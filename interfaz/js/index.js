@@ -32,3 +32,20 @@ const btnModoDirectora = document.getElementById("btnModoDirectora");
 const btnAgregarModal = document.getElementById("btnAgregarModal");
 var directora = false;
 var usuarioLogeado = sistema.getListaPadres()[0];
+
+//Evento inicio al cargar la pagina por primera vez
+window.addEventListener("load", () => {
+    nombrePadre.innerText = "Nombre del padre: " + usuarioLogeado.getNombre();
+    cantidadTickets.innerText = "Cantidad de Tickets: " + usuarioLogeado.getTickets();
+    //Setea la fecha del calendario al día actual
+    let fechaActual = new Date();
+    let formatoFecha = fechaActual.toISOString().split('T')[0];
+    calendario.value = formatoFecha;
+    //Añade descripcion de menu a un elemento p del html
+    let menuSeleccionado = sistema.obtenerDia(formatoFecha)
+    llenarCamposMenu(menuSeleccionado);
+    llenarListaComprados(listaMenusComprados, usuarioLogeado.getListaMenuComprado());
+    generarListaComentarios(menuSeleccionado, listaComentario);
+    document.getElementById("divEsconderAgregarMenu").classList.add("esconder");
+
+});
