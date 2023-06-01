@@ -49,3 +49,24 @@ window.addEventListener("load", () => {
     document.getElementById("divEsconderAgregarMenu").classList.add("esconder");
 
 });
+
+btnModoDirectora.addEventListener('click', () => {
+    if (directora) {
+        alert("modo directora off");
+        directora = false;
+        btnModoDirectora.innerText = "Modo Directora";
+        document.getElementById("divEsconderComentCompra").classList.remove("esconder");
+        document.getElementById("divEsconderAgregarMenu").classList.add("esconder");
+        document.getElementById("divEsconderPadre").classList.remove("invisible");
+    }
+    else {
+        directora = true;
+        btnModoDirectora.innerText = "Modo Padre";
+        document.getElementById("divEsconderComentCompra").classList.add("esconder");
+        document.getElementById("divEsconderAgregarMenu").classList.remove("esconder");
+
+        document.getElementById("divEsconderPadre").classList.add("invisible");
+
+        alert("modo directora on");
+    }
+});
