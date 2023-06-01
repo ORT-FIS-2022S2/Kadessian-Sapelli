@@ -156,3 +156,81 @@ function llenarListaComprados(ul, listaDiasComprados) {
     }
 }
 
+//Aca encadenamos dos eventlisteners porque en una ventana modal no reconoce los eventos si no
+document.addEventListener('DOMContentLoaded', () => {
+    const listaMenus = document.getElementById("listaMenus");
+    llenarListaMenusDirectora(sistema.getListaMenus());
+    listaMenus.addEventListener("change", function (event) {
+
+        let opcionSeleccionada = event.target.value;
+        let menuSeleccionado = sistema.obtenerMenu(opcionSeleccionada);
+        alert(opcionSeleccionada);
+        parrafoDatosMenu.innerText = "";
+        if (menuSeleccionado !== null) {
+            let parrafoDeMenu = document.createElement("p");
+            parrafoDeMenu.innerText = menuSeleccionado.getDescripcion() + "";
+            parrafoDatosMenu.appendChild(parrafoDeMenu);
+            let imagenMenu = document.createElement("img");
+            imagenMenu.src = menuSeleccionado.getImagen(); // seria la imagen del menu
+            imagenMenu.alt = "mandarina";
+            imagenMenu.style.width = "100px"; // Ancho de la imagen en píxeles
+            imagenMenu.style.height = "100px"; // Alto de la imagen en píxeles
+            parrafoDatosMenu.appendChild(imagenMenu);
+            console.log("Opción seleccionada:", opcionSeleccionada);
+        }
+    });
+    const btnComentario = document.getElementById("btnComentario");
+    const radioBtnEstrella = document.querySelectorAll(`input[name="${"estrellas"}"]`);
+    const campoComentario = document.getElementById("campoComentario");
+
+    const botonTicket = document.getElementById('botonTicket');
+    const numeroTicket = document.getElementById('numeroTicket');
+    botonTicket.addEventListener('click', () => {
+        if (numeroTicket.value > 0) {
+            usuarioLogeado.comprarTickets(parseInt(numeroTicket.value));
+            cantidadTickets.innerText = "Cantidad de Tickets: " + usuarioLogeado.getTickets();
+            precioTickets.innerText = "Compra realizada con éxito";
+            numeroTicket.value = "";
+        }
+    });
+    numeroTicket.addEventListener('input', () => {
+        const numeroIngresado = numeroTicket.value;
+        let precio = numeroIngresado * 300;
+        if (precio != 0) {
+            precioTickets.innerText = "Valor total de su compra :" + precio + "$";
+        }
+        else {
+            precioTickets.innerText = "";
+        }
+
+    });
+
+    // Agregar el controlador de eventos al botón de envío
+    btnComentario.addEventListener('click', function () {
+        // Aquí puedes agregar la lógica para enviar el mensaje
+        let comentarioNuevo = campoComentario.value;
+        let valorRadioButton = "1";
+        campoComentario.innerHTML = "";
+        if (comentarioNuevo != "") {
+
+
+            radioBtnEstrella.forEach((radioButton) => {
+                if (radioButton.checked) {
+                    valorRadioButton = radioButton.value;
+                }
+
+                // Hacer algo con el valor del radio button
+                //alert(valorRadioButton);
+            });
+        }
+        radioBtnEstrella.forEach((radioButton) => {
+            if (radioButton.value === "1") {
+                radioButton.checked = true;
+            }
+        });
+        let objetoComentario = new Comentario(usuarioLogeado, comentarioNuevo, valorRadioButton);
+        sistema.obtenerDia(calendario.value).addComentario(objetoComentario);
+        generarListaComentarios(sistema.obtenerDia(calendario.value), listaComentario);
+    });
+
+});
