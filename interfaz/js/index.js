@@ -322,5 +322,25 @@ function generarTags(palabras) {
     return container;
 }
 
+function llenarListaMenusDirectora(arrayDatos) {
+    listaMenus.innerHTML = "";
+
+    for (let i = 0; i < arrayDatos.length; i++) {
+        let opcion = document.createElement("option");
+        opcion.value = arrayDatos[i].getNombre(); // Establece el valor de la opción
+        opcion.textContent = arrayDatos[i].getNombre();; // Establece el texto de la opción
+        listaMenus.appendChild(opcion);
+    }
+}
+btnAgregarModal.addEventListener("click", function () {
+    if (sistema.obtenerDia(calendario.value) === null) {
+        let diaAgregar = new Dia(sistema.obtenerMenu(listaMenus.value), calendario.value);
+        sistema.addDia(diaAgregar);
+        llenarCamposMenu(diaAgregar);
+    }
+    else {
+        alert("Ya hay menu para esta fecha");
+    }
+});
 
 
