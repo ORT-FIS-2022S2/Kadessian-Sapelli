@@ -95,3 +95,40 @@ calendario.addEventListener('change', function () {
         limpiarListaComentarios();
     }
 });
+
+function limpiarCampos() {
+    imagenMenu.innerText = "";
+    parrafo.innerText = "";
+    calorias.innerText = "";
+    proteinas.innerText = "";
+    grasas.innerText = "";
+    carbohidratos.innerText = "";
+    vitC.innerText = "";
+    hierro.innerText = "";
+    sodio.innerText = "";
+    alergenos.innerText = "";
+};
+
+function llenarCamposMenu(dia) {
+    limpiarCampos();
+    if (dia != null) {
+        let foto = document.createElement("img");
+        foto.src = dia.getMenu().getImagen();
+        foto.style.width = "100px"; // Cambia el tamaño de la imagen ajustando el valor de width
+        foto.style.height = "100px"; // Cambia el tamaño de la imagen ajustando el valor de height
+        foto.style.margin = "auto";
+        alergenos.appendChild(generarTags(dia.getMenu().getAlergenos()));
+        imagenMenu.appendChild(foto);
+        parrafo.innerText = dia.getMenu().getDescripcion();
+        calorias.innerText = "Calorías: " + dia.getMenu().getCalorias();
+        proteinas.innerText = "Proteínas: " + dia.getMenu().getProteinas() + " gr";
+        grasas.innerText = "Grasas: " + dia.getMenu().getGrasas() + " gr";
+        sodio.innerText = "Sodio : " + dia.getMenu().getSodio() + " mg";
+        carbohidratos.innerText = "Carbohidratos: " + dia.getMenu().getCarbohidratos() + " gr";
+        vitC.innerText = "Vitamina C: " + dia.getMenu().getVitC() + " mg";
+        hierro.innerText = "Hierro: " + dia.getMenu().getHierro() + " mg";
+    }
+    else {
+        parrafo.innerText = "No hay menu para la fecha seleccionada";
+    }
+}
