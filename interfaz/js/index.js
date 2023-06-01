@@ -234,3 +234,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+function generarListaComentarios(dia, ul) {
+    limpiarListaComentarios();
+    promedio.innerText = dia.promedioEstrellas();
+    cantComentarios.innerText = dia.cantidadComentarios() + " comentarios";
+    for (let i = 0; i < dia.getListaComentariosfecha().length; i++) {
+        let comentario = dia.getListaComentariosfecha()[i];
+        generarComentario(comentario.getPadre().getNombre(), comentario.getEstrellas(), comentario.getMensaje(), ul);
+    }
+}
+
+function limpiarListaComentarios() {
+    listaComentario.innerHTML = "";
+    promedio.innerText = "0";
+    cantComentarios.innerText = 0 + " comentarios";
+}
