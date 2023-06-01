@@ -70,3 +70,28 @@ btnModoDirectora.addEventListener('click', () => {
         alert("modo directora on");
     }
 });
+
+//Evento boton comprar
+btnComprar.addEventListener('click', () => {
+    let menuDia = sistema.obtenerDia(calendario.value);
+    if (menuDia != null) {
+        usuarioLogeado.comprarMenuDia(menuDia);
+        cantidadTickets.innerText = "Cantidad de Tickets: " + usuarioLogeado.getTickets();
+        llenarListaComprados(listaMenusComprados, usuarioLogeado.getListaMenuComprado());
+    }
+});
+
+//Evento al seleccionar una fecha del calendario
+calendario.addEventListener('change', function () {
+    let menuSeleccionado = sistema.obtenerDia(calendario.value);
+    llenarCamposMenu(menuSeleccionado);
+
+
+    if (menuSeleccionado != null) {
+
+        generarListaComentarios(menuSeleccionado, listaComentario);
+    }
+    else {
+        limpiarListaComentarios();
+    }
+});
