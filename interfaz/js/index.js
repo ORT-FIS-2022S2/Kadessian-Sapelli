@@ -132,3 +132,27 @@ function llenarCamposMenu(dia) {
         parrafo.innerText = "No hay menu para la fecha seleccionada";
     }
 }
+
+//listaMenusComprados
+function llenarListaComprados(ul, listaDiasComprados) {
+    ul.innerHTML = ""; // Limpiar el contenido existente de la lista
+
+    for (let i = 0; i < listaDiasComprados.length; i++) {
+        const li = document.createElement("li");
+        li.className = "linksintegrantes";
+        li.style.display = "flex";
+
+        const img = document.createElement("img");
+        img.src = listaDiasComprados[i].getMenu().getImagen();
+        img.alt = "Imagen del día comprado: " + listaDiasComprados[i].getFecha();
+        img.className = "redondaf";
+
+        const fechaSpan = document.createElement("span");
+        fechaSpan.innerText = listaDiasComprados[i].getMenu().getNombre() + "\n" + listaDiasComprados[i].getFecha();
+
+        li.appendChild(img);
+        li.appendChild(fechaSpan);
+        ul.appendChild(li);
+    }
+}
+
