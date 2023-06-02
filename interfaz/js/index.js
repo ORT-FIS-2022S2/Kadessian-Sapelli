@@ -45,7 +45,7 @@ window.addEventListener("load", () => {
     let menuSeleccionado = sistema.obtenerDia(formatoFecha)
     llenarCamposMenu(menuSeleccionado);
     llenarListaComprados(listaMenusComprados, usuarioLogeado.getListaMenuComprado());
-    generarListaComentarios(menuSeleccionado, listaComentario);
+    //generarListaComentarios(menuSeleccionado, listaComentario);
     document.getElementById("divEsconderAgregarMenu").classList.add("esconder");
 
 });

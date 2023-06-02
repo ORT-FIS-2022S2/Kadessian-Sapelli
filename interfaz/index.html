@@ -2,386 +2,393 @@
 <html lang="es">
 
 <head>
-    <!-- Metainformación con responsividad y palabras claves -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="web keywords">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos.css" type="text/css">
-    <script src="js/index.js" type="module"></script>
-    <link rel="icon" href="img/mandarina.png" type="image/x-icon">
-    <title>AlimenTIC</title>
+  <!-- Metainformación con responsividad y palabras claves -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="web keywords">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilos.css" type="text/css">
+  <script src="js/index.js" type="module"></script>
+  <link rel="icon" href="img/mandarina.png" type="image/x-icon">
+
+  <title>AlimenTIC</title>
 </head>
 
 <body>
-    <header class="cabezal">
-        <!--Boton Sesion Directora y Titulo-->
-        <div class="float-left">
-            <button id="btnModoDirectora" type="button"
-                class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                Modo Directora
-            </button>
-            <h1 class="degradeLetra">
-                Programa menú escolar
-            </h1>
-        </div>
-        <!--Boton Padre y Cerrar Sesion-->
-        <div id="divEsconderPadre" class="derecha">
-            <button
-                class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
-                aria-controls="drawer-example">
-                Información Padre
-            </button>
-            <button
-                class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                type="button" onclick="window.location.href='http://localhost:3000'">
-                Cerrar sesión
-            </button>
-        </div>
-    </header>
+  <!-- drawer init and toggle -->
+  <header class="cabezal">
+    <div class="float-left">
+      <button id="btnModoDirectora" type="button"
+        class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Modo
+        Directora</button>
+      <h1 class="degradeLetra">Programa menú escolar</h1>
 
-    <!--Ventana Modal con Informacion del Usuario-->
-    <div id="drawer-example"
-        class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800"
-        tabindex="-1" aria-labelledby="drawer-label">
-        <!--Boton Informacion del usuario-->
-        <h5 id="drawer-label"
-            class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
-            <svg class="w-5 h-5 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                    clip-rule="evenodd"></path>
-            </svg>Información de usuario
-        </h5>
-        <!--Boton cerrar ventana modal-->
-        <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example"
-            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+    </div>
+
+
+
+    <div id="divEsconderPadre" class="derecha">
+
+      <button
+        class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+        type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
+        aria-controls="drawer-example">
+        Información Padre
+      </button>
+      <button
+        class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+        type="button" onclick="window.location.href='http://localhost:3000'">
+        Cerrar sesión
+      </button>
+    </div>
+
+  </header>
+
+  <!-- drawer component -->
+  <div id="drawer-example"
+    class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800"
+    tabindex="-1" aria-labelledby="drawer-label">
+    <h5 id="drawer-label"
+      class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"><svg
+        class="w-5 h-5 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+          clip-rule="evenodd"></path>
+      </svg>Información de usuario</h5>
+    <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example"
+      class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+      <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+      <span class="sr-only">Close menu</span>
+    </button>
+    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400" id="nombrePadre">Nombre padre :</p>
+    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400" id="cantidadTickets"></p>
+
+    <div class="grid grid-cols-2 gap-4 justify-end">
+      <a href="#" type="button" data-modal-target="crypto-modal" data-modal-toggle="crypto-modal"
+        class="px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Comprar
+        Tickets</a>
+
+    </div>
+    <p class="linksintegrantes">
+    <p>Lista menus comprados:</p>
+    <ul id="listaMenusComprados" class="linksintegrantes">
+    </ul>
+
+  </div>
+  <div id="centrar">
+    <!-- Main modal -->
+    <div id="crypto-modal" tabindex="-1" aria-hidden="true"
+      class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+      <div class="relative w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <button id="btnCerrar" type="button"
+            class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+            data-modal-hide="crypto-modal">
             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clip-rule="evenodd"></path>
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
             </svg>
-            <span class="sr-only">Close menu</span>
+            <span class="sr-only">Close modal</span>
+          </button>
+          <!-- Modal header -->
+          <div class="px-6 py-4 border-b rounded-t dark:border-gray-600">
+            <h3 class="text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
+              Eliga cantidad de tickets y método de pago
+            </h3>
+          </div>
+          <!-- Modal body -->
+          <div class="p-6">
+            <p class="text-sm font-normal text-gray-500 dark:text-gray-400">El valor del ticket es de 300$ y tiene valor
+              por un menú.</p>
+            <ul class="my-4 space-y-3">
+              <li>
+                <input type="number" placeholder="Cantidad de tickets" min="1" id="numeroTicket">
+                </input>
+              </li>
+              <li>
+                <label
+                  class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+                  <input type="radio" class="mr-3" name="opcion">
+
+                  <svg aria-hidden="true" class="h-5" viewBox="0 0 292 292" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M145.7 291.66C226.146 291.66 291.36 226.446 291.36 146C291.36 65.5541 226.146 0.339844 145.7 0.339844C65.2542 0.339844 0.0400391 65.5541 0.0400391 146C0.0400391 226.446 65.2542 291.66 145.7 291.66Z"
+                      fill="#3259A5" />
+                    <path
+                      d="M195.94 155.5C191.49 179.08 170.8 196.91 145.93 196.91C117.81 196.91 95.0204 174.12 95.0204 146C95.0204 117.88 117.81 95.0897 145.93 95.0897C170.8 95.0897 191.49 112.93 195.94 136.5H247.31C242.52 84.7197 198.96 44.1797 145.93 44.1797C89.6904 44.1797 44.1104 89.7697 44.1104 146C44.1104 202.24 89.7004 247.82 145.93 247.82C198.96 247.82 242.52 207.28 247.31 155.5H195.94Z"
+                      fill="white" />
+                  </svg>
+                  <span class="flex-1 ml-3 whitespace-nowrap">Coinbase Wallet</span>
+
+                </label>
+              </li>
+              <li>
+                <label
+                  class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+
+                  <input type="radio" class="mr-3" name="opcion">
+                  <svg aria-hidden="true" class="h-5" viewBox="0 0 512 512" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                      <radialGradient cx="0%" cy="50%" fx="0%" fy="50%" r="100%" id="radialGradient-1">
+                        <stop stop-color="#5D9DF6" offset="0%"></stop>
+                        <stop stop-color="#006FFF" offset="100%"></stop>
+                      </radialGradient>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="logo">
+                        <rect id="base" fill="url(#radialGradient-1)" x="0" y="0" width="512" height="512" rx="256">
+                        </rect>
+                        <path
+                          d="M169.209772,184.531136 C217.142772,137.600733 294.857519,137.600733 342.790517,184.531136 L348.559331,190.179285 C350.955981,192.525805 350.955981,196.330266 348.559331,198.676787 L328.82537,217.99798 C327.627045,219.171241 325.684176,219.171241 324.485851,217.99798 L316.547278,210.225455 C283.10802,177.485633 228.89227,177.485633 195.453011,210.225455 L186.951456,218.549188 C185.75313,219.722448 183.810261,219.722448 182.611937,218.549188 L162.877976,199.227995 C160.481326,196.881474 160.481326,193.077013 162.877976,190.730493 L169.209772,184.531136 Z M383.602212,224.489406 L401.165475,241.685365 C403.562113,244.031874 403.562127,247.836312 401.165506,250.182837 L321.971538,327.721548 C319.574905,330.068086 315.689168,330.068112 313.292501,327.721609 C313.292491,327.721599 313.29248,327.721588 313.29247,327.721578 L257.08541,272.690097 C256.486248,272.103467 255.514813,272.103467 254.915651,272.690097 C254.915647,272.690101 254.915644,272.690105 254.91564,272.690108 L198.709777,327.721548 C196.313151,330.068092 192.427413,330.068131 190.030739,327.721634 C190.030725,327.72162 190.03071,327.721606 190.030695,327.721591 L110.834524,250.181849 C108.437875,247.835329 108.437875,244.030868 110.834524,241.684348 L128.397819,224.488418 C130.794468,222.141898 134.680206,222.141898 137.076856,224.488418 L193.284734,279.520668 C193.883897,280.107298 194.85533,280.107298 195.454493,279.520668 C195.454502,279.520659 195.45451,279.520651 195.454519,279.520644 L251.65958,224.488418 C254.056175,222.141844 257.941913,222.141756 260.338618,224.488222 C260.338651,224.488255 260.338684,224.488288 260.338717,224.488321 L316.546521,279.520644 C317.145683,280.107273 318.117118,280.107273 318.71628,279.520644 L374.923175,224.489406 C377.319825,222.142885 381.205562,222.142885 383.602212,224.489406 Z"
+                          id="WalletConnect" fill="#FFFFFF" fill-rule="nonzero"></path>
+                      </g>
+                    </g>
+                  </svg>
+                  <span class="flex-1 ml-3 whitespace-nowrap">WalletConnect</span>
+                </label>
+              </li>
+              <li>
+                <label
+                  class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+                  <input type="radio" class="mr-3" name="opcion">
+                  <svg aria-hidden="true" class="h-4" viewBox="0 0 96 96" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M72.0998 0.600098H48.3998H24.5998H0.799805V24.4001V48.2001V49.7001V71.8001V71.9001V95.5001H24.5998V72.0001V71.9001V49.8001V48.3001V24.5001H48.3998H72.1998H95.9998V0.700104H72.0998V0.600098Z"
+                      fill="#617BFF" />
+                    <path
+                      d="M48.5 71.8002H72.1V95.6002H73C79.1 95.6002 84.9 93.2002 89.2 88.9002C93.5 84.6002 95.9 78.8002 95.9 72.7002V48.2002H48.5V71.8002Z"
+                      fill="#617BFF" />
+                  </svg>
+                  <span class="flex-1 ml-3 whitespace-nowrap">Fortmatic</span>
+                </label>
+              </li>
+              <li>
+                <p id="precioTickets"></p>
+              </li>
+              <li>
+                <button id="botonTicket" type="button"
+                  class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Comprar</button>
+              </li>
+            </ul>
+            <div>
+              <a href="#"
+                class="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
+                <svg aria-hidden="true" class="w-3 h-3 mr-2" aria-hidden="true" focusable="false" data-prefix="far"
+                  data-icon="question-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path fill="currentColor"
+                    d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 448c-110.532 0-200-89.431-200-200 0-110.495 89.472-200 200-200 110.491 0 200 89.471 200 200 0 110.53-89.431 200-200 200zm107.244-255.2c0 67.052-72.421 68.084-72.421 92.863V300c0 6.627-5.373 12-12 12h-45.647c-6.627 0-12-5.373-12-12v-8.659c0-35.745 27.1-50.034 47.579-61.516 17.561-9.845 28.324-16.541 28.324-29.579 0-17.246-21.999-28.693-39.784-28.693-23.189 0-33.894 10.977-48.942 29.969-4.057 5.12-11.46 6.071-16.666 2.124l-27.824-21.098c-5.107-3.872-6.251-11.066-2.644-16.363C184.846 131.491 214.94 112 261.794 112c49.071 0 101.45 38.304 101.45 88.8zM298 368c0 23.159-18.841 42-42 42s-42-18.841-42-42 18.841-42 42-42 42 18.841 42 42z">
+                  </path>
+                </svg>
+                AlimenTIC todos los derechos reservados.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- -->
+    <!-- Aca esta el calendario y todo lo demas -->
+    <form action="#" method="POST">
+      <section>
+        <div class="infoNutricional">
+          <p class="color"><input id="calendario" type="date" min="2023-04-01" max="2024-04-30"></input></p>
+        </div>
+        <div id="alergenos">
+        </div>
+        <p id="descripcionMenu"></p>
+        <p id="fotoMenu"></p>
+        <div class="infoNutricional">
+
+          <ul>
+            <li id="calorias"></li>
+            <li id="proteinas"></li>
+            <li id="carbohidratos"></li>
+            <li id="grasas"></li>
+            <li id="sodio"></li>
+            <li id="vitC"></li>
+            <li id="hierro"></li>
+          </ul>
+        </div>
+
+
+
+      </section>
+      <div id="divEsconderComentCompra">
+
+        <button id="btnComprar" type="button"
+          class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Comprar</button>
+        <button id="btnComentar" type="button"
+          class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+          data-modal-target="staticModal" data-modal-toggle="staticModal">Comentar</button>
+      </div>
+      <div id="divEsconderAgregarMenu">
+        <div>
+
+          <button type="button" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+            class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Agregar
+            Menú</button>
+        </div>
+
+
+    </form>
+
+  </div>
+  <div class="centrar">
+    <div class="flex items-center">
+      <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg">
+        <title>Rating star</title>
+        <path
+          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+        </path>
+      </svg>
+      <p id="promedio" class="ml-2 text-sm font-bold text-gray-900 dark:text-white">4.95</p>
+      <span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
+      <a id="cantComentarios" class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white">73
+        comentarios</a>
+    </div>
+
+  </div>
+  <ul id="listaComentario">
+  </ul>
+
+
+
+  <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
+    class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative w-full max-w-2xl max-h-full">
+      <!-- Modal content -->
+      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+        <!-- Modal header -->
+        <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Static modal
+          </h3>
+          <button type="button"
+            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+            data-modal-hide="staticModal">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Modal body -->
+        <div class="p-6 space-y-6">
+          <div class="estrella">
+            <!--Estrellas-->
+
+            <form class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              Califique el menú:
+              <p class="clasificacion">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                --><label for="radio1">★</label><!--
+                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                --><label for="radio2">★</label><!--
+                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                --><label for="radio3">★</label><!--
+                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                --><label for="radio4">★</label><!--
+                --><input id="radio5" type="radio" name="estrellas" value="1" checked="true"><!--
+                --><label for="radio5">★</label>
+              </p>
+            </form>
+          </div>
+          <!--End estrellas-->
+
+
+          <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Escriba su comentario :</p>
+          <textarea id="campoComentario" rows="4"
+            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Escriba su mensaje aquí..."></textarea>
+
+        </div>
+        <!-- Modal footer -->
+        <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+          <button data-modal-hide="staticModal" id="btnComentario" type="button"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Enviar
+            mensaje</button>
+          <button data-modal-hide="staticModal" type="button"
+            class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal toggle -->
+
+  <!--EL MODAL DE AGREGAR MENU DE LA DIRECTORA PARA DETERMINADA FECHA -->
+  <!-- Main modal -->
+  <div id="authentication-modal" tabindex="-1" aria-hidden="true"
+    class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative w-full max-w-md max-h-full">
+      <!-- Modal content -->
+      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+        <button type="button"
+          class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+          data-modal-hide="authentication-modal">
+          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="sr-only">Close modal</span>
         </button>
-        <p class="mb-6 text-sm text-gray-500 dark:text-gray-400" id="nombrePadre">Nombre padre :</p>
-        <p class="mb-6 text-sm text-gray-500 dark:text-gray-400" id="cantidadTickets"></p>
-        <div class="grid grid-cols-2 gap-4 justify-end">
-            <a href="#" type="button" data-modal-target="crypto-modal" data-modal-toggle="crypto-modal"
-                class="px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                Comprar Tickets
-            </a>
-        </div>
-        <p class="linksintegrantes"></p>
-        <p>Lista menus comprados: </p>
-        <ul id="listaMenusComprados" class="linksintegrantes"></ul>
-    </div>
+        <div class="px-6 py-6 lg:px-8">
+          <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Agregué un menú</h3>
+          <form class="space-y-6" action="#">
 
-    <div id="centrar">
-        <!--Ventana Modal para Comprar Tickets-->
-        <div id="crypto-modal" tabindex="-1" aria-hidden="true"
-            class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-            <div class="relative w-full max-w-md max-h-full">
-                <!--Modal content-->
-                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                    <button id="btnCerrar" type="button"
-                        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                        data-modal-hide="crypto-modal">
-                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                    </button>
-                    <!-- Modal header -->
-                    <div class="px-6 py-4 border-b rounded-t dark:border-gray-600">
-                        <h3 class="text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
-                            Eliga cantidad de tickets y método de pago
-                        </h3>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="p-6">
-                        <p class="text-sm font-normal text-gray-500 dark:text-gray-400">
-                            El valor del ticket es de 300$ y tiene valor por un menú.
-                        </p>
-                        <ul class="my-4 space-y-3">
-                            <li>
-                                <input type="number" placeholder="Cantidad de tickets" min="1"
-                                    id="numeroTicket"></input>
-                            </li>
-                            <!--Boton Coinbase-->
-                            <li>
-                                <label
-                                    class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-                                    <input type="radio" class="mr-3" name="opcion">
-                                    <svg aria-hidden="true" class="h-5" viewBox="0 0 292 292" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M145.7 291.66C226.146 291.66 291.36 226.446 291.36 146C291.36 65.5541 226.146 0.339844 145.7 0.339844C65.2542 0.339844 0.0400391 65.5541 0.0400391 146C0.0400391 226.446 65.2542 291.66 145.7 291.66Z"
-                                            fill="#3259A5" />
-                                        <path
-                                            d="M195.94 155.5C191.49 179.08 170.8 196.91 145.93 196.91C117.81 196.91 95.0204 174.12 95.0204 146C95.0204 117.88 117.81 95.0897 145.93 95.0897C170.8 95.0897 191.49 112.93 195.94 136.5H247.31C242.52 84.7197 198.96 44.1797 145.93 44.1797C89.6904 44.1797 44.1104 89.7697 44.1104 146C44.1104 202.24 89.7004 247.82 145.93 247.82C198.96 247.82 242.52 207.28 247.31 155.5H195.94Z"
-                                            fill="white" />
-                                    </svg>
-                                    <span class="flex-1 ml-3 whitespace-nowrap">Coinbase Wallet</span>
-                                </label>
-                            </li>
-                            <!--Boton WalletConnect-->
-                            <li>
-                                <label
-                                    class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-                                    <input type="radio" class="mr-3" name="opcion">
-                                    <svg aria-hidden="true" class="h-5" viewBox="0 0 512 512" version="1.1"
-                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <defs>
-                                            <radialGradient cx="0%" cy="50%" fx="0%" fy="50%" r="100%"
-                                                id="radialGradient-1">
-                                                <stop stop-color="#5D9DF6" offset="0%"></stop>
-                                                <stop stop-color="#006FFF" offset="100%"></stop>
-                                            </radialGradient>
-                                        </defs>
-                                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <g id="logo">
-                                                <rect id="base" fill="url(#radialGradient-1)" x="0" y="0" width="512"
-                                                    height="512" rx="256"></rect>
-                                                <path
-                                                    d="M169.209772,184.531136 C217.142772,137.600733 294.857519,137.600733 342.790517,184.531136 L348.559331,190.179285 C350.955981,192.525805 350.955981,196.330266 348.559331,198.676787 L328.82537,217.99798 C327.627045,219.171241 325.684176,219.171241 324.485851,217.99798 L316.547278,210.225455 C283.10802,177.485633 228.89227,177.485633 195.453011,210.225455 L186.951456,218.549188 C185.75313,219.722448 183.810261,219.722448 182.611937,218.549188 L162.877976,199.227995 C160.481326,196.881474 160.481326,193.077013 162.877976,190.730493 L169.209772,184.531136 Z M383.602212,224.489406 L401.165475,241.685365 C403.562113,244.031874 403.562127,247.836312 401.165506,250.182837 L321.971538,327.721548 C319.574905,330.068086 315.689168,330.068112 313.292501,327.721609 C313.292491,327.721599 313.29248,327.721588 313.29247,327.721578 L257.08541,272.690097 C256.486248,272.103467 255.514813,272.103467 254.915651,272.690097 C254.915647,272.690101 254.915644,272.690105 254.91564,272.690108 L198.709777,327.721548 C196.313151,330.068092 192.427413,330.068131 190.030739,327.721634 C190.030725,327.72162 190.03071,327.721606 190.030695,327.721591 L110.834524,250.181849 C108.437875,247.835329 108.437875,244.030868 110.834524,241.684348 L128.397819,224.488418 C130.794468,222.141898 134.680206,222.141898 137.076856,224.488418 L193.284734,279.520668 C193.883897,280.107298 194.85533,280.107298 195.454493,279.520668 C195.454502,279.520659 195.45451,279.520651 195.454519,279.520644 L251.65958,224.488418 C254.056175,222.141844 257.941913,222.141756 260.338618,224.488222 C260.338651,224.488255 260.338684,224.488288 260.338717,224.488321 L316.546521,279.520644 C317.145683,280.107273 318.117118,280.107273 318.71628,279.520644 L374.923175,224.489406 C377.319825,222.142885 381.205562,222.142885 383.602212,224.489406 Z"
-                                                    id="WalletConnect" fill="#FFFFFF" fill-rule="nonzero"></path>
-                                            </g>
-                                        </g>
-                                    </svg>
-                                    <span class="flex-1 ml-3 whitespace-nowrap">WalletConnect</span>
-                                </label>
-                            </li>
-                            <!--Boton Fortmatic-->
-                            <li>
-                                <label
-                                    class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-                                    <input type="radio" class="mr-3" name="opcion">
-                                    <svg aria-hidden="true" class="h-4" viewBox="0 0 96 96" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M72.0998 0.600098H48.3998H24.5998H0.799805V24.4001V48.2001V49.7001V71.8001V71.9001V95.5001H24.5998V72.0001V71.9001V49.8001V48.3001V24.5001H48.3998H72.1998H95.9998V0.700104H72.0998V0.600098Z"
-                                            fill="#617BFF" />
-                                        <path
-                                            d="M48.5 71.8002H72.1V95.6002H73C79.1 95.6002 84.9 93.2002 89.2 88.9002C93.5 84.6002 95.9 78.8002 95.9 72.7002V48.2002H48.5V71.8002Z"
-                                            fill="#617BFF" />
-                                    </svg>
-                                    <span class="flex-1 ml-3 whitespace-nowrap">Fortmatic</span>
-                                </label>
-                            </li>
-                            <li>
-                                <p id="precioTickets"></p>
-                            </li>
-                            <li>
-                                <button id="botonTicket" type="button"
-                                    class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Comprar</button>
-                            </li>
-                        </ul>
-                        <div>
-                            <a href="#"
-                                class="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
-                                <svg aria-hidden="true" class="w-3 h-3 mr-2" aria-hidden="true" focusable="false"
-                                    data-prefix="far" data-icon="question-circle" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <path fill="currentColor"
-                                        d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 448c-110.532 0-200-89.431-200-200 0-110.495 89.472-200 200-200 110.491 0 200 89.471 200 200 0 110.53-89.431 200-200 200zm107.244-255.2c0 67.052-72.421 68.084-72.421 92.863V300c0 6.627-5.373 12-12 12h-45.647c-6.627 0-12-5.373-12-12v-8.659c0-35.745 27.1-50.034 47.579-61.516 17.561-9.845 28.324-16.541 28.324-29.579 0-17.246-21.999-28.693-39.784-28.693-23.189 0-33.894 10.977-48.942 29.969-4.057 5.12-11.46 6.071-16.666 2.124l-27.824-21.098c-5.107-3.872-6.251-11.066-2.644-16.363C184.846 131.491 214.94 112 261.794 112c49.071 0 101.45 38.304 101.45 88.8zM298 368c0 23.159-18.841 42-42 42s-42-18.841-42-42 18.841-42 42-42 42 18.841 42 42z">
-                                    </path>
-                                </svg>
-                                AlimenTIC todos los derechos reservados
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex justify-between">
+              <div class="flex items-start">
+
+                <p id="parrafoDatosMenu" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"></p>
+              </div>
+              <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                <label for="listaMenus" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Seleccione
+                  un menú</label>
+                <select id="listaMenus"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option selected>Seleccione un menú</option>
+                </select>
+                <input type="text"></input>
+                <input type="text"></input>
+                <input type="text"></input>
+                <input type="text"></input>
+                <input type="text"></input>
+                <input type="text"></input>
+                <input type="text"></input>
+                <input type="text"></input>
+                
             </div>
+            <button data-modal-hide="staticModal" id="btnAgregarModal" type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar</button>
+
+          </form>
         </div>
-
-        <!--Pagina Principal-->
-        <form action="#" method="POST">
-            <!--Informacion del Menu-->
-            <section>
-                <div class="infoNutricional">
-                    <p class="color"><input id="calendario" type="date" min="2023-04-01" max="2024-04-30"></input></p>
-                </div>
-                <div id="alergenos"></div>
-                <p id="descripcionMenu"></p>
-                <p id="fotoMenu"></p>
-                <div class="infoNutricional">
-                    <ul>
-                        <li id="calorias"></li>
-                        <li id="proteinas"></li>
-                        <li id="carbohidratos"></li>
-                        <li id="grasas"></li>
-                        <li id="sodio"></li>
-                        <li id="vitC"></li>
-                        <li id="hierro"></li>
-                    </ul>
-                </div>
-            </section>
-
-            <div id="divEsconderComentCompra">
-                <button id="btnComprar" type="button"
-                    class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Comprar</button>
-                <button id="btnComentar" type="button"
-                    class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                    data-modal-target="staticModal" data-modal-toggle="staticModal">Comentar</button>
-            </div>
-            <div id="divEsconderAgregarMenu">
-                <div>
-                    <button type="button" data-modal-target="authentication-modal"
-                        data-modal-toggle="authentication-modal"
-                        class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                        Agregar Menú
-                    </button>
-                </div>
-            </div>
-        </form>
+      </div>
     </div>
+  </div>
 
-    <!--Feedback del Menu-->
-    <div class="centrar">
-        <div class="flex items-center">
-            <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <title>Rating star</title>
-                <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                </path>
-            </svg>
-            <p id="promedio" class="ml-2 text-sm font-bold text-gray-900 dark:text-white">
-                4.95
-            </p>
-            <span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
-            <a id="cantComentarios"
-                class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white">
-                73 Comentarios
-            </a>
-        </div>
-    </div>
-    <ul id="listaComentario"></ul>
 
-    <!--Dar Feedback del Menu-->
-    <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
-        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative w-full max-w-2xl max-h-full">
-            <!-- Modal content -->
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                <!-- Modal header -->
-                <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                        Static modal
-                    </h3>
-                    <button type="button"
-                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                        data-modal-hide="staticModal">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-                <!-- Modal body -->
-                <div class="p-6 space-y-6">
-                    <!--Estrellas-->
-                    <div class="estrella">
-                        <form class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            Califique el menú:
-                            <p class="clasificacion">
-                                <input id="radio1" type="radio" name="estrellas" value="5">
-                                <label for="radio1">★</label>
-                                <input id="radio2" type="radio" name="estrellas" value="4">
-                                <label for="radio2">★</label>
-                                <input id="radio3" type="radio" name="estrellas" value="3">
-                                <label for="radio3">★</label>
-                                <input id="radio4" type="radio" name="estrellas" value="2">
-                                <label for="radio4">★</label>
-                                <input id="radio5" type="radio" name="estrellas" value="1" checked="true">
-                                <label for="radio5">★</label>
-                            </p>
-                        </form>
-                    </div>
-                    <!--Comentario-->
-                    <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                        Escriba su comentario:
-                    </p>
-                    <textarea id="campoComentario" rows="4"
-                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Escriba su mensaje aquí..."></textarea>
-                </div>
-                <!-- Modal footer -->
-                <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                    <button data-modal-hide="staticModal" id="btnComentario" type="button"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Enviar mensaje
-                    </button>
-                    <button data-modal-hide="staticModal" type="button"
-                        class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
-                        Cancelar
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Ventana Modal Agregar Menu (Solo Modo Directora)-->
-    <div id="authentication-modal" tabindex="-1" aria-hidden="true"
-        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative w-full max-w-md max-h-full">
-            <!-- Modal content -->
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                <button type="button"
-                    class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                    data-modal-hide="authentication-modal">
-                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="sr-only">Close modal</span>
-                </button>
-                <div class="px-6 py-6 lg:px-8">
-                    <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
-                        Agregué un menú
-                    </h3>
-                    <form class="space-y-6" action="#">
-                        <div class="flex justify-between">
-                            <div class="flex items-start">
-                                <p id="parrafoDatosMenu"
-                                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"></p>
-                            </div>
-                            <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                <label for="listaMenus"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    Seleccione un menú
-                                </label>
-                                <select id="listaMenus"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option selected>
-                                        Seleccione un menú
-                                    </option>
-                                </select>
-                            </p>
-                            <!--Campos para agregar un nuevo menu a la lista-->
-                        </div>
-                        <button data-modal-hide="staticModal" id="btnAgregarModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Agregar
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
