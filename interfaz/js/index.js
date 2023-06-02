@@ -23,13 +23,21 @@ const listaMenusComprados = document.getElementById("listaMenusComprados");
 const numeroTicket = document.getElementById("numeroTicket");
 const botonTicket = document.getElementById("botonTicket");
 const precioTickets = document.getElementById("precioTickets");
-const btnCerrar = document.getElementById("btnCerrar");
+const btnComentar = document.getElementById("btnComentar");
 const listaComentario = document.getElementById("listaComentario");
 const promedio = document.getElementById("promedio");
 const cantComentarios = document.getElementById("cantComentarios");
 const alergenos = document.getElementById("alergenos");
 const btnModoDirectora = document.getElementById("btnModoDirectora");
 const btnAgregarModal = document.getElementById("btnAgregarModal");
+const divSeccionComentarios = document.getElementById("divSeccionComentarios");
+const cerrarDivComentario = document.getElementById("cerrarDivComentario");
+const btnEnviarComentario = document.getElementById("btnComentario");
+const radioBtnEstrella = document.querySelectorAll(`input[name="${"estrellas"}"]`);
+const campoComentario = document.getElementById("campoComentario");
+const divNoSePuedeComentar = document.getElementById("divNoSePuedeComentar");
+const parrafoNoSePuedeComentar = document.getElementById("parrafoNoSePuedeComentar");
+
 var directora = false;
 var usuarioLogeado = sistema.getListaPadres()[0];
 
@@ -47,7 +55,8 @@ window.addEventListener("load", () => {
     llenarListaComprados(listaMenusComprados, usuarioLogeado.getListaMenuComprado());
     //generarListaComentarios(menuSeleccionado, listaComentario);
     document.getElementById("divEsconderAgregarMenu").classList.add("esconder");
-
+    divSeccionComentarios.classList.add("esconder");
+    divNoSePuedeComentar.classList.add("esconder");
 });
 
 btnModoDirectora.addEventListener('click', () => {
@@ -84,6 +93,8 @@ btnComprar.addEventListener('click', () => {
 //Evento al seleccionar una fecha del calendario
 calendario.addEventListener('change', function () {
     let menuSeleccionado = sistema.obtenerDia(calendario.value);
+    divSeccionComentarios.classList.add("esconder");
+    divNoSePuedeComentar.classList.add("esconder");
     llenarCamposMenu(menuSeleccionado);
 
 
@@ -179,9 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Opción seleccionada:", opcionSeleccionada);
         }
     });
-    const btnComentario = document.getElementById("btnComentario");
-    const radioBtnEstrella = document.querySelectorAll(`input[name="${"estrellas"}"]`);
-    const campoComentario = document.getElementById("campoComentario");
 
     const botonTicket = document.getElementById('botonTicket');
     const numeroTicket = document.getElementById('numeroTicket');
@@ -204,35 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
     });
-
-    // Agregar el controlador de eventos al botón de envío
-    btnComentario.addEventListener('click', function () {
-        // Aquí puedes agregar la lógica para enviar el mensaje
-        let comentarioNuevo = campoComentario.value;
-        let valorRadioButton = "1";
-        campoComentario.innerHTML = "";
-        if (comentarioNuevo != "") {
-
-
-            radioBtnEstrella.forEach((radioButton) => {
-                if (radioButton.checked) {
-                    valorRadioButton = radioButton.value;
-                }
-
-                // Hacer algo con el valor del radio button
-                //alert(valorRadioButton);
-            });
-        }
-        radioBtnEstrella.forEach((radioButton) => {
-            if (radioButton.value === "1") {
-                radioButton.checked = true;
-            }
-        });
-        let objetoComentario = new Comentario(usuarioLogeado, comentarioNuevo, valorRadioButton);
-        sistema.obtenerDia(calendario.value).addComentario(objetoComentario);
-        generarListaComentarios(sistema.obtenerDia(calendario.value), listaComentario);
-    });
-
 });
 
 function generarListaComentarios(dia, ul) {
@@ -332,7 +311,7 @@ function llenarListaMenusDirectora(arrayDatos) {
         listaMenus.appendChild(opcion);
     }
 }
-btnAgregarModal.addEventListener("click", function () {
+btnAgregarModal.addEventListener("click", () => {
     if (sistema.obtenerDia(calendario.value) === null) {
         let diaAgregar = new Dia(sistema.obtenerMenu(listaMenus.value), calendario.value);
         sistema.addDia(diaAgregar);
@@ -343,4 +322,46 @@ btnAgregarModal.addEventListener("click", function () {
     }
 });
 
+btnComentar.addEventListener("click", () => {
+    limpiarCamposComentario();
+    if(sistema.obtenerDia(calendario.value) !== null){
+        divSeccionComentarios.classList.remove("esconder");
+        divNoSePuedeComentar.classList.add("esconder");
+    }
+    else{
+        divSeccionComentarios.classList.add("esconder");
+        divNoSePuedeComentar.classList.remove("esconder");        
+    }
+});
 
+cerrarDivComentario.addEventListener("click", () => {
+    limpiarCamposComentario();
+    divSeccionComentarios.classList.add("esconder");
+});
+
+//Limpia los campos modificados por el usuario en el div "Comentar"
+function limpiarCamposComentario() {
+    campoComentario.value = "";
+    //Pone en 5 el valor de las estrellas del div "Comentar"
+    radioBtnEstrella.forEach((radioButton) => {
+        if (radioButton.value === "5") {
+            radioButton.checked = true;
+        }
+    });
+}
+
+// Agregar el controlador de eventos al botón de envío
+btnEnviarComentario.addEventListener('click', function () {
+    // Aquí puedes agregar la lógica para enviar el mensaje
+    let comentarioNuevo = campoComentario.value;
+    let valorRadioButton = "5";
+    radioBtnEstrella.forEach((radioButton) => {
+        if (radioButton.checked) {
+            valorRadioButton = radioButton.value;
+        }
+    });
+    let objetoComentario = new Comentario(usuarioLogeado, comentarioNuevo, valorRadioButton);
+    sistema.obtenerDia(calendario.value).addComentario(objetoComentario);
+    generarListaComentarios(sistema.obtenerDia(calendario.value), listaComentario);
+    limpiarCamposComentario();
+});

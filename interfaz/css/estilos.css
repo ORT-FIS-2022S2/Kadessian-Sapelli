@@ -1,6 +1,15 @@
-*{
-    font-family:helvetica;
-  }
+.linkCerrar{
+  color:black;
+  float:right;
+}
+.divSeccionComentarios{
+  width: 500px; /* Ancho */
+  height: 200px; /* Largo */
+  background-color: #ffffff; /* Color de fondo */
+  margin-left: 30%;
+  margin-top: 20px;
+
+}
   .cabezal{
     border-bottom: 0px solid #473a3a85;
     margin-bottom: 50px;
