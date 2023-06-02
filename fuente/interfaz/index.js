@@ -1,11 +1,11 @@
 //https://source.unsplash.com/featured/?food
 //ESTA PAGINA DA IMAGENES ALEATORIAS DE COMIDA
-import { Dia } from './dominio/Dia.js';
-import { Menu } from './dominio/Menu.js';
-import { Padre } from './dominio/Padre.js';
-import { Comentario } from './dominio/Comentario.js';
-import { Sistema } from './dominio/Sistema.js';
-import { sistema } from './dominio/datosPrecargados.js';
+import { Dia } from '../../dominio/Dia.js';
+import { Menu } from '../../dominio/Menu.js';
+import { Padre } from '../../dominio/Padre.js';
+import { Comentario } from '../../dominio/Comentario.js';
+import { Sistema } from '../../dominio/Sistema.js';
+import { sistema } from '../../dominio/DatosPreCargados.js';
 const parrafoDatosMenu = document.getElementById("parrafoDatosMenu");
 const btnComprar = document.getElementById("btnComprar");
 const calendario = document.getElementById("calendario");
