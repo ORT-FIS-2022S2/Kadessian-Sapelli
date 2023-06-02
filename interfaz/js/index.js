@@ -1,3 +1,5 @@
+//https://source.unsplash.com/featured/?food
+//ESTA PAGINA DA IMAGENES ALEATORIAS DE COMIDA
 import { Dia } from './dominio/Dia.js';
 import { Menu } from './dominio/Menu.js';
 import { Padre } from './dominio/Padre.js';
@@ -5,7 +7,6 @@ import { Comentario } from './dominio/Comentario.js';
 import { Sistema } from './dominio/Sistema.js';
 import { sistema } from './dominio/datosPrecargados.js';
 const parrafoDatosMenu = document.getElementById("parrafoDatosMenu");
-
 const btnComprar = document.getElementById("btnComprar");
 const calendario = document.getElementById("calendario");
 const parrafo = document.getElementById("descripcionMenu");
@@ -29,14 +30,17 @@ const promedio = document.getElementById("promedio");
 const cantComentarios = document.getElementById("cantComentarios");
 const alergenos = document.getElementById("alergenos");
 const btnModoDirectora = document.getElementById("btnModoDirectora");
-const btnAgregarModal = document.getElementById("btnAgregarModal");
+const btnAgregarNuevoMenu = document.getElementById("btnAgregarModal");
 const divSeccionComentarios = document.getElementById("divSeccionComentarios");
 const cerrarDivComentario = document.getElementById("cerrarDivComentario");
 const btnEnviarComentario = document.getElementById("btnComentario");
 const radioBtnEstrella = document.querySelectorAll(`input[name="${"estrellas"}"]`);
 const campoComentario = document.getElementById("campoComentario");
 const divNoSePuedeComentar = document.getElementById("divNoSePuedeComentar");
-const parrafoNoSePuedeComentar = document.getElementById("parrafoNoSePuedeComentar");
+const divErrorComentarioVacio = document.getElementById("divErrorComentarioVacio");
+const formularioCrearMenu = document.getElementById("formularioCrearMenu");
+const btnPanelAgregarMenu = document.getElementById("btnPanelAgregarMenu");
+const btnBorrarMenu = document.getElementById("btnBorrarMenu");
 
 var directora = false;
 var usuarioLogeado = sistema.getListaPadres()[0];
@@ -57,11 +61,16 @@ window.addEventListener("load", () => {
     document.getElementById("divEsconderAgregarMenu").classList.add("esconder");
     divSeccionComentarios.classList.add("esconder");
     divNoSePuedeComentar.classList.add("esconder");
+    divErrorComentarioVacio.classList.add("esconder");
+    formularioCrearMenu.classList.add("esconder");
 });
 
 btnModoDirectora.addEventListener('click', () => {
+    divSeccionComentarios.classList.add("esconder");
+    divNoSePuedeComentar.classList.add("esconder");
+    divErrorComentarioVacio.classList.add("esconder");
     if (directora) {
-        alert("modo directora off");
+
         directora = false;
         btnModoDirectora.innerText = "Modo Directora";
         document.getElementById("divEsconderComentCompra").classList.remove("esconder");
@@ -73,10 +82,8 @@ btnModoDirectora.addEventListener('click', () => {
         btnModoDirectora.innerText = "Modo Padre";
         document.getElementById("divEsconderComentCompra").classList.add("esconder");
         document.getElementById("divEsconderAgregarMenu").classList.remove("esconder");
-
         document.getElementById("divEsconderPadre").classList.add("invisible");
 
-        alert("modo directora on");
     }
 });
 
@@ -95,8 +102,9 @@ calendario.addEventListener('change', function () {
     let menuSeleccionado = sistema.obtenerDia(calendario.value);
     divSeccionComentarios.classList.add("esconder");
     divNoSePuedeComentar.classList.add("esconder");
+    divErrorComentarioVacio.classList.add("esconder");
+    limpiarCamposComentario();
     llenarCamposMenu(menuSeleccionado);
-
 
     if (menuSeleccionado != null) {
 
@@ -107,7 +115,7 @@ calendario.addEventListener('change', function () {
     }
 });
 
-function limpiarCampos() {
+function limpiarSeccionCalendario() {
     imagenMenu.innerText = "";
     parrafo.innerText = "";
     calorias.innerText = "";
@@ -121,16 +129,24 @@ function limpiarCampos() {
 };
 
 function llenarCamposMenu(dia) {
-    limpiarCampos();
+    limpiarSeccionCalendario();
     if (dia != null) {
+        let imagenMenu = document.createElement("div");
+        imagenMenu.style.display = "flex";
+        
         let foto = document.createElement("img");
         foto.src = dia.getMenu().getImagen();
-        foto.style.width = "100px"; // Cambia el tamaño de la imagen ajustando el valor de width
-        foto.style.height = "100px"; // Cambia el tamaño de la imagen ajustando el valor de height
-        foto.style.margin = "auto";
-        alergenos.appendChild(generarTags(dia.getMenu().getAlergenos()));
+        foto.alt = "imagenMenu";
+        foto.style.width = "129px"; // Ancho de la imagen en píxeles
+        foto.style.height = "129px"; // Alto de la imagen en píxeles
+        foto.style.marginRight = "10px";
         imagenMenu.appendChild(foto);
-        parrafo.innerText = dia.getMenu().getDescripcion();
+        
+        let parrafoDeMenu = document.createElement("p");
+        parrafoDeMenu.innerText = dia.getMenu().getDescripcion();
+        imagenMenu.appendChild(parrafoDeMenu);
+        
+        alergenos.appendChild(generarTags(dia.getMenu().getAlergenos()));
         calorias.innerText = "Calorías: " + dia.getMenu().getCalorias();
         proteinas.innerText = "Proteínas: " + dia.getMenu().getProteinas() + " gr";
         grasas.innerText = "Grasas: " + dia.getMenu().getGrasas() + " gr";
@@ -138,11 +154,14 @@ function llenarCamposMenu(dia) {
         carbohidratos.innerText = "Carbohidratos: " + dia.getMenu().getCarbohidratos() + " gr";
         vitC.innerText = "Vitamina C: " + dia.getMenu().getVitC() + " mg";
         hierro.innerText = "Hierro: " + dia.getMenu().getHierro() + " mg";
+        
+        parrafo.appendChild(imagenMenu);
     }
     else {
-        parrafo.innerText = "No hay menu para la fecha seleccionada";
+        parrafo.innerText = "No hay menú para la fecha seleccionada";
     }
 }
+
 
 //listaMenusComprados
 function llenarListaComprados(ul, listaDiasComprados) {
@@ -169,30 +188,10 @@ function llenarListaComprados(ul, listaDiasComprados) {
 
 //Aca encadenamos dos eventlisteners porque en una ventana modal no reconoce los eventos si no
 document.addEventListener('DOMContentLoaded', () => {
-    const listaMenus = document.getElementById("listaMenus");
-    llenarListaMenusDirectora(sistema.getListaMenus());
-    listaMenus.addEventListener("change", function (event) {
-
-        let opcionSeleccionada = event.target.value;
-        let menuSeleccionado = sistema.obtenerMenu(opcionSeleccionada);
-        alert(opcionSeleccionada);
-        parrafoDatosMenu.innerText = "";
-        if (menuSeleccionado !== null) {
-            let parrafoDeMenu = document.createElement("p");
-            parrafoDeMenu.innerText = menuSeleccionado.getDescripcion() + "";
-            parrafoDatosMenu.appendChild(parrafoDeMenu);
-            let imagenMenu = document.createElement("img");
-            imagenMenu.src = menuSeleccionado.getImagen(); // seria la imagen del menu
-            imagenMenu.alt = "mandarina";
-            imagenMenu.style.width = "100px"; // Ancho de la imagen en píxeles
-            imagenMenu.style.height = "100px"; // Alto de la imagen en píxeles
-            parrafoDatosMenu.appendChild(imagenMenu);
-            console.log("Opción seleccionada:", opcionSeleccionada);
-        }
-    });
 
     const botonTicket = document.getElementById('botonTicket');
     const numeroTicket = document.getElementById('numeroTicket');
+    
     botonTicket.addEventListener('click', () => {
         if (numeroTicket.value > 0) {
             usuarioLogeado.comprarTickets(parseInt(numeroTicket.value));
@@ -260,7 +259,6 @@ function generarComentario(nombre, cantidadEstrellas, contenido, ul) {
     const p = document.createElement('p');
     p.classList.add('mb-2', 'text-gray-500', 'dark:text-gray-400', 'centrar');
     p.textContent = contenido;
-
     li.appendChild(p);
     ul.appendChild(li);
 }
@@ -273,7 +271,6 @@ function generarTags(palabras) {
 
     palabras.forEach(palabra => {
         let className = '';
-
         switch (palabra) {
             case 'gluten':
                 className = 'bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300';
@@ -290,14 +287,12 @@ function generarTags(palabras) {
             default:
                 return;
         }
-
         const span = document.createElement('span');
         span.className = className;
         span.textContent = palabra;
 
         container.appendChild(span);
     });
-
     return container;
 }
 
@@ -311,32 +306,36 @@ function llenarListaMenusDirectora(arrayDatos) {
         listaMenus.appendChild(opcion);
     }
 }
-btnAgregarModal.addEventListener("click", () => {
+
+btnAgregarNuevoMenu.addEventListener("click", () => {
+    
     if (sistema.obtenerDia(calendario.value) === null) {
         let diaAgregar = new Dia(sistema.obtenerMenu(listaMenus.value), calendario.value);
         sistema.addDia(diaAgregar);
         llenarCamposMenu(diaAgregar);
     }
     else {
-        alert("Ya hay menu para esta fecha");
+        
     }
+    limpiarCamposValidosMenu();
 });
 
 btnComentar.addEventListener("click", () => {
     limpiarCamposComentario();
-    if(sistema.obtenerDia(calendario.value) !== null){
+    if (sistema.obtenerDia(calendario.value) !== null) {
         divSeccionComentarios.classList.remove("esconder");
         divNoSePuedeComentar.classList.add("esconder");
     }
-    else{
+    else {
         divSeccionComentarios.classList.add("esconder");
-        divNoSePuedeComentar.classList.remove("esconder");        
+        divNoSePuedeComentar.classList.remove("esconder");
     }
 });
 
 cerrarDivComentario.addEventListener("click", () => {
     limpiarCamposComentario();
     divSeccionComentarios.classList.add("esconder");
+    divErrorComentarioVacio.classList.add("esconder");
 });
 
 //Limpia los campos modificados por el usuario en el div "Comentar"
@@ -355,13 +354,160 @@ btnEnviarComentario.addEventListener('click', function () {
     // Aquí puedes agregar la lógica para enviar el mensaje
     let comentarioNuevo = campoComentario.value;
     let valorRadioButton = "5";
-    radioBtnEstrella.forEach((radioButton) => {
-        if (radioButton.checked) {
-            valorRadioButton = radioButton.value;
+    if (comentarioNuevo != "") {
+        radioBtnEstrella.forEach((radioButton) => {
+            if (radioButton.checked) {
+                valorRadioButton = radioButton.value;
+            }
+        });
+        let objetoComentario = new Comentario(usuarioLogeado, comentarioNuevo, valorRadioButton);
+        sistema.obtenerDia(calendario.value).addComentario(objetoComentario);
+        generarListaComentarios(sistema.obtenerDia(calendario.value), listaComentario);
+        limpiarCamposComentario();
+        divErrorComentarioVacio.classList.add("esconder");
+        divSeccionComentarios.classList.add("esconder");
+
+
+    }
+    else {
+        divErrorComentarioVacio.classList.remove("esconder");
+    }
+
+});
+
+
+btnPanelAgregarMenu.addEventListener('click', () => {
+    limpiarCamposValidosMenu();
+    if (btnPanelAgregarMenu.innerText === "Configuración Menú") {
+        btnPanelAgregarMenu.innerText = "Cerrar Configuración Menú"
+        formularioCrearMenu.classList.remove("esconder");
+    }
+    else {
+        btnPanelAgregarMenu.innerText = "Configuración Menú"
+        formularioCrearMenu.classList.add("esconder");
+    }
+});
+
+const campoNombreMenu = document.getElementById("campoNombreMenu");
+const campoDescripcionMenu = document.getElementById("campoDescripcionMenu");
+const campoImagenMenu = document.getElementById("campoImagenMenu");
+const caloriasMenu = document.getElementById("caloriasMenu");
+const proteinasMenu = document.getElementById("proteinasMenu");
+const carbohidratosMenu = document.getElementById("carbohidratosMenu");
+const vitCMenu = document.getElementById("vitCMenu");
+const hierroMenu = document.getElementById("hierroMenu");
+const sodioMenu = document.getElementById("sodioMenu");
+const grasasMenu = document.getElementById("grasasMenu");
+const glutenBox = document.getElementById("glutenBox");
+const huevosBox = document.getElementById("huevosBox");
+const lacteosBox = document.getElementById("lacteosBox");
+const anacaradosBox = document.getElementById("anacaradosBox");
+const btnFormCrearMenu = document.getElementById("btnFormCrearMenu");
+
+btnFormCrearMenu.addEventListener('click', function () {
+    crearMenu();
+    llenarListaMenusDirectora(sistema.getListaMenus());
+});
+
+function crearMenu() {
+    if (camposValidosMenu(campoNombreMenu, campoDescripcionMenu, campoImagenMenu, caloriasMenu,
+        proteinasMenu, carbohidratosMenu, vitCMenu, hierroMenu, sodioMenu, grasasMenu)) {
+        let menuCreado = new Menu(campoNombreMenu.value, campoDescripcionMenu.value, campoImagenMenu.value, caloriasMenu.value,
+            hierroMenu.value, grasasMenu.value, proteinasMenu.value, vitCMenu.value, carbohidratosMenu.value, sodioMenu.value);
+        let arrAlergenos = [];
+        if (glutenBox) {
+            arrAlergenos.push("gluten");
         }
-    });
-    let objetoComentario = new Comentario(usuarioLogeado, comentarioNuevo, valorRadioButton);
-    sistema.obtenerDia(calendario.value).addComentario(objetoComentario);
-    generarListaComentarios(sistema.obtenerDia(calendario.value), listaComentario);
-    limpiarCamposComentario();
+        if (huevosBox) {
+            arrAlergenos.push("huevos");
+        }
+        if (lacteosBox) {
+            arrAlergenos.push("lacteos");
+        }
+        if (anacaradosBox) {
+            arrAlergenos.push("anacarados");
+        }
+        menuCreado.setAlergenos(arrAlergenos);
+        sistema.addMenu(menuCreado);
+        limpiarCamposValidosMenu();
+    }
+}
+function camposValidosMenu(nombre, descripcion, imagen, cal, prot, carbo, vit, hierro, sodio, grasas) {
+    let retorno = true;
+    if (nombre === "") {
+        retorno = false;
+    }
+    if (descripcion === "") {
+        retorno = false;
+    }
+    if (imagen === "") {
+        retorno = false;
+    }
+    if (cal === "") {
+        retorno = false;
+    }
+    if (prot === "") {
+        retorno = false;
+    }
+    if (carbo === "") {
+        retorno = false;
+    }
+    if (vit === "") {
+        retorno = false;
+    }
+    if (hierro === "") {
+        retorno = false;
+    }
+    if (sodio === "") {
+        retorno = false;
+    }
+    if (grasas === "") {
+        retorno = false;
+    }
+    return retorno;
+}
+
+function limpiarCamposValidosMenu() {
+    campoNombreMenu.value = "";
+    campoDescripcionMenu.value = "";
+    campoImagenMenu.value = "";
+    caloriasMenu.value = "";
+    proteinasMenu.value = "";
+    carbohidratosMenu.value = "";
+    vitCMenu.value = "";
+    hierroMenu.value = "";
+    sodioMenu.value = "";
+    grasasMenu.value = "";
+    glutenBox.checked = false;
+    huevosBox.checked = false;
+    lacteosBox.checked = false;
+    anacaradosBox.checked = false;
+}
+
+btnBorrarMenu.addEventListener('click', () =>{
+    if(listaMenus.value != ""){
+        let borrar="";//LLENAR FUNCION
+    }
+});
+
+const listaMenus = document.getElementById("listaMenus");
+llenarListaMenusDirectora(sistema.getListaMenus());
+listaMenus.addEventListener("change", function (event) {
+    let opcionSeleccionada = event.target.value;
+    let menuSeleccionado = sistema.obtenerMenu(opcionSeleccionada);
+    parrafoDatosMenu.innerText = "";
+    if (menuSeleccionado !== null) {
+        let parrafoDeMenu = document.createElement("p");
+        parrafoDeMenu.innerText = menuSeleccionado.getDescripcion() + "";
+        parrafoDatosMenu.appendChild(parrafoDeMenu);
+        let imagenMenu = document.createElement("img");
+        imagenMenu.src = menuSeleccionado.getImagen(); // seria la imagen del menu
+        imagenMenu.alt = "mandarina";
+        imagenMenu.style.width = "129px"; // Ancho de la imagen en píxeles
+        imagenMenu.style.height = "129px"; // Alto de la imagen en píxeles
+        imagenMenu.style.marginLeft = "60px";
+        parrafoDatosMenu.appendChild(imagenMenu);
+        imagenMenu.alt = "imagenMenu";
+        parrafoDatosMenu.style.display = "flex";
+    }
 });

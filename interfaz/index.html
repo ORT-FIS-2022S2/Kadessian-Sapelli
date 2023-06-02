@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <!-- Metainformación con responsividad y palabras claves -->
     <meta charset="utf-8">
@@ -195,15 +196,19 @@
         <!-- Aca esta el calendario y todo lo demas -->
         <form action="#" method="POST">
             <section>
+                <!--calendario-->
                 <div class="infoNutricional">
                     <p class="color"><input id="calendario" type="date" min="2023-04-01" max="2024-04-30"></input></p>
                 </div>
+                <!--tags-->
                 <div id="alergenos">
                 </div>
-                <p id="descripcionMenu"></p>
-                <p id="fotoMenu"></p>
+                <!--foto y descripcion-->
+                <div class="calendarioFotoDescripcion">
+                    <p id="fotoMenu"></p>
+                    <p id="descripcionMenu"></p>
+                </div>
                 <div class="infoNutricional">
-
                     <ul>
                         <li id="calorias"></li>
                         <li id="proteinas"></li>
@@ -214,9 +219,6 @@
                         <li id="hierro"></li>
                     </ul>
                 </div>
-
-
-
             </section>
             <div id="divEsconderComentCompra">
 
@@ -225,30 +227,64 @@
                 <button id="btnComentar" type="button"
                     class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Comentar</button>
             </div>
+            <!--Seccion botones de agregar y crear menu de la directora-->
             <div id="divEsconderAgregarMenu">
                 <div>
-                    <button type="button" data-modal-target="authentication-modal"
-                        data-modal-toggle="authentication-modal"
-                        class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Agregar
+                    <button type="button" id="btnPanelAgregarMenu"
+                        class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Configuración
                         Menú</button>
                 </div>
             </div>
-
         </form>
 
-    </div>
-    <!--SECCION COMENTARIOS SIN MODAL-->
-    <div id="divSeccionComentarios" class="divSeccionComentarios">
+        <!--mensaje de error al mandar comentario  y no estar cargado-->
+        <div class="divErrorComentarios" id="divNoSePuedeComentar">
+            <div class="flex p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+                role="alert">
+                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">Info</span>
+                <div>
+                    <span class="font-medium">No se puede comentar!</span>
+                    Seleccioné una fecha con menú disponible.
+                </div>
+            </div>
+        </div>
+        <!-- fin mensaje de error al mandar comentario  y no estar cargado-->
 
-        <a class="linkCerrar text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white" id="cerrarDivComentario">Cerrar x</a>
-        <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Escriba su comentario :</p>
-        <textarea id="campoComentario" rows="4"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Escriba su mensaje aquí..."></textarea>
+        <!--mensaje de error al mandar un mensaje y estar vacio-->
+        <div class="divErrorComentarios" id="divErrorComentarioVacio">
+            <div class="flex p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+                role="alert">
+                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">Info</span>
+                <div>
+                    <span class="font-medium">No se puede comentar!</span>
+                    No se puede enviar un mensaje vacío.
+                </div>
+            </div>
+        </div>
+        <!--fin mensaje de error al mandar un mensaje y estar vacio-->
 
+        <!--SECCION COMENTARIOS SIN MODAL-->
+        <div id="divSeccionComentarios" class="divSeccionComentarios">
+            <a class="linkCerrar text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white"
+                id="cerrarDivComentario">Cerrar x</a>
+            <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Escriba su comentario :</p>
+            <textarea id="campoComentario" rows="4"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Escriba su mensaje aquí..."></textarea>
             <div class="estrella">
                 <!--Estrellas-->
-    
                 <form class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Califique el menú:
                     <p class="clasificacion">
@@ -266,105 +302,172 @@
                 </form>
             </div>
             <!--End estrellas-->
-         
             <button id="btnComentario" type="button"
-            class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Enviar
-            mensaje</button>
-            
-    </div>
-    </div>
-    <div class="divSeccionComentarios" id="divNoSePuedeComentar">
-        <div class="flex p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
-            <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-            <span class="sr-only">Info</span>
-            <div>
-              <span class="font-medium">No se puede comentar!</span> Seleccioné una fecha con menú disponible.
-            </div>
-          </div>
-          
+                class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Enviar
+                mensaje</button>
         </div>
     </div>
     <!--FIN SECCION COMENTAROS-->
-    <div class="centrar">
-        <div class="flex items-center">
-            <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <title>Rating star</title>
-                <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                </path>
-            </svg>
-            <p id="promedio" class="ml-2 text-sm font-bold text-gray-900 dark:text-white">4.95</p>
-            <span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
-            <a id="cantComentarios"
-                class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white">73
-                comentarios</a>
+
+    <!--DIV DE CREAR MENU NUEVO PARA LA DIRECTORA-->
+
+
+    <!--SELECT PARA AGREGAR MENUS DE LA DIRECTORA-->
+    <div id="formularioCrearMenu" class="formularioCrearMenu">
+        <div class="">
+            <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Agregué un menú</h3>
+            <form class="space-y-6" action="#">
+
+                <div class=" justify-between">
+                    <div class="items-start">
+
+                        <p id="parrafoDatosMenu" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"></p>
+                    </div>
+                        <label for="listaMenus"
+                            class="float-left mb-0 width-20 text-sm font-medium text-gray-900 dark:text-white">Seleccione
+                            un menú</label>
+                        <select id="listaMenus"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>Seleccione un menú</option>
+                        </select>
+                </div>
+                <div>
+                    <button id="btnAgregarModal" type="button"
+                        class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar</button>
+                    <button id="btnBorrarMenu" type="button"
+                        class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Borrar</button>
+                </div>
+            </form>
+        </div>
+        <!--FIN DE SELECT PARA AGREGAR MENUS DE LA DIRECTORA-->
+        <p class="mt-2 text-sm text-black-600 dark:text-black-500"><span class="font-medium"></p>
+        <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Crear nuevo menú:</h3>
+        <div class="mb-6">
+            <label for="campoNombreMenu" class="block mb-2 text-sm font-medium text-black dark:text-black">Nombre
+                menú</label>
+            <input type="text" id="campoNombreMenu"
+                class="bg-black-50 border border-black-500 text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 block w-full p-2.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="Nombre menú">
+            <p class="mt-2 text-sm text-black-600 dark:text-black-500"><span class="font-medium"></p>
+        </div>
+        <div>
+            <label for="campoDescripcionMenu"
+                class="block mb-2 text-sm font-medium text-black dark:text-black">Descripción
+                menú</label>
+            <input type="text" id="campoDescripcionMenu"
+                class="bg-black-50 border border-black-500 text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 block w-full p-2.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="Descripción menú">
+            <p class="mt-2 text-sm text-black-600 dark:text-black-500"><span class="font-medium"></p>
+        </div>
+        <div class="mb-6">
+            <label for="campoImagenMenu" class="block mb-2 text-sm font-medium text-black dark:text-black">Imagen
+                menú</label>
+            <input type="text" readonly id="campoImagenMenu"
+                class="bg-black-50 border border-black-500 text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 block w-full p-2.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="Imagen menú" value="https://source.unsplash.com/featured/?food">
+            <p class="mt-2 text-sm text-black-600 dark:text-black-500"><span class="font-medium"></p>
+        </div>
+        <div class="mb-6">
+            <label for="username-success" class="block mb-2 text-sm font-medium text-black dark:text-black">Información
+                nutricional</label>
+            <label for="caloriasMenu" class="block mb-2 text-sm font-medium text-black dark:text-black">Calorías</label>
+            <input type="number" id="caloriasMenu" min="0"
+                class="bg-black-50 border border-black-500 text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 p-2.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="Calorías">
+            <label for="proteinasMenu"
+                class="block mb-2 text-sm font-medium text-black dark:text-black">Proteínas</label>
+            <input type="number" id="proteinasMenu" min="0"
+                class="bg-black-50 border border-black-500 text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 p-2.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="Proteínas">
+            <label for="sodioMenu" class="block mb-2 text-sm font-medium text-black dark:text-black">Sodio</label>
+            <input type="number" id="sodioMenu" min="0"
+                class="bg-black-50 border border-black-500 text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 p-2.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="Sodio">
+            <label for="carbohidratosMenu"
+                class="block mb-2 text-sm font-medium text-black dark:text-black">Carbohidratos</label>
+            <input type="number" id="carbohidratosMenu" min="0"
+                class="bg-black-50 border border-black-500 text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 p-2.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="Carbohidratos">
+            <label for="grasasMenu" class="block mb-2 text-sm font-medium text-black dark:text-black">Grasas</label>
+            <input type="number" id="grasasMenu" min="0"
+                class="bg-black-50 border border-black-500 text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 p-2.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="Grasas">
+            <label for="hierroMenu" class="block mb-2 text-sm font-medium text-black dark:text-black">Hierro</label>
+            <input type="number" id="hierroMenu" min="0"
+                class="bg-black-50 border border-black-500 text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 p-2.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="Hierro">
+            <label for="vitCMenu" class="block mb-2 text-sm font-medium text-black dark:text-black">Vitamina
+                C</label>
+            <input type="number" id="vitCMenu" min="0"
+                class="bg-black-50 border border-black-500 text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 p-2.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="Vitamina C">
+            <p class="mt-2 text-sm text-black-600 dark:text-black-500"><span class="font-medium"></p>
+            <!--Checkbox alergenos-->
+            <label for="bordered-checkbox-1"
+                class=" py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alergenos</label>
+            <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+                <input id="glutenBox" type="checkbox" value="0" name="bordered-checkbox"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="glutenBox"
+                    class=" py-2 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Gluten</label>
+            </div>
+            <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+                <input checked id="huevosBox" type="checkbox" value="" name="bordered-checkbox"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="huevosBox"
+                    class=" py-2 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Huevos</label>
+            </div>
+            <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+                <input id="lacteosBox" type="checkbox" value="" name="bordered-checkbox"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="lacteosBox"
+                    class=" py-2 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Lacteos</label>
+            </div>
+            <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+                <input checked id="anacaradosBox" type="checkbox" value="" name="bordered-checkbox"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="anacaradosBox"
+                    class=" py-2 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Anacarados</label>
+            </div>
+            <!--Fin checkbox alergenos-->
+            <p class="mt-2 text-sm text-black-600 dark:text-black-500"><span class="font-medium"></p>
+
+            <button id="btnFormCrearMenu" type="button"
+                class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Crear</button>
         </div>
 
-    </div>
-    <ul id="listaComentario">
-    </ul>
+        <!--FIN DE DIV DE CREAR MENU NUEVO PARA LA DIRECTORA-->
 
-    <!--EL MODAL DE AGREGAR MENU DE LA DIRECTORA PARA DETERMINADA FECHA -->
-    <!-- Main modal -->
-    <div id="authentication-modal" tabindex="-1" aria-hidden="true"
-        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative w-full max-w-md max-h-full">
-            <!-- Modal content -->
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                <button type="button"
-                    class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                    data-modal-hide="authentication-modal">
-                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="sr-only">Close modal</span>
-                </button>
-                <div class="px-6 py-6 lg:px-8">
-                    <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Agregué un menú</h3>
-                    <form class="space-y-6" action="#">
-
-                        <div class="flex justify-between">
-                            <div class="flex items-start">
-
-                                <p id="parrafoDatosMenu"
-                                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"></p>
-                            </div>
-                            <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                <label for="listaMenus"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Seleccione
-                                    un menú</label>
-                                <select id="listaMenus"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option selected>Seleccione un menú</option>
-                                </select>
-                                <input type="text"></input>
-                                <input type="text"></input>
-                                <input type="text"></input>
-                                <input type="text"></input>
-                                <input type="text"></input>
-                                <input type="text"></input>
-                                <input type="text"></input>
-                                <input type="text"></input>
-
-                        </div>
-                        <button id="btnAgregarModal" type="button"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar</button>
-
-                    </form>
-                </div>
+        <!--SECCION CON PROMEDIO ESTRELLAS Y CANTIDAD DE COMENTAROS-->
+        <div class="divPromedioComentarios">
+            <div class="flex ">
+                <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <title>Rating star</title>
+                    <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                    </path>
+                </svg>
+                <p id="promedio" class="ml-2 text-sm font-bold text-gray-900 dark:text-white">0</p>
+                <span class=" w-0.5 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
+                <a id="cantComentarios"
+                    class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white">0
+                    comentarios</a>
             </div>
         </div>
-    </div>
+        <!--FIN DE SECCION CON PROMEDIO ESTRELLAS Y CANTIDAD DE COMENTAROS-->
+
+        <!--LISTA DE COMENTARIOS-->
+        <ul id="listaComentario">
+        </ul>
+        <!--FIN DE LISTA DE COMENTARIOS-->
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
