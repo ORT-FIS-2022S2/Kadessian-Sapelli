@@ -1,3 +1,4 @@
+
 .calendarioFotoDescripcion{
   margin-left: 35%;
 }
@@ -81,6 +82,8 @@
     margin-left: 30%;
     margin-right: 30%;
     margin-bottom: 20px;
+    text-align: left;
+    font-size:12px;
   }
   ul {
     list-style-type: none;
@@ -168,9 +171,6 @@
   
   
   .linksintegrantes {
-      /*margin-top: 20px;
-      margin-bottom: 10px;
-      margin-left: 8%;*/
       font-size: 15px;
       color: #5F5C5B;
   }
@@ -198,32 +198,6 @@
     font-family: 'Roboto', sans-serif;
     color: rgb(0, 0, 0);
     margin-left: 50%;
-  }
-  
-  .botonNaranja {
-    position: absolute;
-    width: 200px;
-    height: 50px;
-    background: #FF532E;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    color: white;
-    border-color: #FF532E;
-  }
-  
-  .botonVerde {
-    position: absolute;
-    width: 200px;
-    height: 50px;
-    background: green;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    color: white;
-    border-color: green;
   }
   
   h1{

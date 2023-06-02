@@ -197,7 +197,7 @@
         <form action="#" method="POST">
             <section>
                 <!--calendario-->
-                <div class="infoNutricional">
+                <div class="">
                     <p class="color"><input id="calendario" type="date" min="2023-04-01" max="2024-04-30"></input></p>
                 </div>
                 <!--tags-->
@@ -323,13 +323,13 @@
 
                         <p id="parrafoDatosMenu" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"></p>
                     </div>
-                        <label for="listaMenus"
-                            class="float-left mb-0 width-20 text-sm font-medium text-gray-900 dark:text-white">Seleccione
-                            un menú</label>
-                        <select id="listaMenus"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option selected>Seleccione un menú</option>
-                        </select>
+                    <label for="listaMenus"
+                        class="float-left mb-0 width-20 text-sm font-medium text-gray-900 dark:text-white">Seleccione
+                        un menú</label>
+                    <select id="listaMenus"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option selected>Seleccione un menú</option>
+                    </select>
                 </div>
                 <div>
                     <button id="btnAgregarModal" type="button"
@@ -435,39 +435,39 @@
             <button id="btnFormCrearMenu" type="button"
                 class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Crear</button>
         </div>
+    </div>
+    <!--FIN DE DIV DE CREAR MENU NUEVO PARA LA DIRECTORA-->
 
-        <!--FIN DE DIV DE CREAR MENU NUEVO PARA LA DIRECTORA-->
-
-        <!--SECCION CON PROMEDIO ESTRELLAS Y CANTIDAD DE COMENTAROS-->
-        <div class="divPromedioComentarios">
-            <div class="flex ">
-                <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <title>Rating star</title>
-                    <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                    </path>
-                </svg>
-                <p id="promedio" class="ml-2 text-sm font-bold text-gray-900 dark:text-white">0</p>
-                <span class=" w-0.5 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
-                <a id="cantComentarios"
-                    class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white">0
-                    comentarios</a>
-            </div>
+    <!--SECCION CON PROMEDIO ESTRELLAS Y CANTIDAD DE COMENTAROS-->
+    <div class="divPromedioComentarios">
+        <div class="flex ">
+            <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <title>Rating star</title>
+                <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                </path>
+            </svg>
+            <p id="promedio" class="ml-2 text-sm font-bold text-gray-900 dark:text-white">0</p>
+            <span class=" w-0.5 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
+            <a id="cantComentarios"
+                class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white">0
+                comentarios</a>
         </div>
-        <!--FIN DE SECCION CON PROMEDIO ESTRELLAS Y CANTIDAD DE COMENTAROS-->
+    </div>
+    <!--FIN DE SECCION CON PROMEDIO ESTRELLAS Y CANTIDAD DE COMENTAROS-->
 
-        <!--LISTA DE COMENTARIOS-->
-        <ul id="listaComentario">
-        </ul>
-        <!--FIN DE LISTA DE COMENTARIOS-->
+    <!--LISTA DE COMENTARIOS-->
+    <ul id="listaComentario">
+    </ul>
+    <!--FIN DE LISTA DE COMENTARIOS-->
 
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

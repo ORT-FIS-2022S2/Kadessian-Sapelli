@@ -76,6 +76,8 @@ btnModoDirectora.addEventListener('click', () => {
         document.getElementById("divEsconderComentCompra").classList.remove("esconder");
         document.getElementById("divEsconderAgregarMenu").classList.add("esconder");
         document.getElementById("divEsconderPadre").classList.remove("invisible");
+        btnPanelAgregarMenu.innerText = "Configuración Menú"
+        formularioCrearMenu.classList.add("esconder");
     }
     else {
         directora = true;
@@ -317,7 +319,7 @@ btnAgregarNuevoMenu.addEventListener("click", () => {
     else {
         
     }
-    limpiarCamposValidosMenu();
+    limpiarCamposMenu();
 });
 
 btnComentar.addEventListener("click", () => {
@@ -377,7 +379,7 @@ btnEnviarComentario.addEventListener('click', function () {
 
 
 btnPanelAgregarMenu.addEventListener('click', () => {
-    limpiarCamposValidosMenu();
+    limpiarCamposMenu();
     if (btnPanelAgregarMenu.innerText === "Configuración Menú") {
         btnPanelAgregarMenu.innerText = "Cerrar Configuración Menú"
         formularioCrearMenu.classList.remove("esconder");
@@ -429,9 +431,10 @@ function crearMenu() {
         }
         menuCreado.setAlergenos(arrAlergenos);
         sistema.addMenu(menuCreado);
-        limpiarCamposValidosMenu();
+        limpiarCamposMenu();
     }
 }
+
 function camposValidosMenu(nombre, descripcion, imagen, cal, prot, carbo, vit, hierro, sodio, grasas) {
     let retorno = true;
     if (nombre === "") {
@@ -467,7 +470,7 @@ function camposValidosMenu(nombre, descripcion, imagen, cal, prot, carbo, vit, h
     return retorno;
 }
 
-function limpiarCamposValidosMenu() {
+function limpiarCamposMenu() {
     campoNombreMenu.value = "";
     campoDescripcionMenu.value = "";
     campoImagenMenu.value = "";
@@ -483,12 +486,6 @@ function limpiarCamposValidosMenu() {
     lacteosBox.checked = false;
     anacaradosBox.checked = false;
 }
-
-btnBorrarMenu.addEventListener('click', () =>{
-    if(listaMenus.value != ""){
-        let borrar="";//LLENAR FUNCION
-    }
-});
 
 const listaMenus = document.getElementById("listaMenus");
 llenarListaMenusDirectora(sistema.getListaMenus());
