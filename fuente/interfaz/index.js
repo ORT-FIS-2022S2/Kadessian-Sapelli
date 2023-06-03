@@ -6,10 +6,10 @@ import { Padre } from '../../dominio/Padre.js';
 import { Comentario } from '../../dominio/Comentario.js';
 import { Sistema } from '../../dominio/Sistema.js';
 import { sistema } from '../../dominio/DatosPreCargados.js';
-const parrafoDatosMenu = document.getElementById("parrafoDatosMenu");
+const tituloMenu = document.getElementById("tituloMenu");
 const btnComprar = document.getElementById("btnComprar");
 const calendario = document.getElementById("calendario");
-const parrafo = document.getElementById("descripcionMenu");
+const descripcionMenu = document.getElementById("descripcionMenu");
 const imagenMenu = document.getElementById("fotoMenu");
 const calorias = document.getElementById("calorias");
 const proteinas = document.getElementById("proteinas");
@@ -41,7 +41,11 @@ const divErrorComentarioVacio = document.getElementById("divErrorComentarioVacio
 const formularioCrearMenu = document.getElementById("formularioCrearMenu");
 const btnPanelAgregarMenu = document.getElementById("btnPanelAgregarMenu");
 const btnBorrarMenu = document.getElementById("btnBorrarMenu");
+const divNoHayMenu = document.getElementById("divNoHayMenu");
 
+const tarjetaMenu = document.getElementById("tarjetaMenu");
+
+var panelDirectora = false;
 var directora = false;
 var usuarioLogeado = sistema.getListaPadres()[0];
 
@@ -54,7 +58,9 @@ window.addEventListener("load", () => {
     let formatoFecha = fechaActual.toISOString().split('T')[0];
     calendario.value = formatoFecha;
     //Añade descripcion de menu a un elemento p del html
-    let menuSeleccionado = sistema.obtenerDia(formatoFecha)
+    let diaSeleccionado = sistema.obtenerDia(formatoFecha);
+    let menuSeleccionado = diaSeleccionado.getMenu();
+
     llenarCamposMenu(menuSeleccionado);
     llenarListaComprados(listaMenusComprados, usuarioLogeado.getListaMenuComprado());
     //generarListaComentarios(menuSeleccionado, listaComentario);
@@ -66,11 +72,25 @@ window.addEventListener("load", () => {
 });
 
 btnModoDirectora.addEventListener('click', () => {
+    document.getElementById("divCompraExitosa").classList.add("esconder");
+    document.getElementById("divNoSePuedeComprar").classList.add("esconder");
+    document.getElementById("divCompraExitosa").classList.add("esconder");
+    document.getElementById("divAvisoPreview").classList.add("esconder")
+    document.getElementById("divAvisoMenuIngresado").classList.add("esconder")
+    document.getElementById("divPreviewAgregarMenu").classList.add("esconder");
+    let dia = sistema.obtenerDia(calendario.value);
+    if (dia !== null) {
+        llenarCamposMenu(dia.getMenu());
+    }
+    else {
+        tarjetaMenu.classList.add("esconder");
+        divNoHayMenu.classList.remove("esconder");
+    }
     divSeccionComentarios.classList.add("esconder");
     divNoSePuedeComentar.classList.add("esconder");
     divErrorComentarioVacio.classList.add("esconder");
     if (directora) {
-
+        document.getElementById("divPreviewAgregarMenu").classList.add("esconder");
         directora = false;
         btnModoDirectora.innerText = "Modo Directora";
         document.getElementById("divEsconderComentCompra").classList.remove("esconder");
@@ -94,34 +114,60 @@ btnModoDirectora.addEventListener('click', () => {
 //Evento boton comprar
 btnComprar.addEventListener('click', () => {
     let menuDia = sistema.obtenerDia(calendario.value);
-    if (menuDia != null) {
+    if (menuDia !== null && usuarioLogeado.getTickets() > 0 && 
+    !usuarioLogeado.containsListaMenuComprado(menuDia)){
+        document.getElementById("divNoSePuedeComprar").classList.add("esconder");
+
+        document.getElementById("divCompraExitosa").classList.remove("esconder");
         usuarioLogeado.comprarMenuDia(menuDia);
         cantidadTickets.innerText = "Cantidad de Tickets: " + usuarioLogeado.getTickets();
         llenarListaComprados(listaMenusComprados, usuarioLogeado.getListaMenuComprado());
+    }
+    else{
+        document.getElementById("divCompraExitosa").classList.add("esconder");
+        document.getElementById("divNoSePuedeComprar").classList.remove("esconder");
+
     }
 });
 
 //Evento al seleccionar una fecha del calendario
 calendario.addEventListener('change', function () {
-    let menuSeleccionado = sistema.obtenerDia(calendario.value);
     divSeccionComentarios.classList.add("esconder");
-    divNoSePuedeComentar.classList.add("esconder");
-    divErrorComentarioVacio.classList.add("esconder");
-    limpiarCamposComentario();
-    llenarCamposMenu(menuSeleccionado);
+    document.getElementById("divCompraExitosa").classList.add("esconder");
+    document.getElementById("divNoSePuedeComprar").classList.add("esconder");
+    let diaSeleccionado = sistema.obtenerDia(calendario.value);
+    if (diaSeleccionado !== null) {
+        let menuSeleccionado = diaSeleccionado.getMenu();
+        //el azul
+        document.getElementById("divAvisoPreview").classList.add("esconder")
+        document.getElementById("divAvisoMenuIngresado").classList.add("esconder")
+        divSeccionComentarios.classList.add("esconder");
+        divNoSePuedeComentar.classList.add("esconder");
+        divErrorComentarioVacio.classList.add("esconder");
+        limpiarCamposComentario();
+        limpiarSeccionCalendario();
+        if (menuSeleccionado != null) {
+            llenarCamposMenu(menuSeleccionado);
+            generarListaComentarios(diaSeleccionado, listaComentario);
+        }
 
-    if (menuSeleccionado != null) {
-
-        generarListaComentarios(menuSeleccionado, listaComentario);
     }
     else {
+
+        limpiarSeccionCalendario();
+        divNoHayMenu.classList.remove("esconder")
+        tarjetaMenu.classList.add("esconder");
         limpiarListaComentarios();
+        if (panelDirectora) {
+            document.getElementById("divAvisoPreview").classList.add("esconder")
+            document.getElementById("divAvisoMenuIngresado").classList.add("esconder")
+            document.getElementById("divPreviewAgregarMenu").classList.add("esconder");
+        }
     }
 });
 
 function limpiarSeccionCalendario() {
     imagenMenu.innerText = "";
-    parrafo.innerText = "";
     calorias.innerText = "";
     proteinas.innerText = "";
     grasas.innerText = "";
@@ -132,37 +178,33 @@ function limpiarSeccionCalendario() {
     alergenos.innerText = "";
 };
 
-function llenarCamposMenu(dia) {
+function llenarCamposMenu(menu) {
     limpiarSeccionCalendario();
-    if (dia != null) {
-        let imagenMenu = document.createElement("div");
-        imagenMenu.style.display = "flex";
-        
-        let foto = document.createElement("img");
-        foto.src = dia.getMenu().getImagen();
-        foto.alt = "imagenMenu";
-        foto.style.width = "129px"; // Ancho de la imagen en píxeles
-        foto.style.height = "129px"; // Alto de la imagen en píxeles
-        foto.style.marginRight = "10px";
-        imagenMenu.appendChild(foto);
-        
-        let parrafoDeMenu = document.createElement("p");
-        parrafoDeMenu.innerText = dia.getMenu().getDescripcion();
-        imagenMenu.appendChild(parrafoDeMenu);
-        
-        alergenos.appendChild(generarTags(dia.getMenu().getAlergenos()));
-        calorias.innerText = "Calorías: " + dia.getMenu().getCalorias();
-        proteinas.innerText = "Proteínas: " + dia.getMenu().getProteinas() + " gr";
-        grasas.innerText = "Grasas: " + dia.getMenu().getGrasas() + " gr";
-        sodio.innerText = "Sodio : " + dia.getMenu().getSodio() + " mg";
-        carbohidratos.innerText = "Carbohidratos: " + dia.getMenu().getCarbohidratos() + " gr";
-        vitC.innerText = "Vitamina C: " + dia.getMenu().getVitC() + " mg";
-        hierro.innerText = "Hierro: " + dia.getMenu().getHierro() + " mg";
-        
-        parrafo.appendChild(imagenMenu);
-    }
-    else {
-        parrafo.innerText = "No hay menú para la fecha seleccionada";
+    if (menu != null) {
+        tarjetaMenu.classList.remove("esconder");
+        divNoHayMenu.classList.add("esconder");
+        descripcionMenu.innerText = menu.getDescripcion();
+        let imagen = document.createElement("img");
+        imagen.src = menu.getImagen();
+        imagen.style.width = "750px";
+        imagen.style.height = "310px";
+
+        imagenMenu.appendChild(imagen);
+        tituloMenu.innerHTML = menu.getNombre();
+
+        alergenos.appendChild(generarTags(menu.getAlergenos()));
+        calorias.innerText = "Calorías: " + menu.getCalorias();
+        proteinas.innerText = "Proteínas: " + menu.getProteinas() + " gr";
+        grasas.innerText = "Grasas: " + menu.getGrasas() + " gr";
+        sodio.innerText = "Sodio : " + menu.getSodio() + " mg";
+        carbohidratos.innerText = "Carbohidratos: " + menu.getCarbohidratos() + " gr";
+        vitC.innerText = "Vitamina C: " + menu.getVitC() + " mg";
+        hierro.innerText = "Hierro: " + menu.getHierro() + " mg";
+
+
+    } else {
+        tarjetaMenu.classList.add("esconder");
+        divNoHayMenu.classList.remove("esconder");
     }
 }
 
@@ -195,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const botonTicket = document.getElementById('botonTicket');
     const numeroTicket = document.getElementById('numeroTicket');
-    
+
     botonTicket.addEventListener('click', () => {
         if (numeroTicket.value > 0) {
             usuarioLogeado.comprarTickets(parseInt(numeroTicket.value));
@@ -236,9 +278,10 @@ function limpiarListaComentarios() {
 function generarComentario(nombre, cantidadEstrellas, contenido, ul) {
     const li = document.createElement('li');
     const strong = document.createElement('strong');
-    strong.classList.add('centrar');
     strong.textContent = nombre + " ";
+    strong.classList.add('estrellas');
 
+    // Generar las estrellas según la cantidad pasada como parámetro
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('aria-hidden', 'true');
     svg.classList.add('w-5', 'h-5', 'text-yellow-400');
@@ -248,20 +291,17 @@ function generarComentario(nombre, cantidadEstrellas, contenido, ul) {
     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     path.setAttribute('d', 'M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z');
 
-    svg.appendChild(path);
-    strong.appendChild(svg);
-    li.appendChild(strong);
-
-    // Generar las estrellas según la cantidad pasada como parámetro
-    for (let i = 0; i < cantidadEstrellas - 1; i++) {
-        // Clonar el elemento <svg> para cada estrella
+    for (let i = 0; i < cantidadEstrellas; i++) {
+        const starPath = path.cloneNode(true);
         const starSvg = svg.cloneNode(true);
-        // Agregar cada estrella al <strong>
+        starSvg.appendChild(starPath);
         strong.appendChild(starSvg);
     }
 
+    li.appendChild(strong);
+
     const p = document.createElement('p');
-    p.classList.add('mb-2', 'text-gray-500', 'dark:text-gray-400', 'centrar');
+    p.classList.add('mb-2', 'text-gray-500', 'dark:text-gray-400');
     p.textContent = contenido;
     li.appendChild(p);
     ul.appendChild(li);
@@ -312,16 +352,18 @@ function llenarListaMenusDirectora(arrayDatos) {
 }
 
 btnAgregarNuevoMenu.addEventListener("click", () => {
-    
+
     if (sistema.obtenerDia(calendario.value) === null) {
+        document.getElementById("divAvisoPreview").classList.add("esconder")
+        document.getElementById("divAvisoMenuIngresado").classList.remove("esconder")
+        document.getElementById("divPreviewAgregarMenu").classList.add("esconder");
         let diaAgregar = new Dia(sistema.obtenerMenu(listaMenus.value), calendario.value);
         sistema.addDia(diaAgregar);
-        llenarCamposMenu(diaAgregar);
+        llenarCamposMenu(diaAgregar.getMenu());
     }
     else {
-        
+        document.getElementById("divPreviewAgregarMenu").classList.remove("esconder");
     }
-    limpiarAgregarMenuCampos();
 });
 
 btnComentar.addEventListener("click", () => {
@@ -336,6 +378,7 @@ btnComentar.addEventListener("click", () => {
     }
 });
 
+//este es el link x cerrar con la cruz en el mensaje
 cerrarDivComentario.addEventListener("click", () => {
     limpiarCamposComentario();
     divSeccionComentarios.classList.add("esconder");
@@ -381,14 +424,22 @@ btnEnviarComentario.addEventListener('click', function () {
 
 
 btnPanelAgregarMenu.addEventListener('click', () => {
+    document.getElementById("divAvisoPreview").classList.add("esconder")
+    document.getElementById("divAvisoMenuIngresado").classList.add("esconder")
+    document.getElementById("divPreviewAgregarMenu").classList.add("esconder");
+    document.getElementById("divPreviewAgregarMenu").classList.add("esconder");
+
     limpiarAgregarMenuCampos();
     if (btnPanelAgregarMenu.innerText === "Configuración Menú") {
         btnPanelAgregarMenu.innerText = "Cerrar Configuración Menú"
         formularioCrearMenu.classList.remove("esconder");
+        panelDirectora = true;
+
     }
     else {
         btnPanelAgregarMenu.innerText = "Configuración Menú"
         formularioCrearMenu.classList.add("esconder");
+        panelDirectora = false;
     }
 });
 
@@ -414,8 +465,8 @@ btnFormCrearMenu.addEventListener('click', function () {
 });
 
 function crearMenu() {
-    if (camposValidosMenu(campoNombreMenu, campoDescripcionMenu, campoImagenMenu, caloriasMenu,
-        proteinasMenu, carbohidratosMenu, vitCMenu, hierroMenu, sodioMenu, grasasMenu)) {
+    if (camposValidosMenu(campoNombreMenu.value, campoDescripcionMenu.value, campoImagenMenu.value, caloriasMenu.value,
+        proteinasMenu.value, carbohidratosMenu.value, vitCMenu.value, hierroMenu.value, sodioMenu.value, grasasMenu.value)) {
         let menuCreado = new Menu(campoNombreMenu.value, campoDescripcionMenu.value, campoImagenMenu.value, caloriasMenu.value,
             hierroMenu.value, grasasMenu.value, proteinasMenu.value, vitCMenu.value, carbohidratosMenu.value, sodioMenu.value);
         let arrAlergenos = [];
@@ -434,6 +485,12 @@ function crearMenu() {
         menuCreado.setAlergenos(arrAlergenos);
         sistema.addMenu(menuCreado);
         limpiarAgregarMenuCampos();
+        document.getElementById("divNoSePuedeCrearMenu").classList.add("esconder");
+        document.getElementById("divCreacionExitosa").classList.remove("esconder");
+
+    }
+    else{
+        document.getElementById("divNoSePuedeCrearMenu").classList.remove("esconder");
     }
 }
 
@@ -489,23 +546,26 @@ function limpiarAgregarMenuCampos() {
 }
 
 const listaMenus = document.getElementById("listaMenus");
+
 llenarListaMenusDirectora(sistema.getListaMenus());
+
 listaMenus.addEventListener("change", function (event) {
+
     let opcionSeleccionada = event.target.value;
     let menuSeleccionado = sistema.obtenerMenu(opcionSeleccionada);
     parrafoDatosMenu.innerText = "";
-    if (menuSeleccionado !== null) {
-        let parrafoDeMenu = document.createElement("p");
-        parrafoDeMenu.innerText = menuSeleccionado.getDescripcion() + "";
-        parrafoDatosMenu.appendChild(parrafoDeMenu);
-        let imagenMenu = document.createElement("img");
-        imagenMenu.src = menuSeleccionado.getImagen(); // seria la imagen del menu
-        imagenMenu.alt = "mandarina";
-        imagenMenu.style.width = "129px"; // Ancho de la imagen en píxeles
-        imagenMenu.style.height = "129px"; // Alto de la imagen en píxeles
-        imagenMenu.style.marginLeft = "60px";
-        parrafoDatosMenu.appendChild(imagenMenu);
-        imagenMenu.alt = "imagenMenu";
-        parrafoDatosMenu.style.display = "flex";
+    if (menuSeleccionado !== null && sistema.obtenerDia(calendario.value) === null) {
+        llenarCamposMenu(menuSeleccionado);
+        document.getElementById("divAvisoPreview").classList.remove("esconder")
+        document.getElementById("divPreviewAgregarMenu").classList.add("esconder");
+    } else {
+        //el azul
+        
+        document.getElementById("divAvisoPreview").classList.add("esconder")
+        //el rojo
+        document.getElementById("divPreviewAgregarMenu").classList.remove("esconder");
+        document.getElementById("divAvisoMenuIngresado").classList.add("esconder");
+
+
     }
 });

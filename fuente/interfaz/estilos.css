@@ -1,3 +1,67 @@
+#listaComentario {
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 10px;
+}
+.estrellas svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+#alergenos {
+  margin-top: 5px; /* Ajusta el margen superior según sea necesario */
+  width: 400px; /* Ajusta el ancho máximo según sea necesario */
+
+}
+.card-body {
+  position: absolute;
+  top: 0;
+  right: 220px; /* Ajusta la distancia horizontal según sea necesario */
+  width: calc(100% - 220px); /* Ajusta el ancho según sea necesario */
+}
+.fotoMenu {
+  width: 100%;
+  height: 300px; /* Ajusta la altura según tus necesidades */
+  object-fit: cover; /* Ajusta el tamaño de la imagen sin deformarla */
+}
+
+div.card.mb-3 {
+  max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
+}
+
+#tarjetaMenu {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo con difuminado */
+  backdrop-filter: blur(500px); /* Difuminado */
+  margin-left: 404px;
+}
+
+/* Estilos para los textos en la tarjeta de menú */
+#tituloMenu,#descripcionMenu{
+  background-color: rgba(255, 255, 255, 0.5); /* Fondo con difuminado */
+  backdrop-filter: blur(2px); /* Difuminado */
+}
+
+
+.calendarioFotoDescripcion{
+
+
+  display: flex; /* Utiliza un diseño de columnas flexibles */
+  align-items: center; /* Centra verticalmente los elementos */
+
+color:#ccc8c8;
+  text-align: left;
+  font-size:12px;
+
+}
+.fotoMenu {
+  width: 200px; /* Establece un ancho fijo para la imagen */
+  height: 100%; /* Utiliza la altura del contenedor */
+  max-height: 300px; /* Establece una altura máxima para evitar superposición */
+
+  color:#ccc8c8;
+  width: 600px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
 .color-naranja{
   color:rgb(228, 102, 28);
 }
@@ -104,31 +168,31 @@
     border-bottom: none;
   }
   
-  li#calorias {
+  li#calorias, li#caloriasD {
     background-color: #f2f2f2;
   }
   
-  li#proteinas {
+  li#proteinas, li#proteinasD {
     background-color: #e6f2ff;
   }
   
-  li#carbohidratos {
+  li#carbohidratos, li#carbohidratosD {
     background-color: #f9e6ff;
   }
   
-  li#grasas {
+  li#grasas, li#grasasD {
     background-color: #fff0cc;
   }
   
-  li#sodio {
+  li#sodio, li#sodioD {
     background-color: #ccf2e6;
   }
   
-  li#vitC {
+  li#vitC, li#vitCD {
     background-color: #ffe6cc;
   }
   
-  li#hierro {
+  li#hierro, li#hierroD {
     background-color: #f2ccff;
   }
   a {

@@ -20,15 +20,15 @@ menuCuatro.setAlergenos(["gluten","huevos","anacarados"]);
 const menuCinco = new Menu("Milanesas de soja","Milanesas de soja\nCalabaza al horno\nCupcakes\nPan de sésamo\nAgua","http://allfrozen.com.ar/wp-content/uploads/2022/07/Milanesa-soja-con-calabaza.jpeg",560,
 4,19,24,37,14,65);
 menuCinco.setAlergenos(["gluten"]);
-const menuSeis = new Menu("Croquetas de papa","Croquetas de papa\nVegetales salteados\nCrema de chocolate\nPan \nAgua","https://clarin.com/img//2021/01/19/Q5JP3Iptx_1256x620__2.jpg#1611085186047",560,
+const menuSeis = new Menu("Croquetas de papa","Croquetas de papa\nVegetales salteados\nCrema de chocolate\nPan \nAgua","https://source.unsplash.com/750x310/?food",560,
 1,16,28,28,21,89);
-menuSeis.setAlergenos(["gluten","huevos","lacteos"]);
+menuSeis.setAlergenos(["gluten","huevos","lacteos","anacarados"]);
 const diaUno = new Dia(menuUno,"2023-05-27");
 const diaDos = new Dia(menuDos,"2023-05-29");
 const diaTres = new Dia(menuTres,"2023-05-28");
 const diaCuatro = new Dia(menuCuatro,"2023-05-30");
 const diaCinco = new Dia(menuCinco,"2023-05-31");
-const diaSeis = new Dia(menuSeis,"2023-06-01");
+const diaSeis = new Dia(menuSeis,"2023-06-03");
 
 var sistema = new Sistema();
 
