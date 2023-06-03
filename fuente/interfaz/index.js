@@ -78,6 +78,7 @@ btnModoDirectora.addEventListener('click', () => {
         document.getElementById("divEsconderPadre").classList.remove("invisible");
         btnPanelAgregarMenu.innerText = "Configuración Menú"
         formularioCrearMenu.classList.add("esconder");
+        limpiarAgregarMenuCampos();
     }
     else {
         directora = true;
@@ -85,6 +86,7 @@ btnModoDirectora.addEventListener('click', () => {
         document.getElementById("divEsconderComentCompra").classList.add("esconder");
         document.getElementById("divEsconderAgregarMenu").classList.remove("esconder");
         document.getElementById("divEsconderPadre").classList.add("invisible");
+        limpiarAgregarMenuCampos();
 
     }
 });
@@ -319,7 +321,7 @@ btnAgregarNuevoMenu.addEventListener("click", () => {
     else {
         
     }
-    limpiarCamposMenu();
+    limpiarAgregarMenuCampos();
 });
 
 btnComentar.addEventListener("click", () => {
@@ -379,7 +381,7 @@ btnEnviarComentario.addEventListener('click', function () {
 
 
 btnPanelAgregarMenu.addEventListener('click', () => {
-    limpiarCamposMenu();
+    limpiarAgregarMenuCampos();
     if (btnPanelAgregarMenu.innerText === "Configuración Menú") {
         btnPanelAgregarMenu.innerText = "Cerrar Configuración Menú"
         formularioCrearMenu.classList.remove("esconder");
@@ -431,7 +433,7 @@ function crearMenu() {
         }
         menuCreado.setAlergenos(arrAlergenos);
         sistema.addMenu(menuCreado);
-        limpiarCamposMenu();
+        limpiarAgregarMenuCampos();
     }
 }
 
@@ -470,10 +472,9 @@ function camposValidosMenu(nombre, descripcion, imagen, cal, prot, carbo, vit, h
     return retorno;
 }
 
-function limpiarCamposMenu() {
+function limpiarAgregarMenuCampos() {
     campoNombreMenu.value = "";
     campoDescripcionMenu.value = "";
-    campoImagenMenu.value = "";
     caloriasMenu.value = "";
     proteinasMenu.value = "";
     carbohidratosMenu.value = "";

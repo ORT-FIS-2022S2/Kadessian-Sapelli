@@ -1,4 +1,6 @@
-
+.color-naranja{
+  color:rgb(228, 102, 28);
+}
 .calendarioFotoDescripcion{
   margin-left: 35%;
 }
@@ -38,12 +40,13 @@
   }
   /*sirve para hacer un degrade en una fuente*/
   .degradeLetra {
-    background: linear-gradient(to right,  #000000 ,  #000000 );
+    background: linear-gradient(to right,  #e61d81 ,  #fca92d );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-left: 200px;
     font-family:Arial;
+    font-weight: bold;
   }
   .degradeFondo {
     background: linear-gradient(to right,  #e41262 ,  #eed78c );

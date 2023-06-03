@@ -23,7 +23,8 @@
             <button id="btnModoDirectora" type="button"
                 class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Modo
                 Directora</button>
-            <h1 class="degradeLetra">Programa menú escolar</h1>
+            <h1 class="degradeLetra">AlimenTIC</h1>
+            <small class="ml-3 text-gray-500 dark:text-gray-400">Consulte, compré y comenté el menú de sus hijos en la escuela.</small>
         </div>
         <div id="divEsconderPadre" class="derecha">
             <button
@@ -209,15 +210,17 @@
                     <p id="descripcionMenu"></p>
                 </div>
                 <div class="infoNutricional">
-                    <ul>
-                        <li id="calorias"></li>
-                        <li id="proteinas"></li>
-                        <li id="carbohidratos"></li>
-                        <li id="grasas"></li>
-                        <li id="sodio"></li>
-                        <li id="vitC"></li>
-                        <li id="hierro"></li>
-                    </ul>
+                    <div >
+                        <ul>
+                            <li class="marginRight-50" id="calorias"></li>
+                            <li id="proteinas"></li>
+                            <li id="carbohidratos"></li>
+                            <li id="grasas"></li>
+                            <li id="sodio"></li>
+                            <li id="vitC"></li>
+                            <li id="hierro"></li>
+                        </ul>
+                    </div>
                 </div>
             </section>
             <div id="divEsconderComentCompra">
@@ -463,11 +466,17 @@
     <!--FIN DE LISTA DE COMENTARIOS-->
 
 
-
+    <footer class="">
+        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+            <hr class="my-10 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-1" />
+            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian" class="hover:underline color-naranja">AlimenTIC™</a>. Todos los derechos reservados.</span>
+        </div>
+    </footer>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-</body>
+
 
 </html>
