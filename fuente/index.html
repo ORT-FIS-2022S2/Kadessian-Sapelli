@@ -131,7 +131,7 @@
                 <label
                   class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
 
-                  <input type="radio" class="mr-3" name="opcion">
+                  <input type="radio" class="mr-3" name="opcion" checked>
                   <svg aria-hidden="true" class="h-5" viewBox="0 0 512 512" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
@@ -193,62 +193,55 @@
       </div>
     </div>
     <!-- -->
+    <!--probando card-->
+
+    <!---->
     <!-- Aca esta el calendario y todo lo demas -->
     <form action="#" method="POST">
       <section>
 
 
         <!--calendario-->
-        <div class="">
+        <div style="text-align: center;">
           <p class="color"><input id="calendario" type="date" min="2023-04-01" max="2024-04-30"></input></p>
         </div>
 
 
 
         <!--foto y descripcion-->
-
-
-        <div id="tarjetaMenu" class="calendarioFotoDescripcion">
-          <!--TARJETA CON EL MENU-->
-          <div class="card mb-3" style=" margin-right: 0% ;color:black; max-width: 540px; max-height:600px;">
-            <div class="row g-1">
-              <div id="fotoMenu" class="col-md-4 fotoMenu">
-
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title" id="tituloMenu"></h5>
-                  <p class="card-text" id="descripcionMenu"></p>
-                  <p class="card-text"><small class="text-body-secondary" id="fecha">
-                      <!--tags-->
-                      <div id="alergenos">
-                      </div>
-                    </small></p>
-                </div>
-              </div>
-            </div>
+        <div id="tarjetaMenu" class="card text-bg-dark" style="margin-left: 30%;margin-right: 30%;">
+          <img id="fotoMenu" src="https://source.unsplash.com/750x310/?food" class="card-img" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title" id="tituloMenu"></h5>
+            <p class="card-text" id="descripcionMenu"></p>
+           
           </div>
         </div>
-                <!--mensaje de error no hay menú cargado-->
-                <div class="divErrorComentarios esconder" id="divNoHayMenu">
-                  <div
-                    class="flex p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
-                    role="alert">
-                    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd"
-                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                        clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="sr-only">Info</span>
-                    <div>
-                      <span class="font-medium">No hay menú cargado!</span>
-                      Seleccioné una fecha con menú disponible.
-                    </div>
-                  </div>
-        
-                </div>
-                <!--fin mensaje de error no hay menú cargado-->
+
+
+        <div id="alergenos" style="margin-left: 30%;margin-right: 30%;">
+        </div>
+
+        <!--mensaje de error no hay menú cargado-->
+        <div class="divErrorComentarios esconder" id="divNoHayMenu">
+          <div
+            class="flex p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+            role="alert">
+            <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Info</span>
+            <div>
+              <span class="font-medium">No hay menú cargado!</span>
+              Seleccioné una fecha con menú disponible.
+            </div>
+          </div>
+
+        </div>
+        <!--fin mensaje de error no hay menú cargado-->
         <div class="infoNutricional">
           <div>
             <ul>
@@ -478,9 +471,7 @@
         </div>
         <div>
           <button id="btnAgregarModal" type="button"
-            class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar</button>
-          <button id="btnBorrarMenu" type="button"
-            class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Borrar</button>
+            class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" >Agregar</button>
         </div>
       </form>
     </div>
@@ -636,7 +627,7 @@
   <!--LISTA DE COMENTARIOS-->
   <ul id="listaComentario" style="text-align: left;margin-left: 30%;margin-right: 30%;">
   </ul>
-  
+
   <!--FIN DE LISTA DE COMENTARIOS-->
   <footer class="">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
@@ -652,5 +643,5 @@
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
 
-
+</body>
 </html>

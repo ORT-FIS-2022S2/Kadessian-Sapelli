@@ -167,7 +167,6 @@ calendario.addEventListener('change', () =>{
  *
  */
 function limpiarSeccionCalendario() {
-  imagenMenu.innerText = '';
   calorias.innerText = '';
   proteinas.innerText = '';
   grasas.innerText = '';
@@ -188,12 +187,11 @@ function llenarCamposMenu(menu) {
     tarjetaMenu.classList.remove('esconder');
     divNoHayMenu.classList.add('esconder');
     descripcionMenu.innerText = menu.getDescripcion();
-    const imagen = document.createElement('img');
-    imagen.src = menu.getImagen();
-    imagen.style.width = '750px';
-    imagen.style.height = '310px';
 
-    imagenMenu.appendChild(imagen);
+    imagenMenu.src = menu.getImagen();
+    imagenMenu.style.width = '750px';
+    imagenMenu.style.height = '310px';
+
     tituloMenu.innerHTML = menu.getNombre();
 
     alergenos.appendChild(generarTags(menu.getAlergenos()));
