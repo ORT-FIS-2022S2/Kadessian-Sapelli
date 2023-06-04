@@ -38,9 +38,10 @@ const divNoHayMenu = document.getElementById('divNoHayMenu');
 const tarjetaMenu = document.getElementById('tarjetaMenu');
 const divComentCompra = document.getElementById('divEsconderComentCompra');
 const divAgregarMenu = document.getElementById('divEsconderAgregarMenu');
-const diveAvisoIngreMenu = document.getElementById('divAvisoMenuIngresado');
-const divPreviewMenu = document.getElementById('divPreviewAgregarMenu');
+const divAvisoIngreMenu = document.getElementById('divAvisoMenuIngresado');
+const divErrorPreviewMenu = document.getElementById('divPreviewAgregarMenu');
 const divNoSePuedeCrearMenu = document.getElementById('divNoSePuedeCrearMenu');
+
 let panelDirectora = false;
 let directora = false;
 const usuario = sistema.getListaPadres()[0];
@@ -59,7 +60,7 @@ window.addEventListener('load', () => {
   if (diaSeleccionado !== null){
     menuSeleccionado = diaSeleccionado.getMenu();
   }
-
+  generarListaComentarios(diaSeleccionado, listaComentario);
   llenarCamposMenu(menuSeleccionado);
   llenarListaComprados(listaMenusComprados, usuario.getListaMenuComprado());
   // generarListaComentarios(menuSeleccionado, listaComentario);
@@ -71,12 +72,14 @@ window.addEventListener('load', () => {
 });
 
 btnModoDirectora.addEventListener('click', () => {
+  divComentarioVacio.classList.add('esconder');
   document.getElementById('divCompraExitosa').classList.add('esconder');
   document.getElementById('divNoSePuedeComprar').classList.add('esconder');
   document.getElementById('divCompraExitosa').classList.add('esconder');
   document.getElementById('divAvisoPreview').classList.add('esconder');
-  diveAvisoIngreMenu.classList.add('esconder');
-  divPreviewMenu.classList.add('esconder');
+  divAvisoIngreMenu.classList.add('esconder');
+  divErrorPreviewMenu.classList.add('esconder');
+  limpiarSeccionCalendario();
   const dia = sistema.obtenerDia(calendario.value);
   if (dia !== null) {
     llenarCamposMenu(dia.getMenu());
@@ -88,7 +91,7 @@ btnModoDirectora.addEventListener('click', () => {
   errorAlComentar.classList.add('esconder');
   divComentarioVacio.classList.add('esconder');
   if (directora) {
-    divPreviewMenu.classList.add('esconder');
+    divErrorPreviewMenu.classList.add('esconder');
     directora = false;
     btnModoDirectora.innerText = 'Modo Directora';
     divComentCompra.classList.remove('esconder');
@@ -125,6 +128,9 @@ btnComprar.addEventListener('click', () => {
 
 // Evento al seleccionar una fecha del calendario
 calendario.addEventListener('change', () =>{
+  divComentarioVacio.classList.add('esconder');
+  divErrorPreviewMenu.classList.add('esconder');
+  divAvisoIngreMenu.classList.add('esconder');
   errorAlComentar.classList.add('esconder');
   divSeccionComentarios.classList.add('esconder');
   document.getElementById('divCompraExitosa').classList.add('esconder');
@@ -134,7 +140,7 @@ calendario.addEventListener('change', () =>{
     const menuSeleccionado = diaSeleccionado.getMenu();
     // el azul
     document.getElementById('divAvisoPreview').classList.add('esconder');
-    diveAvisoIngreMenu.classList.add('esconder');
+    divAvisoIngreMenu.classList.add('esconder');
     divSeccionComentarios.classList.add('esconder');
     errorAlComentar.classList.add('esconder');
     divComentarioVacio.classList.add('esconder');
@@ -151,8 +157,8 @@ calendario.addEventListener('change', () =>{
     limpiarListaComentarios();
     if (panelDirectora) {
       document.getElementById('divAvisoPreview').classList.add('esconder');
-      diveAvisoIngreMenu.classList.add('esconder');
-      divPreviewMenu.classList.add('esconder');
+      divAvisoIngreMenu.classList.add('esconder');
+      divErrorPreviewMenu.classList.add('esconder');
     }
   }
 });
@@ -262,7 +268,6 @@ document.addEventListener('DOMContentLoaded', () => {
  * @param {Element} ul
  */
 function generarListaComentarios(dia, ul) {
-  alert(ul);
   limpiarListaComentarios();
   promedio.innerText = dia.promedioEstrellas();
   cantComentarios.innerText = dia.cantidadComentarios() + ' comentarios';
@@ -376,20 +381,6 @@ function llenarListaMenusDirectora(arrayDatos) {
   }
 }
 
-btnAgregarNuevoMenu.addEventListener('click', () => {
-  if (sistema.obtenerDia(calendario.value) === null) {
-    document.getElementById('divAvisoPreview').classList.add('esconder');
-    diveAvisoIngreMenu.classList.remove('esconder');
-    divPreviewMenu.classList.add('esconder');
-    const menu = sistema.obtenerMenu(listaMenus.value);
-    const diaAgregar = new Dia(menu, calendario.value);
-    sistema.addDia(diaAgregar);
-    llenarCamposMenu(diaAgregar.getMenu());
-  } else {
-    divPreviewMenu.classList.remove('esconder');
-  }
-});
-
 btnComentar.addEventListener('click', () => {
   limpiarCamposComentario();
   if (sistema.obtenerDia(calendario.value) !== null) {
@@ -447,9 +438,9 @@ btnEnviarComentario.addEventListener('click', () => {
 btnPanelMenu.addEventListener('click', () => {
   
   document.getElementById('divAvisoPreview').classList.add('esconder');
-  diveAvisoIngreMenu.classList.add('esconder');
-  divPreviewMenu.classList.add('esconder');
-  divPreviewMenu.classList.add('esconder');
+  divAvisoIngreMenu.classList.add('esconder');
+  divErrorPreviewMenu.classList.add('esconder');
+  divErrorPreviewMenu.classList.add('esconder');
 
   limpiarAgregarMenuCampos();
   if (btnPanelMenu.innerText === 'Configuración Menú') {
@@ -603,10 +594,25 @@ listaMenus.addEventListener('change', function(event) {
   if (menu !== null && sistema.obtenerDia(calendario.value) === null) {
     llenarCamposMenu(menu);
     document.getElementById('divAvisoPreview').classList.remove('esconder');
-    divPreviewMenu.classList.add('esconder');
+    divErrorPreviewMenu.classList.add('esconder');
   } else {
     document.getElementById('divAvisoPreview').classList.add('esconder');
-    divPreviewMenu.classList.remove('esconder');
-    diveAvisoIngreMenu.classList.add('esconder');
+    divErrorPreviewMenu.classList.remove('esconder');
+    divAvisoIngreMenu.classList.add('esconder');
+  }
+});
+
+btnAgregarNuevoMenu.addEventListener('click', () => {
+  if (sistema.obtenerDia(calendario.value) === null) {
+    document.getElementById('divAvisoPreview').classList.add('esconder');
+    divAvisoIngreMenu.classList.remove('esconder');
+    divErrorPreviewMenu.classList.add('esconder');
+    const menu = sistema.obtenerMenu(listaMenus.value);
+    const diaAgregar = new Dia(menu, calendario.value);
+    sistema.addDia(diaAgregar);
+    llenarCamposMenu(diaAgregar.getMenu());
+  } else {
+    divErrorPreviewMenu.classList.remove('esconder');
+    divAvisoIngreMenu.classList.add('esconder');
   }
 });
