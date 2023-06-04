@@ -55,7 +55,10 @@ window.addEventListener('load', () => {
   calendario.value = formatoFecha;
   // Añade descripcion de menu a un elemento p del html
   const diaSeleccionado = sistema.obtenerDia(formatoFecha);
-  const menuSeleccionado = diaSeleccionado.getMenu();
+  let menuSeleccionado = null;
+  if (diaSeleccionado !== null){
+    menuSeleccionado = diaSeleccionado.getMenu();
+  }
 
   llenarCamposMenu(menuSeleccionado);
   llenarListaComprados(listaMenusComprados, usuario.getListaMenuComprado());
@@ -122,6 +125,7 @@ btnComprar.addEventListener('click', () => {
 
 // Evento al seleccionar una fecha del calendario
 calendario.addEventListener('change', () =>{
+  errorAlComentar.classList.add('esconder');
   divSeccionComentarios.classList.add('esconder');
   document.getElementById('divCompraExitosa').classList.add('esconder');
   document.getElementById('divNoSePuedeComprar').classList.add('esconder');
@@ -261,7 +265,7 @@ function generarListaComentarios(dia, ul) {
   alert(ul);
   limpiarListaComentarios();
   promedio.innerText = dia.promedioEstrellas();
-  cantComentarios.innerText = dia.cantidadComentarios() + 'comentarios';
+  cantComentarios.innerText = dia.cantidadComentarios() + ' comentarios';
   for (let i = 0; i < dia.getListaComentariosfecha().length; i++) {
     const comentario = dia.getListaComentariosfecha()[i];
     const nombre = comentario.getPadre().getNombre();
@@ -441,6 +445,7 @@ btnEnviarComentario.addEventListener('click', () => {
 });
 
 btnPanelMenu.addEventListener('click', () => {
+  
   document.getElementById('divAvisoPreview').classList.add('esconder');
   diveAvisoIngreMenu.classList.add('esconder');
   divPreviewMenu.classList.add('esconder');
