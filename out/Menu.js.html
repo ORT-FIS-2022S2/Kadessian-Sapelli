@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Menu.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Menu.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>export class Menu {
+  
+  #nombre;
+  #descripcion;
+  #imagen;
+  #alergenos;
+  #calorias;
+  #hierro;
+  #grasas;
+  #proteinas;
+  #vitC;
+  #carbohidratos;
+  #sodio;
+  
+  /**
+   * 
+   * @param {String} nombre 
+   * @param {String} descripcion 
+   * @param {String} imagen 
+   * @param {Number} calorias 
+   * @param {Number} hierro 
+   * @param {Number} grasas 
+   * @param {Number} proteinas 
+   * @param {Number} vitC 
+   * @param {Number} carbohidratos 
+   * @param {Number} sodio 
+   */
+  constructor(nombre, descripcion, imagen, calorias, hierro, grasas, proteinas,
+    vitC, carbohidratos, sodio) {
+      this.#nombre = nombre;
+      this.#descripcion = descripcion;
+      this.#imagen = imagen;
+      this.#alergenos = [];
+      this.#calorias = calorias;
+      this.#hierro = hierro;
+      this.#grasas = grasas;
+      this.#proteinas = proteinas;
+      this.#vitC = vitC;
+      this.#carbohidratos = carbohidratos;
+      this.#sodio = sodio;
+    }
+
+    /**
+     * 
+     * @param {Array.&lt;String>} alergenos 
+     */
+    setAlergenos(alergenos) {
+      this.#alergenos = alergenos;
+    }
+
+    /**
+     * 
+     * @returns {String}
+     */
+    getNombre() {
+      return this.#nombre;
+    }
+
+    /**
+     * 
+     * @returns {String}
+     */
+    getDescripcion() {
+      return this.#descripcion;
+    }
+
+    /**
+     * 
+     * @returns {String}
+     */
+    getImagen() {
+      return this.#imagen;
+    }
+
+    /**
+     * 
+     * @returns {Array.&lt;String>}
+     */
+    getAlergenos() {
+      return this.#alergenos;
+    }
+
+    /**
+     * 
+     * @returns {Number}
+     */
+    getCalorias() {
+      return this.#calorias;
+    }
+
+    /**
+     * 
+     * @returns {Number}
+     */
+    getHierro() {
+      return this.#hierro;
+    }
+    
+    /**
+     * 
+     * @returns {Number}
+     */
+    getGrasas() {
+      return this.#grasas;
+    }
+
+    /**
+     * 
+     * @returns {Number}
+     */
+    getProteinas() {
+      return this.#proteinas;
+    }
+
+    /**
+     * 
+     * @returns {Number}
+     */
+    getVitC() {
+      return this.#vitC;
+    }
+
+    /**
+     * 
+     * @returns {Number}
+     */
+    getCarbohidratos() {
+      return this.#carbohidratos;
+    }
+
+    /**
+     * 
+     * @returns {Number}
+     */
+    getSodio() {
+      return this.#sodio;
+    }
+    
+    /**
+     * 
+     * @param {String} nombre 
+     */
+    setNombre(nombre) {
+      if (!nombre || typeof nombre !== 'string') {
+        throw new Error('El nombre del menú no es válido.');
+      }
+      this.#nombre = nombre;
+    }
+    
+    /**
+     * 
+     * @param {String} descripcion 
+     */
+    setDescripcion(descripcion) {
+      if (!descripcion || typeof descripcion !== 'string') {
+        throw new Error('La descripción del menú no es válida.');
+      }
+      this.#descripcion = descripcion;
+    }
+    
+    /**
+     * 
+     * @param {String} imagen 
+     */
+    setImagen(imagen) {
+      if (!imagen || typeof imagen !== 'string') {
+        throw new Error('La URL de la imagen no es válida.');
+      }
+      this.#imagen = imagen;
+    }
+    
+    /**
+     * 
+     * @param {Number} calorias 
+     */
+    setCalorias(calorias) {
+      if (!calorias || typeof calorias !== 'number' || calorias &lt; 0) {
+        throw new Error('Las calorías del menú no son válidas.');
+      }
+      this.#calorias = calorias;
+    }
+    
+    /**
+     * 
+     * @param {Number} hierro 
+     */
+    setHierro(hierro) {
+      if (typeof hierro !== 'number' || hierro &lt; 0) {
+        throw new Error('El valor de hierro no es válido.');
+      }
+      this.#hierro = hierro;
+    }
+    
+    /**
+     * 
+     * @param {Number} grasas 
+     */
+    setGrasas(grasas) {
+      if (typeof grasas !== 'number' || grasas &lt; 0) {
+        throw new Error('El valor de grasas no es válido.');
+      }
+      this.#grasas = grasas;
+    }
+    
+    /**
+     * 
+     * @param {Number} proteinas 
+     */
+    setProteinas(proteinas) {
+      if (typeof proteinas !== 'number' || proteinas &lt; 0) {
+        throw new Error('El valor de proteínas no es válido.');
+      }
+      this.#proteinas = proteinas;
+    }
+    
+    /**
+     * 
+     * @param {Number} vitC 
+     */
+    setVitC(vitC) {
+      if (typeof vitC !== 'number' || vitC &lt; 0) {
+        throw new Error('El valor de vitamina C no es válido.');
+      }
+      this.#vitC = vitC;
+    }
+    
+    /**
+     * 
+     * @param {Number} carbohidratos 
+     */
+    setCarbohidratos(carbohidratos) {
+      if (typeof carbohidratos !== 'number' || carbohidratos &lt; 0) {
+        throw new Error('El valor de carbohidratos no es válido.');
+      }
+      this.#carbohidratos = carbohidratos;
+    }
+    
+    /**
+     * 
+     * @param {Number} sodio 
+     */
+    setSodio(sodio) {
+      if (typeof sodio !== 'number' || sodio &lt; 0) {
+        throw new Error('El valor de sodio no es válido.');
+      }
+      this.#sodio = sodio;
+    }
+    
+    /**
+     * 
+     * @returns {String}
+     */
+    toString() {
+      return this.#nombre;
+    }
+  }
+  </code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Menu_Menu.html">Menu</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Jun 09 2023 20:50:11 GMT-0300 (hora estándar de Uruguay)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

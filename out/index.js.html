@@ -1,4 +1,32 @@
-import {Dia} from '../../dominio/Dia.js';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: index.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: index.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import {Dia} from '../../dominio/Dia.js';
 import {Menu} from '../../dominio/Menu.js';
 import {Comentario} from '../../dominio/Comentario.js';
 import {sistema} from './DatosPreCargados.js';
@@ -113,7 +141,7 @@ btnModoDirectora.addEventListener('click', () => {
 // Evento boton comprar
 btnComprar.addEventListener('click', () => {
   const menuDia = sistema.obtenerDia(calendario.value);
-  if (menuDia !== null && usuario.getTickets() > 0 &&
+  if (menuDia !== null &amp;&amp; usuario.getTickets() > 0 &amp;&amp;
     !usuario.containsListaMenuComprado(menuDia)) {
     document.getElementById('divNoSePuedeComprar').classList.add('esconder');
     document.getElementById('divCompraExitosa').classList.remove('esconder');
@@ -210,13 +238,13 @@ function llenarCamposMenu(menu) {
 /**
  *
  * @param {Element} ul
- * @param {Array.<Dia>} listaDiasComprados
+ * @param {Array.&lt;Dia>} listaDiasComprados
  */
 function llenarListaComprados(ul, listaDiasComprados) {
   ul.innerHTML = '';
   // Limpiar el contenido existente de la lista
 
-  for (let i = 0; i < listaDiasComprados.length; i++) {
+  for (let i = 0; i &lt; listaDiasComprados.length; i++) {
     const li = document.createElement('li');
     li.className = 'linksintegrantes';
     li.style.display = 'flex';
@@ -268,7 +296,7 @@ function generarListaComentarios(dia, ul) {
   limpiarListaComentarios();
   promedio.innerText = dia.promedioEstrellas();
   cantComentarios.innerText = dia.cantidadComentarios() + ' comentarios';
-  for (let i = 0; i < dia.getListaComentariosfecha().length; i++) {
+  for (let i = 0; i &lt; dia.getListaComentariosfecha().length; i++) {
     const comentario = dia.getListaComentariosfecha()[i];
     const nombre = comentario.getPadre().getNombre();
     const estrella = comentario.getEstrellas();
@@ -309,7 +337,7 @@ function generarComentario(nombre, cantidadEstrellas, contenido, ul) {
   const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
   path.setAttribute('d', 'M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z');
 
-  for (let i = 0; i < cantidadEstrellas; i++) {
+  for (let i = 0; i &lt; cantidadEstrellas; i++) {
     const starPath = path.cloneNode(true);
     const starSvg = svg.cloneNode(true);
     starSvg.appendChild(starPath);
@@ -327,7 +355,7 @@ function generarComentario(nombre, cantidadEstrellas, contenido, ul) {
 
 /**
  *
- * @param {Array.<string>} palabras
+ * @param {Array.&lt;string>} palabras
  * @return {Element}
  */
 function generarTags(palabras) {
@@ -365,12 +393,12 @@ function generarTags(palabras) {
 
 /**
  *
- * @param {Array.<Menu>} arrayDatos
+ * @param {Array.&lt;Menu>} arrayDatos
  */
 function llenarListaMenusDirectora(arrayDatos) {
   listaMenus.innerHTML = '';
 
-  for (let i = 0; i < arrayDatos.length; i++) {
+  for (let i = 0; i &lt; arrayDatos.length; i++) {
     const opcion = document.createElement('option');
     opcion.value = arrayDatos[i].getNombre(); // Establece el valor de la opción
     opcion.textContent = arrayDatos[i].getNombre();
@@ -567,7 +595,7 @@ llenarListaMenusDirectora(sistema.getListaMenus());
 listaMenus.addEventListener('change', function (event) {
   const opcionSeleccionada = event.target.value;
   const menu = sistema.obtenerMenu(opcionSeleccionada);
-  if (menu !== null && sistema.obtenerDia(calendario.value) === null) {
+  if (menu !== null &amp;&amp; sistema.obtenerDia(calendario.value) === null) {
     llenarCamposMenu(menu);
     document.getElementById('divAvisoPreview').classList.remove('esconder');
     divErrorPreviewMenu.classList.add('esconder');
@@ -591,4 +619,26 @@ btnAgregarNuevoMenu.addEventListener('click', () => {
     divErrorPreviewMenu.classList.remove('esconder');
     divAvisoIngreMenu.classList.add('esconder');
   }
-});
+});</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#camposValidos">camposValidos</a></li><li><a href="global.html#crearMenu">crearMenu</a></li><li><a href="global.html#generarComentario">generarComentario</a></li><li><a href="global.html#generarListaComentarios">generarListaComentarios</a></li><li><a href="global.html#generarTags">generarTags</a></li><li><a href="global.html#limpiarAgregarMenuCampos">limpiarAgregarMenuCampos</a></li><li><a href="global.html#limpiarCamposComentario">limpiarCamposComentario</a></li><li><a href="global.html#limpiarListaComentarios">limpiarListaComentarios</a></li><li><a href="global.html#limpiarSeccionCalendario">limpiarSeccionCalendario</a></li><li><a href="global.html#llenarCamposMenu">llenarCamposMenu</a></li><li><a href="global.html#llenarListaComprados">llenarListaComprados</a></li><li><a href="global.html#llenarListaMenusDirectora">llenarListaMenusDirectora</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Jun 09 2023 20:52:31 GMT-0300 (hora estándar de Uruguay)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
