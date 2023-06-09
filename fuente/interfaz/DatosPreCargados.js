@@ -1,8 +1,8 @@
-import { Menu } from './Menu.js';
-import { Dia } from './Dia.js';
-import { Padre } from './Padre.js';
-import { Comentario } from './Comentario.js';
-import { Sistema } from './Sistema.js';
+import { Menu } from '../dominio/Menu.js';
+import { Dia } from '../dominio/Dia.js';
+import { Padre } from '../dominio/Padre.js';
+import { Comentario } from '../dominio/Comentario.js';
+import { Sistema } from '../dominio/Sistema.js';
 
 const menuUno = new Menu('Hamburguesas con arroz', 'Hamburguesa de carne\nArroz con vegetales salteados\nCrema de vainilla\nPan integral\nAgua',
   '../interfaz/img/hamburguesa.jpg', 560,
