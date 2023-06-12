@@ -40,3 +40,24 @@ Para correr pruebas jest ingrese en la misma terminal de comandos
 ```
 npm run test
 ```
+
+## Objetivos
+Nuestro objetivo fue completar los requerimientos de mayor importancia definidos en la elicitacion del proycto. 
+
+### UML
+Creamos un diagrama de clases para poder visualizar mejor el esqueleto del sistema y tener en claro que clases eran necesarias crear para el funcionamiento de la pagina web.
+<!--IMAGEN DEL UML-->
+
+### Funciones del Sistema
+Al no tener login en nuestro sistema, el sistema contara con un usuario predefinido.
+
+**Funciones del usuario**
+- Ingresar como padre y visualizar toda la informacion del mismo
+- Poder comprar tickets para la compra de menus
+- Comprar un menu
+- Comentar y evaluar un menu
+
+**Funciones de directora**
+- Agregar menu al calendario
+- Crear un menu desde cero
+- Editar un menu
