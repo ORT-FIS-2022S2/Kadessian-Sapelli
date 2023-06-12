@@ -19,24 +19,31 @@
 <body>
   <!-- drawer init and toggle -->
   <header class="cabezal">
-    <div class="float-left">
-      <button id="btnModoDirectora" type="button"
-        class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Modo
-        Directora</button>
-      <h1 class="degradeLetra">AlimenTIC</h1>
-      <small class="especial ml-3 text-gray-500 dark:text-gray-400">Consulte, compré y comenté el menú de sus hijos en
-        la
-        escuela.</small>
-    </div>
-    <div id="divEsconderPadre" class="derecha">
-      <button
-        class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-        type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
-        aria-controls="drawer-example">
-        Información Padre
-      </button>
+    <div>
+      <div class="flex items-center justify-between">
+        <div class="float-left">
+          <button id="btnModoDirectora" type="button"
+            class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Modo
+            Directora</button>
+        </div>
+        <div class="float-center">
+          <h1 class="degradeLetra text-center mx-2">AlimenTIC</h1>
+        </div>
+        <div id="divEsconderPadre" class="float-right">
+          <button
+            class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
+            aria-controls="drawer-example">
+            Información Padre
+          </button>
+        </div>
+      </div>
+      <small id="descripcion" class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+        Consulte, compré y comenté el menú de sus hijos en la escuela
+      </small>
     </div>
   </header>
+
 
   <!-- drawer component -->
   <div id="drawer-example"
@@ -214,7 +221,7 @@
           <div class="card-img-overlay">
             <h5 class="card-title" id="tituloMenu"></h5>
             <p class="card-text" id="descripcionMenu"></p>
-           
+
           </div>
         </div>
 
@@ -471,7 +478,7 @@
         </div>
         <div>
           <button id="btnAgregarModal" type="button"
-            class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" >Agregar</button>
+            class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Agregar</button>
         </div>
       </form>
     </div>
@@ -644,4 +651,5 @@
     crossorigin="anonymous"></script>
 
 </body>
+
 </html>

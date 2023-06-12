@@ -64,6 +64,7 @@
   margin-left: 30%;
   margin-top: 20px;
 }
+
 .cabezal {
   border-bottom: 0px solid #473a3a85;
   margin-bottom: 50px;
@@ -95,7 +96,15 @@
   height: 13vh;
 }
 
-.derecha {
+.float-center {
+  float: left;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 13vh;
+}
+
+.float-right {
   text-align: right;
   display: flex;
   justify-content: flex-end;
@@ -273,18 +282,27 @@ h1 {
   background-color: #FF532E;
 }
 
-#divEsconderComentCompra,#divEsconderAgregarMenu{
+#divEsconderComentCompra,
+#divEsconderAgregarMenu {
   margin-left: 30%;
   margin-right: 30%;
   text-align: center;
 }
 
-#descripcionMenu,#tituloMenu{
-  color:black;
+#descripcionMenu,
+#tituloMenu {
+  color: black;
   background-color: rgba(255, 255, 255, 0.329);
   backdrop-filter: blur(5px);
   text-align: left;
-  width:fit-content;
-  padding: 5px 10px; /* Ajusta los valores según tus necesidades */
+  width: fit-content;
+  padding: 5px 10px;
+  /* Ajusta los valores según tus necesidades */
   max-width: 250px;
+}
+
+#descripcion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
