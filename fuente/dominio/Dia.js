@@ -45,7 +45,7 @@ export class Dia {
   }
 
   setMenu(menu) {
-    if (menu=== null || menu === undefined) {
+    if (menu === null || menu === undefined) {
       throw new Error('El menú proporcionado no es válido');
     }
     this.#menu = menu;

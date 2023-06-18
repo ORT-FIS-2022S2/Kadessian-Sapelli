@@ -1,5 +1,5 @@
 import { Comentario } from "../Comentario.js";
-import {Padre} from "../Padre.js";
+import { Padre } from "../Padre.js";
 
 
 describe('Test de clase Comentario', () => {

@@ -424,7 +424,7 @@ describe('Test de clase Menu', () => {
         30,  // Vitamina C
         40,  // Carbohidratos
         50   // Sodio
-      );  
+      );
       menu.setNombre(null);
     }).toThrow('El nombre del menú no es válido.');
   });
@@ -442,7 +442,7 @@ describe('Test de clase Menu', () => {
         30,  // Vitamina C
         40,  // Carbohidratos
         50   // Sodio
-      );  
+      );
       menu.setDescripcion(undefined);
     }).toThrow('La descripción del menú no es válida.');
   });
@@ -478,7 +478,7 @@ describe('Test de clase Menu', () => {
         30,  // Vitamina C
         40,  // Carbohidratos
         50   // Sodio
-      );  
+      );
       menu.setCalorias('');
     }).toThrow('Las calorías del menú no son válidas.');
   });
@@ -496,7 +496,7 @@ describe('Test de clase Menu', () => {
         30,  // Vitamina C
         40,  // Carbohidratos
         50   // Sodio
-      );  
+      );
       menu.setHierro('');
     }).toThrow('El valor de hierro no es válido.');
   });
@@ -515,7 +515,7 @@ describe('Test de clase Menu', () => {
         40,  // Carbohidratos
         50   // Sodio
       );
-  
+
       menu.setGrasas(true);
     }).toThrow('El valor de grasas no es válido.');
   });
@@ -533,7 +533,7 @@ describe('Test de clase Menu', () => {
         30,  // Vitamina C
         40,  // Carbohidratos
         50   // Sodio
-      );  
+      );
       menu.setProteinas('');
     }).toThrow('El valor de proteínas no es válido.');
   });
@@ -551,7 +551,7 @@ describe('Test de clase Menu', () => {
         30,  // Vitamina C
         40,  // Carbohidratos
         50   // Sodio
-      );  
+      );
       menu.setVitC('');
     }).toThrow('El valor de vitamina C no es válido.');
   });
@@ -569,7 +569,7 @@ describe('Test de clase Menu', () => {
         30,  // Vitamina C
         40,  // Carbohidratos
         50   // Sodio
-      );  
+      );
       menu.setCarbohidratos(false);
     }).toThrow('El valor de carbohidratos no es válido.');
   });
@@ -587,7 +587,7 @@ describe('Test de clase Menu', () => {
         30,  // Vitamina C
         40,  // Carbohidratos
         50   // Sodio
-      );  
+      );
       menu.setSodio('');
     }).toThrow('El valor de sodio no es válido.');
   });
@@ -608,5 +608,5 @@ describe('Test de clase Menu', () => {
     let esperado = 'Nombre del Menú';
     expect(menu.toString()).toBe(esperado);
   });
-  
+
 });

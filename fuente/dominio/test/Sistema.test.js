@@ -19,8 +19,8 @@ describe('Test de clase Sistema', () => {
   test('Agregar un día a la lista de días', () => {
     const sistema = new Sistema();
     const menu = new Menu('Hamburguesas con arroz', 'Hamburguesa de carne\nArroz con vegetales salteados\nCrema de vainilla\nPan integral\nAgua',
-    '../interfaz/img/hamburguesa.jpg', 560,
-    2, 10, 25, 20, 10, 90);
+      '../interfaz/img/hamburguesa.jpg', 560,
+      2, 10, 25, 20, 10, 90);
     const dia = new Dia(menu, '2023-06-01');
     sistema.addDia(dia);
 
@@ -51,9 +51,9 @@ describe('Test de clase Sistema', () => {
   test('Eliminar un día de la lista de días', () => {
     const sistema = new Sistema();
     const menu = new Menu('Hamburguesas con arroz', 'Hamburguesa de carne\nArroz con vegetales salteados\nCrema de vainilla\nPan integral\nAgua',
-    '../interfaz/img/hamburguesa.jpg', 560,
-    2, 10, 25, 20, 10, 90);
-    const dia = new Dia(menu,'2023-06-01');
+      '../interfaz/img/hamburguesa.jpg', 560,
+      2, 10, 25, 20, 10, 90);
+    const dia = new Dia(menu, '2023-06-01');
     sistema.addDia(dia);
     sistema.deleteDia(dia);
 
@@ -76,33 +76,33 @@ describe('Test de clase Sistema', () => {
     const menu = new Menu('Hamburguesas con arroz', 'Hamburguesa de carne\nArroz con vegetales salteados\nCrema de vainilla\nPan integral\nAgua',
       '../interfaz/img/hamburguesa.jpg', 560,
       2, 10, 25, 20, 10, 90);
-    
+
     expect(() => {
       sistema.deleteMenu(menu);
     }).toThrow(Error);
   });
-  
+
   test('Eliminar un día inexistente de la lista de días', () => {
     const sistema = new Sistema();
     const menu = new Menu('Hamburguesas con arroz', 'Hamburguesa de carne\nArroz con vegetales salteados\nCrema de vainilla\nPan integral\nAgua',
       '../interfaz/img/hamburguesa.jpg', 560,
       2, 10, 25, 20, 10, 90);
     const dia = new Dia(menu, '2023-06-01');
-  
+
     expect(() => {
       sistema.deleteDia(dia);
     }).toThrow(Error);
   });
-  
+
   test('Eliminar un padre inexistente de la lista de padres', () => {
     const sistema = new Sistema();
     const padre = new Padre('Roberto', 5555555, 5);
-  
+
     expect(() => {
       sistema.deletePadre(padre);
     }).toThrow(Error);
-  });  
-  
+  });
+
   test('Obtener un menú por nombre', () => {
     const sistema = new Sistema();
     const menu1 = new Menu('Hamburguesas con arroz', 'Hamburguesa de carne\nArroz con vegetales salteados\nCrema de vainilla\nPan integral\nAgua',

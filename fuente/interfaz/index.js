@@ -1,7 +1,7 @@
-import {Dia} from '../../dominio/Dia.js';
-import {Menu} from '../../dominio/Menu.js';
-import {Comentario} from '../../dominio/Comentario.js';
-import {sistema} from './DatosPreCargados.js';
+import { Dia } from '../../dominio/Dia.js';
+import { Menu } from '../../dominio/Menu.js';
+import { Comentario } from '../../dominio/Comentario.js';
+import { sistema } from './DatosPreCargados.js';
 const tituloMenu = document.getElementById('tituloMenu');
 const btnComprar = document.getElementById('btnComprar');
 const calendario = document.getElementById('calendario');
@@ -533,9 +533,9 @@ function camposValidos(nom, desc, img, cal, prot, carbo, vit, hie, sal, grasa) {
   if (nom === '' || desc === '' || img === '') {
     retorno = false;
   }
-  if (isNaN(Number(cal)) || isNaN(Number(prot)) || isNaN(Number(carbo)) 
-  || isNaN(Number(vit)) || isNaN(Number(hie)) || isNaN(Number(sal))
-  || isNaN(Number(grasa))) {
+  if (isNaN(Number(cal)) || isNaN(Number(prot)) || isNaN(Number(carbo))
+    || isNaN(Number(vit)) || isNaN(Number(hie)) || isNaN(Number(sal))
+    || isNaN(Number(grasa))) {
     retorno = false;
   }
   return retorno;

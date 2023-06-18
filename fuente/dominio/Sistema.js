@@ -1,9 +1,9 @@
 export class Sistema {
-  
+
   #listaMenus;
   #listaPadres;
   #listaDias;
-  
+
   /**
    * 
    */
@@ -11,9 +11,9 @@ export class Sistema {
     this.#listaMenus = [];
     this.#listaDias = [];
     this.#listaPadres = [];
-    
+
   }
-  
+
   /**
    * 
    * @param {Dia} dia 
@@ -62,8 +62,8 @@ export class Sistema {
     } else {
       throw new Error('El día especificado no existe en la lista.');
     }
-  } 
-  
+  }
+
   /**
    * 
    * @param {Padre} padre 
@@ -106,7 +106,7 @@ export class Sistema {
    * @param {String} nombre 
    * @returns {Menu}
    */
-  obtenerMenu(nombre){
+  obtenerMenu(nombre) {
     let retorno = null;
     for (let i = 0; i < this.#listaMenus.length; i++) {
       if (this.#listaMenus[i].getNombre() === nombre) {
@@ -166,7 +166,7 @@ export class Sistema {
    * 
    * @returns {String}
    */
-  toString(){
+  toString() {
     return 'Listas del sistema';
   }
 }

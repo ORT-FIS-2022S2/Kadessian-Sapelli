@@ -1,9 +1,9 @@
 export class Comentario {
-  
+
   #padre;
   #mensaje;
   #estrellas;
-  
+
   /**
    * 
    * @param {Padre} padre 
@@ -15,7 +15,7 @@ export class Comentario {
     this.#mensaje = mensaje;
     this.#estrellas = estrellas;
   }
-  
+
   /**
    * 
    * @returns {Padre}
