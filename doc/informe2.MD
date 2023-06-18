@@ -46,7 +46,7 @@ Nuestro objetivo fue completar los requerimientos de mayor importancia definidos
 
 ### UML
 Creamos un diagrama de clases para poder visualizar mejor el esqueleto del sistema y tener en claro que clases eran necesarias crear para el funcionamiento de la pagina web.
-<!--IMAGEN DEL UML-->
+<img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/UML.png">
 
 ### Funciones del Sistema
 Al no tener login en nuestro sistema, el sistema contara con un usuario predefinido.
