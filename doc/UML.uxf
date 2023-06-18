@@ -1,0 +1,115 @@
+<diagram program="umletino" version="15.1"><zoom_level>3</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>240</x><y>138</y><w>72</w><h>96</h></coordinates><panel_attributes>Sistema
+--
+- listaMenus : Array&lt;Menu&gt;              
+- listaPadres : Array&lt;Padre&gt;            
+- listaDias : Array&lt;Dia&gt;
+--
++ constructor()                         
++ addDia(dia: Dia): void                 
++ addPadre(padre: Padre): void           
++ addMenu(menu: Menu): void              
++ deleteMenu(menu: Menu): void           
++ deleteDia(dia: Dia): void              
++ deletePadre(padre: Padre): void        
++ getListaMenus(): Array&lt;Menu&gt;           
++ getListaPadres(): Array&lt;Padre&gt;         
++ getListaDias(): Array&lt;Dia&gt;             
++ obtenerMenu(nombre: String): Menu      
++ obtenerDia(fecha: Date): Dia           
++ containsMenu(menu: Menu): Boolean     
++ containsDia(dia: Dia): Boolean         
++ containsPadre(padre: Padre): Boolean   
++ toString(): String   </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>99</x><y>282</y><w>87</w><h>96</h></coordinates><panel_attributes>Padre
+--
+- nombre: String                       
+- tickets: Number                      
+- ci: Number                           
+- listaMenuComprado: Array&lt;Dia&gt; 
+--
++ constructor(nombre, ci, tickets)      
++ addMenuComprado(dia: Dia): void        
++ removeMenuComprado(dia: Dia): void     
++ getNombre(): String                   
++ getCi(): Number                        
++ getTickets(): Number                   
++ getListaMenuComprado(): Array&lt;Dia&gt;     
++ setNombre(nombre: String): void        
++ setCi(ci: Number): void                
++ setTickets(tickets: Number): void      
++ containsListaMenuComprado(dia: Dia): Boolean 
++ comprarMenuDia(dia: Dia): void         
++ comprarTickets(cantTickets: Number): void 
++ toString(): String                    
++ isValid(): Boolean       </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>363</x><y>282</y><w>87</w><h>177</h></coordinates><panel_attributes>Menu
+--
+- nombre: String                       
+- descripcion: String                  
+- imagen: String                       
+- alergenos: Array&lt;String&gt;             
+- calorias: Number                     
+- hierro: Number                       
+- grasas: Number                       
+- proteinas: Number                    
+- vitC: Number                         
+- carbohidratos: Number                
+- sodio: Number  
+--
++ constructor(nombre, descripcion,      
+   imagen, calorias, hierro, grasas,     
+   proteinas, vitC, carbohidratos, sodio)
++ setAlergenos(alergenos: Array&lt;String&gt;): void 
++ getNombre(): String                    
++ getDescripcion(): String               
++ getImagen(): String                    
++ getAlergenos(): Array&lt;String&gt;          
++ getCalorias(): Number                  
++ getHierro(): Number                    
++ getGrasas(): Number                    
++ getProteinas(): Number                 
++ getVitC(): Number                      
++ getCarbohidratos(): Number             
++ getSodio(): Number                     
++ setNombre(nombre: String): void        
++ setDescripcion(descripcion: String): void 
++ setImagen(imagen: String): void        
++ setCalorias(calorias: Number): void    
++ setHierro(hierro: Number): void        
++ setGrasas(grasas: Number): void        
++ setProteinas(proteinas: Number): void  
++ setVitC(vitC: Number): void            
++ setCarbohidratos(carbohidratos: Number): void 
++ setSodio(sodio: Number): void          
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>228</x><y>282</y><w>93</w><h>81</h></coordinates><panel_attributes>Dia
+--
+- menu: Menu                     
+- fecha: String                   
+- listaComentarios: Array&lt;Comentario&gt; 
+--
++ constructor(menu: Menu, fecha: String) 
++ addComentario(comentario: Comentario): void 
++ removeComentario(comentario: Comentario): void 
++ getListaComentariosfecha(): Array&lt;Comentario&gt; 
++ getMenu(): Menu                  
++ getFecha(): String               
++ setFecha(fecha: String): void    
++ setMenu(menu: Menu): void       
++ cantidadComentarios(): Number   
++ promedioEstrellas(): Number     
++ toString(): String              
++ isValidFecha(fecha: String): Boolean 
++ isValid(): Boolean      </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>201</x><y>399</y><w>111</w><h>60</h></coordinates><panel_attributes>Comentario
+--
+- padre: Padre                   
+- mensaje: String                 
+- estrellas: Number 
+--
++ constructor(padre: Padre, mensaje: String, estrellas: Number)
++ getPadre(): Padre               
++ getMensaje(): String            
++ getEstrellas(): Number          
++ setPadre(padre: Padre): void    
++ setMensaje(mensaje: String): void 
++ setEstrellas(estrellas: Number): void 
++ toString(): String              </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>135</x><y>375</y><w>69</w><h>63</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;190;210;190</additional_attributes></element><element><id>Relation</id><coordinates><x>273</x><y>231</y><w>144</w><h>57</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;460;90;460;170</additional_attributes></element><element><id>Relation</id><coordinates><x>273</x><y>231</y><w>9</w><h>57</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>141</x><y>231</y><w>141</w><h>57</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>450;10;450;90;10;90;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>318</x><y>315</y><w>51</w><h>9</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>150;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>360</y><w>15</w><h>45</h></coordinates><panel_attributes>m1=0..n
+m2=1..1</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>183</x><y>315</y><w>51</w><h>12</h></coordinates><panel_attributes>m1=0..n
+m2=0..n</panel_attributes><additional_attributes>10;10;150;10</additional_attributes></element></diagram>
