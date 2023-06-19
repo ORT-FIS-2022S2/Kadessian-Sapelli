@@ -1,13 +1,15 @@
+/**
+ * Clase Dia
+ */
 export class Dia {
-  
   #menu;
   #fecha;
-  #listaComentarios
+  #listaComentarios;
 
   /**
-   * 
-   * @param {Menu} menu 
-   * @param {Date} fecha 
+   *
+   * @param {Menu} menu
+   * @param {Date} fecha
    */
   constructor(menu, fecha) {
     this.#fecha = fecha;
@@ -17,7 +19,7 @@ export class Dia {
 
   /**
    * Agrega un comentario a listaComentarios
-   * @param {Comentario} comentario 
+   * @param {Comentario} comentario
    */
   addComentario(comentario) {
     if (comentario.getMensaje() === '' || comentario.getPadre() === null) {
@@ -28,7 +30,7 @@ export class Dia {
 
   /**
    * Remueve un comentario de listaComentarios
-   * @param {Comentario} comentario 
+   * @param {Comentario} comentario
    */
   removeComentario(comentario) {
     const index = this.#listaComentarios.indexOf(comentario);
@@ -41,7 +43,7 @@ export class Dia {
 
   /**
    * Retorna lista de comentarios
-   * @returns {Array.<Comentario>}
+   * @return {Array.<Comentario>}
    */
   getListaComentariosfecha() {
     return this.#listaComentarios;
@@ -49,7 +51,7 @@ export class Dia {
 
   /**
    * Retorna menu
-   * @returns {Menu}
+   * @return {Menu}
    */
   getMenu() {
     return this.#menu;
@@ -57,7 +59,7 @@ export class Dia {
 
   /**
    * Retorna fecha del menú
-   * @returns {Date}
+   * @return {Date}
    */
   getFecha() {
     return this.#fecha;
@@ -65,7 +67,7 @@ export class Dia {
 
   /**
    * Establece fecha menú
-   * @param {Date} fecha 
+   * @param {Date} fecha
    */
   setFecha(fecha) {
     if (!this.isValidFecha(fecha)) {
@@ -76,7 +78,7 @@ export class Dia {
 
   /**
    * Establece Menu
-   * @param {Menu} menu 
+   * @param {Menu} menu
    */
   setMenu(menu) {
     if (menu === null || menu === undefined) {
@@ -87,7 +89,7 @@ export class Dia {
 
   /**
    * Retorna cantidad de comentarios
-   * @returns {Number}
+   * @return {Number}
    */
   cantidadComentarios() {
     let cont = 0;
@@ -99,7 +101,7 @@ export class Dia {
 
   /**
    * Retorna promedio de estrellas de los comentarios del Dia
-   * @returns {Number}
+   * @return {Number}
    */
   promedioEstrellas() {
     let resultado = 0;
@@ -115,16 +117,16 @@ export class Dia {
 
   /**
    * toString de clase Dia
-   * @returns {String}
+   * @return {String}
    */
   toString() {
     return this.#fecha;
   }
 
   /**
-   * 
-   * @param {Date} fecha 
-   * @returns {Boolean}
+   *
+   * @param {Date} fecha
+   * @return {Boolean}
    */
   isValidFecha(fecha) {
     if (fecha === '') {
@@ -145,8 +147,8 @@ export class Dia {
   }
 
   /**
-   * 
-   * @returns {Boolean}
+   *
+   * @return {Boolean}
    */
   isValid() {
     if (this.#fecha === '' || !this.isValidFecha(this.#fecha)) {

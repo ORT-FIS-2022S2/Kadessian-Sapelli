@@ -41,13 +41,15 @@ const divAgregarMenu = document.getElementById('divEsconderAgregarMenu');
 const divAvisoIngreMenu = document.getElementById('divAvisoMenuIngresado');
 const divErrorPreviewMenu = document.getElementById('divPreviewAgregarMenu');
 const divNoSePuedeCrearMenu = document.getElementById('divNoSePuedeCrearMenu');
-
+const btnInfoPadre = document.getElementById('btnInfoPadre');
+const tituloDes = document.getElementById('descripcion');
 let panelDirectora = false;
 let directora = false;
 const usuario = sistema.getListaPadres()[0];
 
 // Evento inicio al cargar la pagina por primera vez
 window.addEventListener('load', () => {
+  responsividad();
   nombrePadre.innerText = 'Nombre del padre: ' + usuario.getNombre();
   cantTickets.innerText = 'Cantidad de Tickets: ' + usuario.getTickets();
   // Setea la fecha del calendario al día actual
@@ -72,6 +74,7 @@ window.addEventListener('load', () => {
 });
 
 btnModoDirectora.addEventListener('click', () => {
+  responsividad();
   divComentarioVacio.classList.add('esconder');
   document.getElementById('divCompraExitosa').classList.add('esconder');
   document.getElementById('divNoSePuedeComprar').classList.add('esconder');
@@ -112,6 +115,7 @@ btnModoDirectora.addEventListener('click', () => {
 
 // Evento boton comprar
 btnComprar.addEventListener('click', () => {
+  responsividad();
   const menuDia = sistema.obtenerDia(calendario.value);
   if (menuDia !== null && usuario.getTickets() > 0 &&
     !usuario.containsListaMenuComprado(menuDia)) {
@@ -128,6 +132,7 @@ btnComprar.addEventListener('click', () => {
 
 // Evento al seleccionar una fecha del calendario
 calendario.addEventListener('change', () => {
+  responsividad();
   divComentarioVacio.classList.add('esconder');
   divErrorPreviewMenu.classList.add('esconder');
   divAvisoIngreMenu.classList.add('esconder');
@@ -166,6 +171,7 @@ calendario.addEventListener('change', () => {
  * Esta función limpia la sección donde se visualiza el menú de la fecha
  */
 function limpiarSeccionCalendario() {
+  responsividad();
   calorias.innerText = '';
   proteinas.innerText = '';
   grasas.innerText = '';
@@ -181,6 +187,7 @@ function limpiarSeccionCalendario() {
  * @param {Menu} menu
  */
 function llenarCamposMenu(menu) {
+  responsividad();
   limpiarSeccionCalendario();
   if (menu != null) {
     tarjetaMenu.classList.remove('esconder');
@@ -214,6 +221,7 @@ function llenarCamposMenu(menu) {
  * @param {Array.<Dia>} listaDiasComprados
  */
 function llenarListaComprados(ul, listaDiasComprados) {
+  responsividad();
   ul.innerHTML = '';
   // Limpiar el contenido existente de la lista
 
@@ -239,9 +247,11 @@ function llenarListaComprados(ul, listaDiasComprados) {
 
 // Aca encadenamos dos eventlisteners porque es una ventana modal
 document.addEventListener('DOMContentLoaded', () => {
+  responsividad();
   const botonTicket = document.getElementById('botonTicket');
   const numeroTicket = document.getElementById('numeroTicket');
   botonTicket.addEventListener('click', () => {
+    responsividad();
     if (numeroTicket.value > 0) {
       usuario.comprarTickets(parseInt(numeroTicket.value));
       cantTickets.innerText = 'Cantidad de Tickets: ' + usuario.getTickets();
@@ -250,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   numeroTicket.addEventListener('input', () => {
+    responsividad();
     const numeroIngresado = numeroTicket.value;
     const precio = numeroIngresado * 300;
     if (precio != 0) {
@@ -266,6 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * @param {Element} ul
  */
 function generarListaComentarios(dia, ul) {
+  responsividad();
   limpiarListaComentarios();
   promedio.innerText = dia.promedioEstrellas();
   cantComentarios.innerText = dia.cantidadComentarios() + ' comentarios';
@@ -282,15 +294,18 @@ function generarListaComentarios(dia, ul) {
  * Limpia la lista de la sección comentarios de cada menú
  */
 function limpiarListaComentarios() {
+  responsividad();
   listaComentario.innerHTML = '';
   promedio.innerText = '0';
   cantComentarios.innerText = 0 + ' comentarios';
 }
 
 /**
- * Esta función crea un comentario pasandole nombre, contenido, estrellas y lo hace
- * con el css importado de flowbite (Estrellas y formato de cada comentario)
- * Luego se añade el comentario a el elemento lista desordenada pasada por parametro
+ * Esta función crea un comentario pasandole nombre, contenido, estrellas y
+ * lo hace con el css importado de flowbite
+ * (Estrellas y formato de cada comentario)
+ * Luego se añade el comentario a el elemento lista desordenada
+ * pasada por parametro
  * @param {String} nombre
  * @param {String} cantidadEstrellas
  * @param {String} contenido
@@ -372,6 +387,7 @@ function generarTags(palabras) {
  * @param {Array.<Menu>} arrayDatos
  */
 function llenarListaMenusDirectora(arrayDatos) {
+  responsividad();
   listaMenus.innerHTML = '';
 
   for (let i = 0; i < arrayDatos.length; i++) {
@@ -383,6 +399,7 @@ function llenarListaMenusDirectora(arrayDatos) {
 }
 
 btnComentar.addEventListener('click', () => {
+  responsividad();
   limpiarCamposComentario();
   if (sistema.obtenerDia(calendario.value) !== null) {
     divSeccionComentarios.classList.remove('esconder');
@@ -395,6 +412,7 @@ btnComentar.addEventListener('click', () => {
 
 // este es el link x cerrar con la cruz en el mensaje
 cerrarDivComentario.addEventListener('click', () => {
+  responsividad();
   limpiarCamposComentario();
   divSeccionComentarios.classList.add('esconder');
   divComentarioVacio.classList.add('esconder');
@@ -415,6 +433,7 @@ function limpiarCamposComentario() {
 
 // Agregar el controlador de eventos al botón de envío
 btnEnviarComentario.addEventListener('click', () => {
+  responsividad();
   const cmntNuevo = campoComentario.value;
   let valorRadioButton = '5';
   if (cmntNuevo != '') {
@@ -436,7 +455,7 @@ btnEnviarComentario.addEventListener('click', () => {
 });
 
 btnPanelMenu.addEventListener('click', () => {
-
+  responsividad();
   document.getElementById('divAvisoPreview').classList.add('esconder');
   divAvisoIngreMenu.classList.add('esconder');
   divErrorPreviewMenu.classList.add('esconder');
@@ -470,7 +489,7 @@ const lacteosBox = document.getElementById('lacteosBox');
 const anacaradosBox = document.getElementById('anacaradosBox');
 const btnFormCrearMenu = document.getElementById('btnFormCrearMenu');
 
-btnFormCrearMenu.addEventListener('click', function () {
+btnFormCrearMenu.addEventListener('click', function() {
   crearMenu();
   llenarListaMenusDirectora(sistema.getListaMenus());
 });
@@ -535,9 +554,9 @@ function camposValidos(nom, desc, img, cal, prot, carbo, vit, hie, sal, grasa) {
   if (nom === '' || desc === '' || img === '') {
     retorno = false;
   }
-  if (isNaN(Number(cal)) || isNaN(Number(prot)) || isNaN(Number(carbo))
-    || isNaN(Number(vit)) || isNaN(Number(hie)) || isNaN(Number(sal))
-    || isNaN(Number(grasa))) {
+  if (isNaN(Number(cal)) || isNaN(Number(prot)) || isNaN(Number(carbo)) ||
+    isNaN(Number(vit)) || isNaN(Number(hie)) || isNaN(Number(sal)) ||
+    isNaN(Number(grasa))) {
     retorno = false;
   }
   return retorno;
@@ -566,7 +585,8 @@ const listaMenus = document.getElementById('listaMenus');
 
 llenarListaMenusDirectora(sistema.getListaMenus());
 
-listaMenus.addEventListener('change', function (event) {
+listaMenus.addEventListener('change', function(event) {
+  responsividad();
   const opcionSeleccionada = event.target.value;
   const menu = sistema.obtenerMenu(opcionSeleccionada);
   if (menu !== null && sistema.obtenerDia(calendario.value) === null) {
@@ -581,6 +601,7 @@ listaMenus.addEventListener('change', function (event) {
 });
 
 btnAgregarNuevoMenu.addEventListener('click', () => {
+  responsividad();
   if (sistema.obtenerDia(calendario.value) === null) {
     document.getElementById('divAvisoPreview').classList.add('esconder');
     divAvisoIngreMenu.classList.remove('esconder');
@@ -594,3 +615,52 @@ btnAgregarNuevoMenu.addEventListener('click', () => {
     divAvisoIngreMenu.classList.add('esconder');
   }
 });
+
+window.addEventListener('resize', responsividad);
+
+/**
+ * Esta función es para aplicar responsividad a los elementos
+ * ya que al ser extraidos de otro framework tenemos que manipularlos
+ * por js y no en el media de css
+ */
+function responsividad() {
+  if (window.matchMedia('(max-width: 800px)').matches) {
+    divNoHayMenu.style.fontSize='10%';
+    divNoHayMenu.style.height='10%';
+    btnModoDirectora.classList.remove('px-5');
+    btnModoDirectora.classList.add('px-2');
+    btnComentar.classList.remove('px-5');
+    btnComprar.classList.remove('px-5');
+    btnComentar.classList.add('px-2');
+    tituloMenu.style.fontSize = '60%';
+    divSeccionComentarios.style.width='40%';
+    descripcionMenu.style.fontSize = '60%';
+    document.getElementById('fotoMenu').style.height='200px';
+    btnComprar.classList.add('px-2');
+    btnPanelMenu.classList.remove('px-5');
+    btnPanelMenu.classList.add('px-2');
+    btnEnviarComentario.classList.add('px-2');
+    btnAgregarNuevoMenu.classList.add('px-2');
+    // campoComentario.rows='2';
+    btnInfoPadre.classList.remove('px-5');
+    btnInfoPadre.classList.add('px-2');
+    tituloDes.style.fontSize='60%';
+  } else {
+    tituloDes.style.fontSize='100%';
+    divNoHayMenu.style.height='100%';
+    document.getElementById('fotoMenu').style.height='310px';
+    tituloMenu.style.fontSize = '100%';
+    descripcionMenu.style.fontSize = '100%';
+    cantComentarios.style.fontSize = '100%';
+    divSeccionComentarios.style.width='100%';
+    descripcionMenu.style.fontSize = '100%';
+    btnComentar.classList.add('px-5');
+    btnComprar.classList.add('px-5');
+    btnPanelMenu.classList.add('px-5');
+    btnAgregarNuevoMenu.classList.add('px-5');
+    btnModoDirectora.classList.add('px-5');
+    btnModoDirectora.classList.remove('px-2');
+    btnInfoPadre.classList.add('px-5');
+    btnInfoPadre.classList.remove('px-2');
+  }
+}

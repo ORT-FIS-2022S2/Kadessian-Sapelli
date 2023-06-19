@@ -1,22 +1,23 @@
+/**
+ * Clase Sistema
+ */
 export class Sistema {
-
   #listaMenus;
   #listaPadres;
   #listaDias;
 
   /**
-   * 
+   *
    */
   constructor() {
     this.#listaMenus = [];
     this.#listaDias = [];
     this.#listaPadres = [];
-
   }
 
   /**
    * Agrega un Dia a la listaDias
-   * @param {Dia} dia 
+   * @param {Dia} dia
    */
   addDia(dia) {
     this.#listaDias.push(dia);
@@ -24,7 +25,7 @@ export class Sistema {
 
   /**
    * Agrega un Padre a la listaPadres
-   * @param {Padre} padre 
+   * @param {Padre} padre
    */
   addPadre(padre) {
     this.#listaPadres.push(padre);
@@ -32,7 +33,7 @@ export class Sistema {
 
   /**
    * Agrega un Menu a la listaMenus
-   * @param {Menu} menu 
+   * @param {Menu} menu
    */
   addMenu(menu) {
     this.#listaMenus.push(menu);
@@ -40,7 +41,7 @@ export class Sistema {
 
   /**
    * Borra un Menú pasado por parametro de la listaMenus
-   * @param {Menu} menu 
+   * @param {Menu} menu
    */
   deleteMenu(menu) {
     const index = this.#listaMenus.indexOf(menu);
@@ -53,7 +54,7 @@ export class Sistema {
 
   /**
    * Borra un Dia pasado por parametro de la listaDias
-   * @param {Dia} dia 
+   * @param {Dia} dia
    */
   deleteDia(dia) {
     const index = this.#listaDias.indexOf(dia);
@@ -66,7 +67,7 @@ export class Sistema {
 
   /**
    * Borra un Padre pasado por parametro de la listaPadres
-   * @param {Padre} padre 
+   * @param {Padre} padre
    */
   deletePadre(padre) {
     const index = this.#listaPadres.indexOf(padre);
@@ -79,7 +80,7 @@ export class Sistema {
 
   /**
    * Retorna el arraylist listaMenus
-   * @returns {Array.<Menu>}
+   * @return {Array.<Menu>}
    */
   getListaMenus() {
     return this.#listaMenus;
@@ -87,7 +88,7 @@ export class Sistema {
 
   /**
    * Retorna el arraylist listaPadres
-   * @returns {Array.<Padre>}
+   * @return {Array.<Padre>}
    */
   getListaPadres() {
     return this.#listaPadres;
@@ -95,7 +96,7 @@ export class Sistema {
 
   /**
    * Retorna el arraylist ListaDias
-   * @returns {Array.<Dia>}
+   * @return {Array.<Dia>}
    */
   getListaDias() {
     return this.#listaDias;
@@ -103,8 +104,8 @@ export class Sistema {
 
   /**
    * Entrega un objeto menú pasandole un string que es el nombre del menú
-   * @param {String} nombre 
-   * @returns {Menu}
+   * @param {String} nombre
+   * @return {Menu}
    */
   obtenerMenu(nombre) {
     let retorno = null;
@@ -121,8 +122,8 @@ export class Sistema {
   /**
    * Busca en la lista de dias el dia pasado por parametro si encuentra su fecha
    * retorna un objeto menu
-   * @param {Date} fecha 
-   * @returns {Dia}
+   * @param {Date} fecha
+   * @return {Dia}
    */
   obtenerDia(fecha) {
     let retorno = null;
@@ -137,8 +138,8 @@ export class Sistema {
 
   /**
    * Retorna true si el Menu se encuentra en la listaMenus
-   * @param {Menu} menu 
-   * @returns {Boolean}
+   * @param {Menu} menu
+   * @return {Boolean}
    */
   containsMenu(menu) {
     return this.#listaMenus.includes(menu);
@@ -146,8 +147,8 @@ export class Sistema {
 
   /**
    * Retorna true si el Dia se encuentra en la listaDias
-   * @param {Dia} dia 
-   * @returns {Boolean}
+   * @param {Dia} dia
+   * @return {Boolean}
    */
   containsDia(dia) {
     return this.#listaDias.includes(dia);
@@ -155,8 +156,8 @@ export class Sistema {
 
   /**
    * Retorna true si el Padre se encuentra en la listaPadres
-   * @param {Padre} padre 
-   * @returns {Boolean}
+   * @param {Padre} padre
+   * @return {Boolean}
    */
   containsPadre(padre) {
     return this.#listaPadres.includes(padre);
@@ -164,7 +165,7 @@ export class Sistema {
 
   /**
    * Retorna un toString() de la clase
-   * @returns {String}
+   * @return {String}
    */
   toString() {
     return 'Listas del sistema';

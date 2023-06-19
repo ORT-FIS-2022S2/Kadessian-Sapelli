@@ -1,5 +1,7 @@
+/**
+ * Clase Menu
+ */
 export class Menu {
-
   #nombre;
   #descripcion;
   #imagen;
@@ -13,20 +15,20 @@ export class Menu {
   #sodio;
 
   /**
-   * 
-   * @param {String} nombre 
-   * @param {String} descripcion 
-   * @param {String} imagen 
-   * @param {Number} calorias 
-   * @param {Number} hierro 
-   * @param {Number} grasas 
-   * @param {Number} proteinas 
-   * @param {Number} vitC 
-   * @param {Number} carbohidratos 
-   * @param {Number} sodio 
+   *
+   * @param {String} nombre
+   * @param {String} descripcion
+   * @param {String} imagen
+   * @param {Number} calorias
+   * @param {Number} hierro
+   * @param {Number} grasas
+   * @param {Number} proteinas
+   * @param {Number} vitC
+   * @param {Number} carbohidratos
+   * @param {Number} sodio
    */
   constructor(nombre, descripcion, imagen, calorias, hierro, grasas, proteinas,
-    vitC, carbohidratos, sodio) {
+      vitC, carbohidratos, sodio) {
     this.#nombre = nombre;
     this.#descripcion = descripcion;
     this.#imagen = imagen;
@@ -41,8 +43,9 @@ export class Menu {
   }
 
   /**
-   * Establece alergenos (es un array que contiene 'lacteos','gluten','huevos','anacarados')
-   * @param {Array.<String>} alergenos 
+   * Establece alergenos
+   * (es un array que contiene 'lacteos','gluten','huevos','anacarados')
+   * @param {Array.<String>} alergenos
    */
   setAlergenos(alergenos) {
     this.#alergenos = alergenos;
@@ -50,7 +53,7 @@ export class Menu {
 
   /**
    * Retorna el nombre del menú
-   * @returns {String}
+   * @return {String}
    */
   getNombre() {
     return this.#nombre;
@@ -58,7 +61,7 @@ export class Menu {
 
   /**
    * Retorna descripción del menú
-   * @returns {String}
+   * @return {String}
    */
   getDescripcion() {
     return this.#descripcion;
@@ -66,7 +69,7 @@ export class Menu {
 
   /**
    * Retorna un link con la imagen del menú
-   * @returns {String}
+   * @return {String}
    */
   getImagen() {
     return this.#imagen;
@@ -74,7 +77,7 @@ export class Menu {
 
   /**
    * Retorna el array de alergenos
-   * @returns {Array.<String>}
+   * @return {Array.<String>}
    */
   getAlergenos() {
     return this.#alergenos;
@@ -82,7 +85,7 @@ export class Menu {
 
   /**
    * Retorna la cantidad de calorias del menú
-   * @returns {Number}
+   * @return {Number}
    */
   getCalorias() {
     return this.#calorias;
@@ -90,7 +93,7 @@ export class Menu {
 
   /**
    * Retorna la cantidad de hierro del menú
-   * @returns {Number}
+   * @return {Number}
    */
   getHierro() {
     return this.#hierro;
@@ -98,7 +101,7 @@ export class Menu {
 
   /**
    * Retorna la cantidad de grasas del menú
-   * @returns {Number}
+   * @return {Number}
    */
   getGrasas() {
     return this.#grasas;
@@ -106,7 +109,7 @@ export class Menu {
 
   /**
    * Retorna la cantidad de proteinas del menú
-   * @returns {Number}
+   * @return {Number}
    */
   getProteinas() {
     return this.#proteinas;
@@ -114,7 +117,7 @@ export class Menu {
 
   /**
    * Retorna la cantidad de vitamina c del menú
-   * @returns {Number}
+   * @return {Number}
    */
   getVitC() {
     return this.#vitC;
@@ -122,7 +125,7 @@ export class Menu {
 
   /**
    * Retorna la cantidad de carbohidratos del menú
-   * @returns {Number}
+   * @return {Number}
    */
   getCarbohidratos() {
     return this.#carbohidratos;
@@ -130,7 +133,7 @@ export class Menu {
 
   /**
    * Retorna la cantidad de sodio del menú
-   * @returns {Number}
+   * @return {Number}
    */
   getSodio() {
     return this.#sodio;
@@ -138,7 +141,7 @@ export class Menu {
 
   /**
    * Establece nombre del menú
-   * @param {String} nombre 
+   * @param {String} nombre
    */
   setNombre(nombre) {
     if (!nombre || typeof nombre !== 'string') {
@@ -149,7 +152,7 @@ export class Menu {
 
   /**
    * Establece descripción del menú
-   * @param {String} descripcion 
+   * @param {String} descripcion
    */
   setDescripcion(descripcion) {
     if (!descripcion || typeof descripcion !== 'string') {
@@ -160,7 +163,7 @@ export class Menu {
 
   /**
    * Establece link de la imagen del menú
-   * @param {String} imagen 
+   * @param {String} imagen
    */
   setImagen(imagen) {
     if (!imagen || typeof imagen !== 'string') {
@@ -171,7 +174,7 @@ export class Menu {
 
   /**
    * Establece cantidad de calorias
-   * @param {Number} calorias 
+   * @param {Number} calorias
    */
   setCalorias(calorias) {
     if (!calorias || typeof calorias !== 'number' || calorias < 0) {
@@ -182,7 +185,7 @@ export class Menu {
 
   /**
    * Establece cantidad de hierro
-   * @param {Number} hierro 
+   * @param {Number} hierro
    */
   setHierro(hierro) {
     if (typeof hierro !== 'number' || hierro < 0) {
@@ -193,7 +196,7 @@ export class Menu {
 
   /**
    * Establece cantidad de grasas
-   * @param {Number} grasas 
+   * @param {Number} grasas
    */
   setGrasas(grasas) {
     if (typeof grasas !== 'number' || grasas < 0) {
@@ -204,7 +207,7 @@ export class Menu {
 
   /**
    * Establece cantidad de proteinas
-   * @param {Number} proteinas 
+   * @param {Number} proteinas
    */
   setProteinas(proteinas) {
     if (typeof proteinas !== 'number' || proteinas < 0) {
@@ -215,7 +218,7 @@ export class Menu {
 
   /**
    * Establece la cantidad de vitamina C del menú
-   * @param {Number} vitC 
+   * @param {Number} vitC
    */
   setVitC(vitC) {
     if (typeof vitC !== 'number' || vitC < 0) {
@@ -226,7 +229,7 @@ export class Menu {
 
   /**
    * Establece cantidad de carbohidratos del menú
-   * @param {Number} carbohidratos 
+   * @param {Number} carbohidratos
    */
   setCarbohidratos(carbohidratos) {
     if (typeof carbohidratos !== 'number' || carbohidratos < 0) {
@@ -237,7 +240,7 @@ export class Menu {
 
   /**
    * Establece la cantidad de sodio del menú
-   * @param {Number} sodio 
+   * @param {Number} sodio
    */
   setSodio(sodio) {
     if (typeof sodio !== 'number' || sodio < 0) {
@@ -248,7 +251,7 @@ export class Menu {
 
   /**
    * Retorna un toString de la clase Menu
-   * @returns {String}
+   * @return {String}
    */
   toString() {
     return this.#nombre;

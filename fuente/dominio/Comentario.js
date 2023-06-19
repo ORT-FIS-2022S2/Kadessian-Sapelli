@@ -1,14 +1,16 @@
+/**
+ * Clase Comentario
+ */
 export class Comentario {
-
   #padre;
   #mensaje;
   #estrellas;
 
   /**
-   * 
-   * @param {Padre} padre 
-   * @param {String} mensaje 
-   * @param {Number} estrellas 
+   *
+   * @param {Padre} padre
+   * @param {String} mensaje
+   * @param {Number} estrellas
    */
   constructor(padre, mensaje, estrellas) {
     this.#padre = padre;
@@ -18,7 +20,7 @@ export class Comentario {
 
   /**
    * Retorna el objeto Padre del Comentario
-   * @returns {Padre}
+   * @return {Padre}
    */
   getPadre() {
     return this.#padre;
@@ -26,7 +28,7 @@ export class Comentario {
 
   /**
    * Retorna el mensaje del Comentario
-   * @returns {String}
+   * @return {String}
    */
   getMensaje() {
     return this.#mensaje;
@@ -34,7 +36,7 @@ export class Comentario {
 
   /**
    * Retorna cantidad de estrellas
-   * @returns {Number}
+   * @return {Number}
    */
   getEstrellas() {
     return this.#estrellas;
@@ -42,7 +44,7 @@ export class Comentario {
 
   /**
    * Establece el padre para el Comentario
-   * @param {Padre} padre 
+   * @param {Padre} padre
    */
   setPadre(padre) {
     if (padre === null) {
@@ -53,7 +55,7 @@ export class Comentario {
 
   /**
    * Establece el mensaje para el Comentario
-   * @param {String} mensaje 
+   * @param {String} mensaje
    */
   setMensaje(mensaje) {
     if (mensaje === '') {
@@ -64,18 +66,19 @@ export class Comentario {
 
   /**
    * Establece el numero de estrellas para el Comentario
-   * @param {Number} estrellas 
+   * @param {Number} estrellas
    */
   setEstrellas(estrellas) {
     if (estrellas < 0 || estrellas > 5) {
-      throw new Error('El valor de las estrellas no es válido. Debe estar entre 0 y 5.');
+      mensaje='El valor de las estrellas no es válido. Debe estar entre 0 y 5.';
+      throw new Error(mensaje);
     }
     this.#estrellas = estrellas;
   }
 
   /**
    * Retorna el toString de la clase
-   * @returns {String}
+   * @return {String}
    */
   toString() {
     return this.#mensaje;
