@@ -1,7 +1,7 @@
-import { Dia } from '../../dominio/Dia.js';
-import { Menu } from '../../dominio/Menu.js';
-import { Comentario } from '../../dominio/Comentario.js';
-import { sistema } from './DatosPreCargados.js';
+import {Dia} from '../../dominio/Dia.js';
+import {Menu} from '../../dominio/Menu.js';
+import {Comentario} from '../../dominio/Comentario.js';
+import {sistema} from './DatosPreCargados.js';
 const tituloMenu = document.getElementById('tituloMenu');
 const btnComprar = document.getElementById('btnComprar');
 const calendario = document.getElementById('calendario');
@@ -163,7 +163,7 @@ calendario.addEventListener('change', () => {
 });
 
 /**
- *
+ * Esta función limpia la sección donde se visualiza el menú de la fecha
  */
 function limpiarSeccionCalendario() {
   calorias.innerText = '';
@@ -177,7 +177,7 @@ function limpiarSeccionCalendario() {
 }
 
 /**
- *
+ * Esta función llena la sección donde se visualiza el menú de la fecha
  * @param {Menu} menu
  */
 function llenarCamposMenu(menu) {
@@ -208,7 +208,8 @@ function llenarCamposMenu(menu) {
 }
 
 /**
- *
+ * Esta función llena la lista de menús comprados por el padre en su panel
+ * de control
  * @param {Element} ul
  * @param {Array.<Dia>} listaDiasComprados
  */
@@ -260,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- *
+ * Genera todos los comentarios de cada dia, y los añade a una lista desordenada
  * @param {Dia} dia
  * @param {Element} ul
  */
@@ -278,7 +279,7 @@ function generarListaComentarios(dia, ul) {
 }
 
 /**
- *
+ * Limpia la lista de la sección comentarios de cada menú
  */
 function limpiarListaComentarios() {
   listaComentario.innerHTML = '';
@@ -287,7 +288,9 @@ function limpiarListaComentarios() {
 }
 
 /**
- *
+ * Esta función crea un comentario pasandole nombre, contenido, estrellas y lo hace
+ * con el css importado de flowbite (Estrellas y formato de cada comentario)
+ * Luego se añade el comentario a el elemento lista desordenada pasada por parametro
  * @param {String} nombre
  * @param {String} cantidadEstrellas
  * @param {String} contenido
@@ -326,7 +329,7 @@ function generarComentario(nombre, cantidadEstrellas, contenido, ul) {
 }
 
 /**
- *
+ * Esta función genera los tags de los alergenos con css importado de flowbite
  * @param {Array.<string>} palabras
  * @return {Element}
  */
@@ -364,7 +367,8 @@ function generarTags(palabras) {
 }
 
 /**
- *
+ * Esta función es para llenar un select que contiene los menús
+ * que puede ingresar la directora al sistema
  * @param {Array.<Menu>} arrayDatos
  */
 function llenarListaMenusDirectora(arrayDatos) {
@@ -397,7 +401,7 @@ cerrarDivComentario.addEventListener('click', () => {
 });
 
 /**
- *
+ * Esta funcion es para limpiar el imput de envío de comentario
  */
 function limpiarCamposComentario() {
   campoComentario.value = '';
@@ -411,7 +415,6 @@ function limpiarCamposComentario() {
 
 // Agregar el controlador de eventos al botón de envío
 btnEnviarComentario.addEventListener('click', () => {
-  // Aquí puedes agregar la lógica para enviar el mensaje
   const cmntNuevo = campoComentario.value;
   let valorRadioButton = '5';
   if (cmntNuevo != '') {
@@ -473,11 +476,10 @@ btnFormCrearMenu.addEventListener('click', function () {
 });
 
 /**
- *
+ * Esta funcion crea un menú ingresado por la directora
+ * Al darle click a agregar en el form de su configuracion
  */
 function crearMenu() {
-  // Esta funcion crea un menú ingresado por la directora
-  // Al darle click a agregar en el form de su configuracion
   const nomb = campoNombreMenu.value;
   const desc = campoDescripcionMenu.value;
   const img = campoImagenMenu.value;
@@ -515,7 +517,7 @@ function crearMenu() {
 }
 
 /**
- *
+ * Retorna true si los campos para el nuevo menú a ingresar son válidos
  * @param {String} nom
  * @param {String} desc
  * @param {String} img
@@ -542,7 +544,7 @@ function camposValidos(nom, desc, img, cal, prot, carbo, vit, hie, sal, grasa) {
 }
 
 /**
- *
+ * Limpia los imputs de la sección creación de un nuevo menú de la directora
  */
 function limpiarAgregarMenuCampos() {
   campoNombreMenu.value = '';

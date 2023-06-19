@@ -15,7 +15,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Agrega un Dia a la listaDias
    * @param {Dia} dia 
    */
   addDia(dia) {
@@ -23,7 +23,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Agrega un Padre a la listaPadres
    * @param {Padre} padre 
    */
   addPadre(padre) {
@@ -31,7 +31,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Agrega un Menu a la listaMenus
    * @param {Menu} menu 
    */
   addMenu(menu) {
@@ -39,7 +39,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Borra un Menú pasado por parametro de la listaMenus
    * @param {Menu} menu 
    */
   deleteMenu(menu) {
@@ -52,7 +52,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Borra un Dia pasado por parametro de la listaDias
    * @param {Dia} dia 
    */
   deleteDia(dia) {
@@ -65,7 +65,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Borra un Padre pasado por parametro de la listaPadres
    * @param {Padre} padre 
    */
   deletePadre(padre) {
@@ -78,7 +78,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Retorna el arraylist listaMenus
    * @returns {Array.<Menu>}
    */
   getListaMenus() {
@@ -86,7 +86,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Retorna el arraylist listaPadres
    * @returns {Array.<Padre>}
    */
   getListaPadres() {
@@ -94,7 +94,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Retorna el arraylist ListaDias
    * @returns {Array.<Dia>}
    */
   getListaDias() {
@@ -102,7 +102,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Entrega un objeto menú pasandole un string que es el nombre del menú
    * @param {String} nombre 
    * @returns {Menu}
    */
@@ -117,10 +117,10 @@ export class Sistema {
     return retorno;
   }
 
-  //Busca en la lista de dias el dia pasado por parametro si encuentra su fecha
-  //retorna un objeto menu
+
   /**
-   * 
+   * Busca en la lista de dias el dia pasado por parametro si encuentra su fecha
+   * retorna un objeto menu
    * @param {Date} fecha 
    * @returns {Dia}
    */
@@ -136,7 +136,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Retorna true si el Menu se encuentra en la listaMenus
    * @param {Menu} menu 
    * @returns {Boolean}
    */
@@ -145,7 +145,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Retorna true si el Dia se encuentra en la listaDias
    * @param {Dia} dia 
    * @returns {Boolean}
    */
@@ -154,7 +154,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Retorna true si el Padre se encuentra en la listaPadres
    * @param {Padre} padre 
    * @returns {Boolean}
    */
@@ -163,7 +163,7 @@ export class Sistema {
   }
 
   /**
-   * 
+   * Retorna un toString() de la clase
    * @returns {String}
    */
   toString() {

@@ -41,7 +41,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Establece alergenos (es un array que contiene 'lacteos','gluten','huevos','anacarados')
    * @param {Array.<String>} alergenos 
    */
   setAlergenos(alergenos) {
@@ -49,7 +49,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Retorna el nombre del menú
    * @returns {String}
    */
   getNombre() {
@@ -57,7 +57,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Retorna descripción del menú
    * @returns {String}
    */
   getDescripcion() {
@@ -65,7 +65,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Retorna un link con la imagen del menú
    * @returns {String}
    */
   getImagen() {
@@ -73,7 +73,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Retorna el array de alergenos
    * @returns {Array.<String>}
    */
   getAlergenos() {
@@ -81,7 +81,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Retorna la cantidad de calorias del menú
    * @returns {Number}
    */
   getCalorias() {
@@ -89,7 +89,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Retorna la cantidad de hierro del menú
    * @returns {Number}
    */
   getHierro() {
@@ -97,7 +97,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Retorna la cantidad de grasas del menú
    * @returns {Number}
    */
   getGrasas() {
@@ -105,7 +105,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Retorna la cantidad de proteinas del menú
    * @returns {Number}
    */
   getProteinas() {
@@ -113,7 +113,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Retorna la cantidad de vitamina c del menú
    * @returns {Number}
    */
   getVitC() {
@@ -121,7 +121,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Retorna la cantidad de carbohidratos del menú
    * @returns {Number}
    */
   getCarbohidratos() {
@@ -129,7 +129,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Retorna la cantidad de sodio del menú
    * @returns {Number}
    */
   getSodio() {
@@ -137,7 +137,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Establece nombre del menú
    * @param {String} nombre 
    */
   setNombre(nombre) {
@@ -148,7 +148,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Establece descripción del menú
    * @param {String} descripcion 
    */
   setDescripcion(descripcion) {
@@ -159,7 +159,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Establece link de la imagen del menú
    * @param {String} imagen 
    */
   setImagen(imagen) {
@@ -170,7 +170,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Establece cantidad de calorias
    * @param {Number} calorias 
    */
   setCalorias(calorias) {
@@ -181,7 +181,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Establece cantidad de hierro
    * @param {Number} hierro 
    */
   setHierro(hierro) {
@@ -192,7 +192,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Establece cantidad de grasas
    * @param {Number} grasas 
    */
   setGrasas(grasas) {
@@ -203,7 +203,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Establece cantidad de proteinas
    * @param {Number} proteinas 
    */
   setProteinas(proteinas) {
@@ -214,7 +214,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Establece la cantidad de vitamina C del menú
    * @param {Number} vitC 
    */
   setVitC(vitC) {
@@ -225,7 +225,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Establece cantidad de carbohidratos del menú
    * @param {Number} carbohidratos 
    */
   setCarbohidratos(carbohidratos) {
@@ -236,7 +236,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Establece la cantidad de sodio del menú
    * @param {Number} sodio 
    */
   setSodio(sodio) {
@@ -247,7 +247,7 @@ export class Menu {
   }
 
   /**
-   * 
+   * Retorna un toString de la clase Menu
    * @returns {String}
    */
   toString() {

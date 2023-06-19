@@ -17,7 +17,7 @@ export class Comentario {
   }
 
   /**
-   * 
+   * Retorna el objeto Padre del Comentario
    * @returns {Padre}
    */
   getPadre() {
@@ -25,7 +25,7 @@ export class Comentario {
   }
 
   /**
-   * 
+   * Retorna el mensaje del Comentario
    * @returns {String}
    */
   getMensaje() {
@@ -33,7 +33,7 @@ export class Comentario {
   }
 
   /**
-   * 
+   * Retorna cantidad de estrellas
    * @returns {Number}
    */
   getEstrellas() {
@@ -41,7 +41,7 @@ export class Comentario {
   }
 
   /**
-   * 
+   * Establece el padre para el Comentario
    * @param {Padre} padre 
    */
   setPadre(padre) {
@@ -52,7 +52,7 @@ export class Comentario {
   }
 
   /**
-   * 
+   * Establece el mensaje para el Comentario
    * @param {String} mensaje 
    */
   setMensaje(mensaje) {
@@ -63,7 +63,7 @@ export class Comentario {
   }
 
   /**
-   * 
+   * Establece el numero de estrellas para el Comentario
    * @param {Number} estrellas 
    */
   setEstrellas(estrellas) {
@@ -74,7 +74,7 @@ export class Comentario {
   }
 
   /**
-   * 
+   * Retorna el toString de la clase
    * @returns {String}
    */
   toString() {

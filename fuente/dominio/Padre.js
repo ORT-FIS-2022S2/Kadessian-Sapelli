@@ -46,7 +46,7 @@ export class Padre {
   }
 
   /**
-   * 
+   * Retorna el Nombre del padre
    * @returns {String}
    */
   getNombre() {
@@ -54,7 +54,7 @@ export class Padre {
   }
 
   /**
-   * 
+   * Retorna la CI del padre
    * @returns {Number}
    */
   getCi() {
@@ -62,7 +62,7 @@ export class Padre {
   }
 
   /**
-   * 
+   * Retorna los Tickets del padre
    * @returns {Number}
    */
   getTickets() {
@@ -70,7 +70,7 @@ export class Padre {
   }
 
   /**
-   * 
+   * Retorna la listaMenuComprado sorteada por fecha de fecha mas actual a posterior
    * @returns {Array.<Dia>}
    */
   getListaMenuComprado() {
@@ -84,7 +84,7 @@ export class Padre {
   }
 
   /**
-   * 
+   * Establece Nombre del padre
    * @param {String} nombre 
    */
   setNombre(nombre) {
@@ -95,7 +95,7 @@ export class Padre {
   }
 
   /**
-   * 
+   * Establece CI del padre
    * @param {Number} ci 
    */
   setCi(ci) {
@@ -106,7 +106,7 @@ export class Padre {
   }
 
   /**
-   * 
+   * Establece cantidad de tickets
    * @param {Number} tickets 
    */
   setTickets(tickets) {
@@ -117,7 +117,7 @@ export class Padre {
   }
 
   /**
-   * 
+   * Retorna true si el dia pasado por parametro se encuentra en listaMenuComprado
    * @param {Dia} dia 
    * @returns {Boolean}
    */
@@ -132,7 +132,7 @@ export class Padre {
   }
 
   /**
-   * 
+   * Añade un Dia al arrayList listaMenuComprado
    * @param {Dia} dia 
    */
   comprarMenuDia(dia) {
@@ -144,7 +144,7 @@ export class Padre {
   }
 
   /**
-   * 
+   * Aumenta la cantidad de tickets de la clase
    * @param {Number} cantTickets 
    */
   comprarTickets(cantTickets) {
@@ -155,7 +155,7 @@ export class Padre {
   }
 
   /**
-   * 
+   * Retorna el toString() de la clase
    * @returns {String}
    */
   toString() {
@@ -163,7 +163,7 @@ export class Padre {
   }
 
   /**
-   * 
+   * Retorna true si es valida la nueva instancia de la clase si no arroja excepción
    * @returns {Boolean}
    */
   isValid() {
