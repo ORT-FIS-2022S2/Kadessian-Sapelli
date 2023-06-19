@@ -1,3 +1,9 @@
+.degradeLetraFecha {
+  background: linear-gradient(to right, #e61d81, #fca92d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 #listaComentario {
   margin-left: 30%;
   margin-right: 30%;

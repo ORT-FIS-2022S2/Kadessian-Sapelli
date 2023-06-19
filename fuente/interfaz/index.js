@@ -2,6 +2,7 @@ import {Dia} from '../../dominio/Dia.js';
 import {Menu} from '../../dominio/Menu.js';
 import {Comentario} from '../../dominio/Comentario.js';
 import {sistema} from './DatosPreCargados.js';
+const btnComentario = document.getElementById('btnComentario');
 const tituloMenu = document.getElementById('tituloMenu');
 const btnComprar = document.getElementById('btnComprar');
 const calendario = document.getElementById('calendario');
@@ -49,7 +50,6 @@ const usuario = sistema.getListaPadres()[0];
 
 // Evento inicio al cargar la pagina por primera vez
 window.addEventListener('load', () => {
-  responsividad();
   nombrePadre.innerText = 'Nombre del padre: ' + usuario.getNombre();
   cantTickets.innerText = 'Cantidad de Tickets: ' + usuario.getTickets();
   // Setea la fecha del calendario al día actual
@@ -71,10 +71,10 @@ window.addEventListener('load', () => {
   errorAlComentar.classList.add('esconder');
   divComentarioVacio.classList.add('esconder');
   formularioCrearMenu.classList.add('esconder');
+  responsividad();
 });
 
 btnModoDirectora.addEventListener('click', () => {
-  responsividad();
   divComentarioVacio.classList.add('esconder');
   document.getElementById('divCompraExitosa').classList.add('esconder');
   document.getElementById('divNoSePuedeComprar').classList.add('esconder');
@@ -111,6 +111,7 @@ btnModoDirectora.addEventListener('click', () => {
     document.getElementById('divEsconderPadre').classList.add('invisible');
     limpiarAgregarMenuCampos();
   }
+  responsividad();
 });
 
 // Evento boton comprar
@@ -641,18 +642,21 @@ function responsividad() {
     btnPanelMenu.classList.add('px-2');
     btnEnviarComentario.classList.add('px-2');
     btnAgregarNuevoMenu.classList.add('px-2');
-    // campoComentario.rows='2';
+    btnComentario.classList.remove('px-5');
+    btnComentario.classList.add('px-2');
     btnInfoPadre.classList.remove('px-5');
     btnInfoPadre.classList.add('px-2');
     tituloDes.style.fontSize='60%';
+    alergenos.style.fontSize='80%';
+    cantComentarios.style.fontSize='60%';
+    promedio.style.fontSize='60%';
   } else {
     tituloDes.style.fontSize='100%';
     divNoHayMenu.style.height='100%';
     document.getElementById('fotoMenu').style.height='310px';
     tituloMenu.style.fontSize = '100%';
     descripcionMenu.style.fontSize = '100%';
-    cantComentarios.style.fontSize = '100%';
-    divSeccionComentarios.style.width='100%';
+    divSeccionComentarios.style.width='40%';
     descripcionMenu.style.fontSize = '100%';
     btnComentar.classList.add('px-5');
     btnComprar.classList.add('px-5');
@@ -662,5 +666,11 @@ function responsividad() {
     btnModoDirectora.classList.remove('px-2');
     btnInfoPadre.classList.add('px-5');
     btnInfoPadre.classList.remove('px-2');
+    btnComentario.classList.remove('px-5');
+    btnComentario.classList.add('px-5');
+    btnComentar.classList.remove('px-2');
+    alergenos.style.fontSize='100%';
+    cantComentarios.style.fontSize='100%';
+    promedio.style.fontSize='100%';
   }
 }
