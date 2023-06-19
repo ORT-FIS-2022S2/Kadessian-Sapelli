@@ -70,7 +70,7 @@ export class Comentario {
    */
   setEstrellas(estrellas) {
     if (estrellas < 0 || estrellas > 5) {
-      mensaje='El valor de las estrellas no es válido. Debe estar entre 0 y 5.';
+      const mensaje='El valor de las estrellas no es válido. Debe estar entre 0 y 5.';
       throw new Error(mensaje);
     }
     this.#estrellas = estrellas;
