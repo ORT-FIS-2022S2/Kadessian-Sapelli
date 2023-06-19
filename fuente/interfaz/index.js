@@ -556,10 +556,12 @@ function camposValidos(nom, desc, img, cal, prot, carbo, vit, hie, sal, grasa) {
     retorno = false;
   }
   if (isNaN(Number(cal)) || isNaN(Number(prot)) || isNaN(Number(carbo)) ||
-    isNaN(Number(vit)) || isNaN(Number(hie)) || isNaN(Number(sal)) ||
-    isNaN(Number(grasa))) {
-    retorno = false;
-  }
+  isNaN(Number(vit)) || isNaN(Number(hie)) || isNaN(Number(sal)) ||
+  isNaN(Number(grasa)) || cal === '' || prot === '' || carbo === '' ||
+  vit === '' || hie === '' || sal === '' || grasa === '') {
+  retorno = false;
+}
+
   return retorno;
 }
 
