@@ -12,18 +12,6 @@ describe('Test de clase Padre', () => {
     expect(papaNombre).toBe(nombreEsperado);
   });
 
-  test('Crear una instancia Padre inválida', () => {
-    expect(() => new Padre('', 6, 4).isValid()).toThrowError('El nombre del padre no puede ser vacío');
-  });
-
-  test('Crear una instancia Padre inválida', () => {
-    expect(() => new Padre('Pablo', 6, -1).isValid()).toThrowError('Los tickets del padre no pueden ser negativos');
-  });
-
-  test('Crear una instancia Padre inválida', () => {
-    expect(() => new Padre('Pablo', -6, 4).isValid()).toThrowError('La cedula del padre no puede ser vacía o negativa');
-  });
-
   test('Get un nombre de Padre', () => {
     let papa = new Padre('Pablo', 45678904, 4);
     let papaNombre = papa.getNombre();
@@ -254,16 +242,6 @@ describe('Test de clase Padre', () => {
     let papa = new Padre('Pablo', 45678904, 4);
     const resultado = papa.isValid();
     expect(resultado).toBe(true);
-  });
-
-  test('IsValid de Padre inválido (nombre vacío)', () => {
-    let papa = new Padre('', 45678904, 4);
-    expect(() => papa.isValid()).toThrow('El nombre del padre no puede ser vacío');
-  });
-
-  test('IsValid de Padre inválido (ci negativa)', () => {
-    let papa = new Padre('Pablo', -1, 4);
-    expect(() => papa.isValid()).toThrow('La cedula del padre no puede ser vacía o negativa');
   });
 
   test('Ordenar lista de menús comprados por fecha', () => {

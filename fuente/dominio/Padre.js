@@ -181,11 +181,11 @@ export class Padre {
   isValid() {
     if (this.#nombre === undefined ||
        this.#nombre === null || this.#nombre === '') {
-      throw new Error('El nombre del padre no puede ser vacío');
+      throw new Error('El nombre del usuario no puede ser vacío');
     }
     if (this.#ci === undefined ||
       this.#ci === null || this.#ci === '' || this.#ci < 0) {
-      throw new Error('La cedula del padre no puede ser vacía o negativa');
+      throw new Error('La contraseña del usuario es incorrecta');
     }
     if (this.#tickets === undefined ||
       this.#tickets === null || this.#tickets < 0) {
