@@ -51,7 +51,7 @@ export class Padre {
    * @param {String} password
    * @return {String}
    */
-  getPassword(password) {
+  getPassword() {
     return this.#password;
   }
 
@@ -60,7 +60,7 @@ export class Padre {
    * @param {String} usuario
    * @return {String}
    */
-  getUsuario(usuario) {
+  getUsuario() {
     return this.#usuario;
   }
 
