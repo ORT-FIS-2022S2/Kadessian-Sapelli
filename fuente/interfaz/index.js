@@ -48,6 +48,11 @@ let panelDirectora = false;
 let directora = false;
 const usuario = sistema.getListaPadres()[0];
 
+//loggin
+const nombreUsuario = sistema.getElementById('usuario');
+const contraseñaUsuario = sistema.getElementById('contraseña');
+const botonloggin = sistema.getElementById('botonLoggin');
+
 // Evento inicio al cargar la pagina por primera vez
 window.addEventListener('load', () => {
   nombrePadre.innerText = 'Nombre del padre: ' + usuario.getNombre();
