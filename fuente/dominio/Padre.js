@@ -6,6 +6,8 @@ export class Padre {
   #tickets;
   #ci;
   #listaMenuComprado;
+  #usuario;
+  #password;
 
   /**
    *
@@ -18,6 +20,48 @@ export class Padre {
     this.#ci = ci;
     this.#tickets = tickets;
     this.#listaMenuComprado = [];
+    this.#usuario;
+    this.#password;
+  }
+
+  /**
+   *
+   * @param {String} password
+   */
+  setPassword(password) {
+    if (password.length < 8) {
+      throw new Error('Su password no puede ser largo menor a 8');
+    }
+    this.#password=password;
+  }
+
+  /**
+   *
+   * @param {String} usuario
+   */
+  setUsuario(usuario) {
+    if (usuario.length < 4) {
+      throw new Error('Su usuario no puede ser largo menor a 4');
+    }
+    this.#usuario=usuario;
+  }
+
+  /**
+   *
+   * @param {String} password
+   * @return {String}
+   */
+  getPassword(password) {
+    return this.#password;
+  }
+
+  /**
+   *
+   * @param {String} usuario
+   * @return {String}
+   */
+  getUsuario(usuario) {
+    return this.#usuario;
   }
 
   /**

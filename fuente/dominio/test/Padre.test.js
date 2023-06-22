@@ -5,6 +5,54 @@ import { Dia } from '../Dia.js';
 
 describe('Test de clase Padre', () => {
 
+
+  test('Obtener un password de padre', () => {
+    let papa = new Padre('Pablo', 45678904, 4);
+    let papaPassword = 'holaholahola';
+    papa.setPassword(papaPassword);
+    expect(papa.getPassword()).toBe('holaholahola');
+  });
+
+  test('Obtener un usuario de padre', () => {
+    let papa = new Padre('Pablo', 45678904, 4);
+    let papaUsuario = 'holaholahola';
+    papa.setUsuario(papaUsuario);
+    expect(papa.getUsuario()).toBe('holaholahola');
+  });
+
+  test('Setear un password valido', () => {
+    let papa = new Padre('Pablo', 45678904, 4);
+    let papaPassword = 'holaholahola';
+    papa.setPassword(papaPassword);
+    expect(papa.getPassword()).toBe('holaholahola');
+  });
+
+  test('Setear un password invalido', () => {
+    let papa = new Padre('Pablo', 45678904, 4);
+    let papaPassword = 'hola';
+    expect(() => papa.setPassword(papaPassword)).toThrow('Su password no puede ser largo menor a 8');
+  });
+
+  test('Setear un usuario valido', () => {
+    let papa = new Padre('Pablo', 45678904, 4);
+    let papaUsuario = 'pablo500';
+    papa.setUsuario(papaUsuario);
+    expect(papa.getUsuario()).toBe(papaUsuario);
+  });
+
+  test('Setear un usuario invalido', () => {
+    let papa = new Padre('Pablo', 45678904, 4);
+    let papaUsuario = 'h';
+    expect(() => papa.setUsuario(papaUsuario)).toThrow('Su usuario no puede ser largo menor a 4');
+  });
+
+  test('Crear una instancia Padre válida', () => {
+    let papa = new Padre('Pablo', 45678904, 4);
+    let papaNombre = papa.getNombre();
+    let nombreEsperado = 'Pablo';
+    expect(papaNombre).toBe(nombreEsperado);
+  });
+
   test('Crear una instancia Padre válida', () => {
     let papa = new Padre('Pablo', 45678904, 4);
     let papaNombre = papa.getNombre();
