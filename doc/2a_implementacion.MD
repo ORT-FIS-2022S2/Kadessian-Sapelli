@@ -131,3 +131,5 @@ Luego estan las carpetas docs (No contiene el software si no la documentación),
 # Interfaz de usuario
 
 Para la realización de la interfaz de usuario nos basamos en los bocetos de los requerimientos, y en otros principios de usabilidad, utilizamos un diseño limpio y minimalista para que quede lo mas claro posible como funciona cada componente, otro principio que desarrollamos es que cada acción que realiza el usuario tiene una retroalimentación (se visualizan mensajes para todo acción del usuario).
+Tambien aplicamos responsibidad a nuestro proyecto para que la interfaz sea adecuada en todas las resoluciones de pantalla.
+<img src=>
