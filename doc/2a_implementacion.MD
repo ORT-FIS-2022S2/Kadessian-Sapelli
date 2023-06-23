@@ -98,7 +98,7 @@ Con estas dos funciones enrutamos el archivo index.html al puerto 3000 de nuestr
 Aquí reportamos un issue ya que no encontramos forma de configurar un server con una dispoción de carpetas deseada, aquí el link a dicho reporte:
 https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/3#issue-1771661121
 
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/carpetas.PNG></img>
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/carpetas.png></img>
 El proyecto dispone de las siguientes carpetas en la carpeta fuente:
 
 1. **Dominio:** Contiene las clases del código y la carpeta test con los test unitarios de cada clase.
@@ -117,15 +117,15 @@ Para la realización de la interfaz de usuario nos basamos en los bocetos de los
 ## Responsividad
 Tambien aplicamos responsibidad a nuestro proyecto para que la interfaz sea adecuada en todas las resoluciones de pantalla.
 *Responsividad pantallas grandes mayor a 1500px de ancho:*
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveGrande.PNG></img>
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveGrande.png></img>
 *Responsividad pantallas medias menor a 1000px de ancho:*
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveMedia.PNG></img>
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveMedia.png></img>
 *Responsividad pantallas pequeñas menor a 800px de ancho:*
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveChica.PNG></img>
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveChica.png></img>
 
 ## Accesibilidad
 Nuestro proyecto cumple con los principios de accesibilidad WCAG lo comprobamos con la extensión wave.
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/WaveDespues.PNG></img>
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/WaveDespues.png></img>
 
 El único error que tuvimos de contraste no lo podemos arreglar ya que es por las estrellas de el css de una libreria externa.
 Reportamos el issue https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/4
@@ -135,10 +135,10 @@ Reportamos el issue https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/4
 ## Estilo de codificación
 La codificación la realizamos en el IDE Visual Studio Code, respetando el estandar de codificación 'google style' el cual comprobamos con esLint, para cada código de js.
 **Eslint con 0 errores para las clases del dominio:**
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/eslintDominio.PNG></img>
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/eslintDominio.png></img>
 
 **Eslint para el codigo index.js:**
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/eslintindex.PNG></img>
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/eslintindex.png></img>
 Reporte de issue por lineas muy largas: https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/5
 
 ## Buenas practicas de OOP
@@ -165,7 +165,7 @@ Tratamos de implementar las siguientes buenas practicas de codificación en nues
 Realizamos test unitario en todas las clases del dominio, con jest y alcanzamos una cobertura del 100% para todas las clases. Cada clase del dominio tiene una clase en la carpeta test que la prueba , la cual contiene pruebas que son independientes entre sí de cada método.
 
 **Pruebas con cobertura 100% :**
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/jest100.PNG></img>
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/jest100.png></img>
 
 Para ejecutar las pruebas en la terminal en la carpeta Sapelli-Kadessian ingresar:
 > npm run test
