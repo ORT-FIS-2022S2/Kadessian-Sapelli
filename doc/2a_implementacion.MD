@@ -5,7 +5,7 @@
 | Identificación |
 | -------- |
 | Fundamentos de Ingeniería de Software     |
-| M4B - Docentes: Gerardo Matturro, Alejando Adorjan |
+| M4B - Docentes: Gerardo Matturro, Alejandro Adorjan |
 | Ana Kadessian, Jorge Sapelli |
 | 26/06/2023 |
 | https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian |
@@ -56,30 +56,11 @@ Al no tener login en nuestro sistema, el sistema contara con un usuario predefin
 5. Comprar un menú.
 6. Comentar y evaluar un menu.
 7. Observar comentarios realizados a cada menú.
-*Imagen de funcionalidad 1:*
-![](https://hackmd.io/_uploads/BkEN4VXO3.png)
-*Imagen de funcionalidad 2,3:*
-![](https://hackmd.io/_uploads/B1Cp-4QOn.png)
-*Imagen de funcionalidad 4:*
-![](https://hackmd.io/_uploads/HyiUf4Qdn.png)
-*Imagen de funcionalidad 5:*
-![](https://hackmd.io/_uploads/B1USX4m_2.png)
-*Imagen de funcionalidad 6:*
-![](https://hackmd.io/_uploads/HyRd7N7uh.png)
-*Imagen de funcionalidad 7:*
-![](https://hackmd.io/_uploads/Sye6XNQ_3.png)
 
 **Funcionalidades de usuario directora**
 1. Agregar un menú al calendario para la fecha deseada, que este disponible (sin menú ya cargado).
 2. Crear un menu desde cero, personalizando su nombre, descripción, información nutricional y alergenos.
 3. Puede visualizar los comentarios y evaluaciones de cada menú ya cargado realizado por los padres.
-*Imagen de funcionalidad 1:*
-![](https://hackmd.io/_uploads/SkLpVNXO2.png)
-*Imagen de funcionalidad 2:*
-![](https://hackmd.io/_uploads/rkAkHV7_3.png)
-*Imagen de funcionalidad 3:*
-![](https://hackmd.io/_uploads/B1_VS4mO3.png)
-
 
 ## Librerias utilizadas
 
@@ -117,7 +98,7 @@ Con estas dos funciones enrutamos el archivo index.html al puerto 3000 de nuestr
 Aquí reportamos un issue ya que no encontramos forma de configurar un server con una dispoción de carpetas deseada, aquí el link a dicho reporte:
 https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/3#issue-1771661121
 
-![](https://hackmd.io/_uploads/BymRsNXd2.png)
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/carpetas.PNG></img>
 El proyecto dispone de las siguientes carpetas en la carpeta fuente:
 
 1. **Dominio:** Contiene las clases del código y la carpeta test con los test unitarios de cada clase.
