@@ -11,36 +11,6 @@
 | https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian |
 
 # Construccion
-
-## Instalacion y iniciación del proyecto
-
-Descargar y instalar la ultima versión de Node.JS
-> https://nodejs.org/
-
-Una vez clonado este repositorio en su máquina, abra una terminal y posicionesé en la primer carpeta "/Kadessian-Sapelli" y ejecutar los siguientes comandos:
-
-```
-npm init
-```
-```
-npm install
-```
-Para ejecutar el proyecto en la misma ruta de la terminal ejecuté esté comando
-
-```
-node app.mjs
-```
-Luego de esto dirijasé al localhost:3000 de su explorador web
-> http://localhost:3000/
-
-Es importante que NO se cambie la configuracion de puertos
-
-
-Para correr pruebas jest ingrese en la misma terminal de comandos
-```
-npm run test
-```
-
 ## Objetivos
 Nuestro objetivo fue completar los requerimientos de mayor importancia definidos en la elicitacion del proycto. 
 
@@ -61,3 +31,38 @@ Al no tener login en nuestro sistema, el sistema contara con un usuario predefin
 - Agregar menu al calendario
 - Crear un menu desde cero
 - Editar un menu
+
+<br>
+
+# Interfaz de Usuario
+
+## Instalacion y iniciación del proyecto
+
+Descargar e instalar la ultima versión de Node.JS
+> https://nodejs.org/
+
+Una vez clonado este repositorio en su máquina, abra una terminal y posicionesé en la primer carpeta "/Kadessian-Sapelli" y ejecute los siguientes comandos:
+
+```
+npm init
+```
+```
+npm install
+```
+Para ejecutar el proyecto en la misma ruta de la terminal ejecuté esté comando
+
+```
+node app.mjs
+```
+Luego de esto dirijasé al localhost:3000 de su explorador web
+> http://localhost:3000/
+
+Es importante que NO se cambie la configuracion de puertos
+
+<br>
+
+Para correr pruebas jest ingrese en la misma terminal de comandos
+```
+npm run test
+```
+
