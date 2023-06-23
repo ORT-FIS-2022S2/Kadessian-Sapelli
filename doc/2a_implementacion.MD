@@ -179,9 +179,12 @@ Tratamos de implementar las siguientes buenas practicas de codificación en nues
 - En los métodos las variables son privadas, por lo que controlamos el acceso a dichos datos de manera adecuada.
 - Comentarios en todas las funciones para que se entienda lo que hace cada cosa (jsdocs).
 
-## Test unitario
+# Test unitario
 
 Realizamos test unitario en todas las clases del dominio, con jest y alcanzamos una cobertura del 100% para todas las clases. Cada clase del dominio tiene una clase en la carpeta test que la prueba , la cual contiene pruebas que son independientes entre sí de cada método.
 
 **Pruebas con cobertura 100% :**
 <img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/jest100.PNG></img>
+
+Para ejecutar las pruebas en la terminal en la carpeta Sapelli-Kadessian ingresar:
+> npm run test
