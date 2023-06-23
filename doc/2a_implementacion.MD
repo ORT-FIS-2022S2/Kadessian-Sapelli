@@ -49,8 +49,8 @@ Creamos un diagrama de clases para poder visualizar mejor el esqueleto del siste
 Al no tener login en nuestro sistema, el sistema contara con un usuario predefinido.
 
 **Funcionalidades del usuario padre**
-1.  Ver que menú se ofrece en cada fecha, si no hay menú muestra un mensaje de no disponibilidad.
-2.  Ingresar como padre y visualizar toda la informacion del mismo en el botón (información padre).
+1. Ver que menú se ofrece en cada fecha, si no hay menú muestra un mensaje de no disponibilidad.
+2. Ingresar como padre y visualizar toda la informacion del mismo en el botón (información padre).
 3. Ver una lista o historial de menús comprados.
 4. Compra de tickets para la compra de menús.
 5. Comprar un menú.
@@ -169,3 +169,5 @@ Realizamos test unitario en todas las clases del dominio, con jest y alcanzamos 
 
 Para ejecutar las pruebas en la terminal en la carpeta Sapelli-Kadessian ingresar:
 > npm run test
+
+# Reflexión
