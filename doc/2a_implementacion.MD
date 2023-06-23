@@ -130,6 +130,25 @@ Luego estan las carpetas docs (No contiene el software si no la documentación),
 
 # Interfaz de usuario
 
+## Diseño UI
 Para la realización de la interfaz de usuario nos basamos en los bocetos de los requerimientos, y en otros principios de usabilidad, utilizamos un diseño limpio y minimalista para que quede lo mas claro posible como funciona cada componente, otro principio que desarrollamos es que cada acción que realiza el usuario tiene una retroalimentación (se visualizan mensajes para todo acción del usuario).
+
+## Responsividad
 Tambien aplicamos responsibidad a nuestro proyecto para que la interfaz sea adecuada en todas las resoluciones de pantalla.
-<img src=>
+*Responsividad pantallas grandes mayor a 1500px de ancho:*
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveGrande.PNG></img>
+*Responsividad pantallas medias menor a 1000px de ancho:*
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveMedia.PNG></img>
+*Responsividad pantallas pequeñas menor a 800px de ancho:*
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveChica.PNG></img>
+
+## Accesibilidad
+Nuestro proyecto cumple con los principios de accesibilidad WCAG lo comprobamos con la extensión wave.
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/WaveDespues.PNG></img>
+
+El único error que tuvimos de contraste no lo podemos arreglar ya que es por las estrellas de el css de una libreria externa.
+Reportamos el issue https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/4
+
+# Codificación
+
+La codificación la realizamos en el IDE Visual Studio Code, respetando el estandar de codificación 'google style' el cual comprobamos con esLint, para cada código de js.
