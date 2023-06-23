@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687447090313" clover="3.2.0">
-  <project timestamp="1687447090313" name="All files">
-    <metrics statements="202" coveredstatements="201" conditionals="139" coveredconditionals="138" methods="77" coveredmethods="77" elements="418" coveredelements="416" complexity="0" loc="202" ncloc="202" packages="1" files="5" classes="5"/>
-    <file name="Comentario.js" path="C:\JOJO\Sapelli-Kadessian\fuente\dominio\Comentario.js">
+<coverage generated="1687542533875" clover="3.2.0">
+  <project timestamp="1687542533875" name="All files">
+    <metrics statements="202" coveredstatements="202" conditionals="139" coveredconditionals="139" methods="77" coveredmethods="77" elements="418" coveredelements="418" complexity="0" loc="202" ncloc="202" packages="1" files="5" classes="5"/>
+    <file name="Comentario.js" path="C:\Users\betin\OneDrive\Escritorio\Sapelli-Kadessian\fuente\dominio\Comentario.js">
       <metrics statements="17" coveredstatements="17" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="8"/>
       <line num="16" count="18" type="stmt"/>
       <line num="17" count="18" type="stmt"/>
@@ -22,7 +22,7 @@
       <line num="76" count="1" type="stmt"/>
       <line num="84" count="1" type="stmt"/>
     </file>
-    <file name="Dia.js" path="C:\JOJO\Sapelli-Kadessian\fuente\dominio\Dia.js">
+    <file name="Dia.js" path="C:\Users\betin\OneDrive\Escritorio\Sapelli-Kadessian\fuente\dominio\Dia.js">
       <metrics statements="44" coveredstatements="44" conditionals="27" coveredconditionals="27" methods="13" coveredmethods="13"/>
       <line num="15" count="41" type="stmt"/>
       <line num="16" count="41" type="stmt"/>
@@ -69,7 +69,7 @@
       <line num="158" count="1" type="stmt"/>
       <line num="160" count="1" type="stmt"/>
     </file>
-    <file name="Menu.js" path="C:\JOJO\Sapelli-Kadessian\fuente\dominio\Menu.js">
+    <file name="Menu.js" path="C:\Users\betin\OneDrive\Escritorio\Sapelli-Kadessian\fuente\dominio\Menu.js">
       <metrics statements="54" coveredstatements="54" conditionals="41" coveredconditionals="41" methods="24" coveredmethods="24"/>
       <line num="32" count="72" type="stmt"/>
       <line num="33" count="72" type="stmt"/>
@@ -126,12 +126,12 @@
       <line num="249" count="1" type="stmt"/>
       <line num="257" count="1" type="stmt"/>
     </file>
-    <file name="Padre.js" path="C:\JOJO\Sapelli-Kadessian\fuente\dominio\Padre.js">
-      <metrics statements="50" coveredstatements="49" conditionals="53" coveredconditionals="52" methods="16" coveredmethods="16"/>
-      <line num="17" count="69" type="stmt"/>
-      <line num="18" count="69" type="stmt"/>
-      <line num="19" count="69" type="stmt"/>
-      <line num="20" count="69" type="stmt"/>
+    <file name="Padre.js" path="C:\Users\betin\OneDrive\Escritorio\Sapelli-Kadessian\fuente\dominio\Padre.js">
+      <metrics statements="50" coveredstatements="50" conditionals="53" coveredconditionals="53" methods="16" coveredmethods="16"/>
+      <line num="17" count="71" type="stmt"/>
+      <line num="18" count="71" type="stmt"/>
+      <line num="19" count="71" type="stmt"/>
+      <line num="20" count="71" type="stmt"/>
       <line num="28" count="13" type="cond" truecount="5" falsecount="0"/>
       <line num="30" count="3" type="stmt"/>
       <line num="32" count="10" type="stmt"/>
@@ -141,7 +141,7 @@
       <line num="43" count="1" type="stmt"/>
       <line num="46" count="2" type="cond" truecount="2" falsecount="0"/>
       <line num="47" count="1" type="stmt"/>
-      <line num="56" count="4" type="stmt"/>
+      <line num="56" count="3" type="stmt"/>
       <line num="64" count="2" type="stmt"/>
       <line num="72" count="3" type="stmt"/>
       <line num="83" count="5" type="stmt"/>
@@ -171,15 +171,15 @@
       <line num="163" count="1" type="stmt"/>
       <line num="165" count="1" type="stmt"/>
       <line num="173" count="1" type="stmt"/>
-      <line num="182" count="3" type="cond" truecount="5" falsecount="0"/>
-      <line num="184" count="1" type="stmt"/>
-      <line num="186" count="2" type="cond" truecount="6" falsecount="0"/>
-      <line num="188" count="1" type="stmt"/>
-      <line num="190" count="1" type="cond" truecount="4" falsecount="1"/>
-      <line num="192" count="0" type="stmt"/>
+      <line num="182" count="6" type="cond" truecount="5" falsecount="0"/>
+      <line num="184" count="2" type="stmt"/>
+      <line num="186" count="4" type="cond" truecount="6" falsecount="0"/>
+      <line num="188" count="2" type="stmt"/>
+      <line num="190" count="2" type="cond" truecount="5" falsecount="0"/>
+      <line num="192" count="1" type="stmt"/>
       <line num="194" count="1" type="stmt"/>
     </file>
-    <file name="Sistema.js" path="C:\JOJO\Sapelli-Kadessian\fuente\dominio\Sistema.js">
+    <file name="Sistema.js" path="C:\Users\betin\OneDrive\Escritorio\Sapelli-Kadessian\fuente\dominio\Sistema.js">
       <metrics statements="37" coveredstatements="37" conditionals="10" coveredconditionals="10" methods="16" coveredmethods="16"/>
       <line num="13" count="15" type="stmt"/>
       <line num="14" count="15" type="stmt"/>

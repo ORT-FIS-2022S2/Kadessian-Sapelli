@@ -162,8 +162,8 @@ Reporte de issue por lineas muy largas: https://github.com/ORT-FIS-2022S2/Sapell
 
 ## Buenas practicas de OOP
 
-Separamos las clases del dominio, en 5 archivos de javascript cada uno es una clase (Comentario.js, Dia.js, Menu.js, Padre.js, Sistema.js). Así modificar y actualizar el codigo es mucho mas fácil y comodo de realizar.
-Para el código de la interfaz utilizamos dos archivos de javascript por un lado DatosPreCargados.js que son todos los datos que queriamos precargar en el sitio web, y otro llamado index.js que tiene todos los eventos y funciones de la interfaz. Consideramos que poner los datos precargados en otro archivo de javascript era buena practica ya que son muchas líneas que dificultarian la visualización de todo el resto de código si se pusiera todo junto, aparte que al modificar dichos datos de prueba no nos preocupamos si borramos alguna función importante del sistema por error.
+Separamos las clases del dominio, en 5 archivos de javascript cada uno es una clase (Comentario.js, Dia.js, Menu.js, Padre.js, Sistema.js) en la carpeta dominio. Así modificar y actualizar el codigo es mucho mas fácil y comodo de realizar.
+Para el código de la interfaz (carpeta interfaz) utilizamos dos archivos de javascript por un lado DatosPreCargados.js que son todos los datos que queriamos precargar en el sitio web, y otro llamado index.js que tiene todos los eventos y funciones de la interfaz. Consideramos que poner los datos precargados en otro archivo de javascript era buena practica ya que son muchas líneas que dificultarian la visualización de todo el resto de código si se pusiera todo junto, aparte que al modificar dichos datos de prueba no nos preocupamos si borramos alguna función importante del sistema por error.
 
 ## Buenas practicas de codificación
 
@@ -178,3 +178,10 @@ Tratamos de implementar las siguientes buenas practicas de codificación en nues
 - Indentación de 2 espacios.
 - En los métodos las variables son privadas, por lo que controlamos el acceso a dichos datos de manera adecuada.
 - Comentarios en todas las funciones para que se entienda lo que hace cada cosa (jsdocs).
+
+## Test unitario
+
+Realizamos test unitario en todas las clases del dominio, con jest y alcanzamos una cobertura del 100% para todas las clases. Cada clase del dominio tiene una clase en la carpeta test que la prueba , la cual contiene pruebas que son independientes entre sí de cada método.
+
+**Pruebas con cobertura 100% :**
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/jest100.PNG></img>
