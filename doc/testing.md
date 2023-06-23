@@ -34,3 +34,19 @@ A lo ultimo se escriben las conclusiones obtenidas luego de realizar la prueba c
 
 Como se puede ver, la informacion del footer queda cortado y no podemos visualizar el boton de "Agregar Comensal" como hemos mencionado anteriormente
 
+
+### Sesion de prueba exploratoria 2
+*Bloque de tiempo:* 30 minutos (Corta)
+
+*Objetivos:* 
+- Poder seleccionar un mes y un comensal de forma sensilla
+
+- Ver que hayan datos en el historias 
+
+- Ver si hay historial para un comensal agregado por el usuario (No precargado)
+
+- Corregir faltas de ortografia y erorres de typeo
+
+*Notas:* En esta prueba, no habia mucho por probar ya que las funcionalidades son acotadas. Se encontro un error al principio cuando no se selecciona ningun mes y tenemos a enero como default, no nos aparece para seleccionar ningun comensal. Luego cuando seleccionamos un mes, nos aparecen comensales pregargados pero no el que acabamos de agregar. Cuando se selecciona un comensal pregarcago (Que se encuentran precargados en pocos meses) se ve el historial con el menu de ciertos dias especificas. Se ve un numero junto al dia que nunca especifica que quiere decir ese numero. En los menus, hay varias faltas de ortografia pero son mas que nada errores de typeo a corregir para el futuro. La seleccion del mes y del comensal (Si lo hay) es claro y muy sencillo.
+
+Al no haber muchas funcionalidades en el sistema, solo se lograron realizar estas dos pruebas exploratorias. 
