@@ -81,7 +81,7 @@ Al no tener login en nuestro sistema, el sistema contara con un usuario predefin
 ![](https://hackmd.io/_uploads/B1_VS4mO3.png)
 
 
-### Librerias utilizadas
+## Librerias utilizadas
 
 Utilizamos las siguientes dependencias en el package.json las cuales contienen jsDoc (para documentación del codigo), esLint (para analizis de estilo de código) y jest para test unitarios configurados.
 ```
@@ -127,3 +127,7 @@ Cada archivo es una clase.
 
 **Otras carpetas:**
 Luego estan las carpetas docs (No contiene el software si no la documentación), coverage (informe de la cobertura de los test unitarios) y out (la documentación de jsdocs).
+
+# Interfaz de usuario
+
+Para la realización de la interfaz de usuario nos basamos en los bocetos de los requerimientos, y en otros principios de usabilidad, utilizamos un diseño limpio y minimalista para que quede lo mas claro posible como funciona cada componente, otro principio que desarrollamos es que cada acción que realiza el usuario tiene una retroalimentación (se visualizan mensajes para todo acción del usuario).
