@@ -151,4 +151,30 @@ Reportamos el issue https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/4
 
 # Codificación
 
+## Estilo de codificación
 La codificación la realizamos en el IDE Visual Studio Code, respetando el estandar de codificación 'google style' el cual comprobamos con esLint, para cada código de js.
+**Eslint con 0 errores para las clases del dominio:**
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/eslintDominio.PNG></img>
+
+**Eslint para el codigo index.js:**
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/eslintindex.PNG></img>
+Reporte de issue por lineas muy largas: https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/5
+
+## Buenas practicas de OOP
+
+Separamos las clases del dominio, en 5 archivos de javascript cada uno es una clase (Comentario.js, Dia.js, Menu.js, Padre.js, Sistema.js). Así modificar y actualizar el codigo es mucho mas fácil y comodo de realizar.
+Para el código de la interfaz utilizamos dos archivos de javascript por un lado DatosPreCargados.js que son todos los datos que queriamos precargar en el sitio web, y otro llamado index.js que tiene todos los eventos y funciones de la interfaz. Consideramos que poner los datos precargados en otro archivo de javascript era buena practica ya que son muchas líneas que dificultarian la visualización de todo el resto de código si se pusiera todo junto, aparte que al modificar dichos datos de prueba no nos preocupamos si borramos alguna función importante del sistema por error.
+
+## Buenas practicas de codificación
+
+Tratamos de implementar las siguientes buenas practicas de codificación en nuestro código:
+
+- Parámetros cortos.
+- Líneas menores a 80 carácteres.
+- Métodos y funciones con poca cantidad de líneas.
+- Código envolvente.
+- Reutilización de código.
+- Variables nemotécnicas con nombres simples y en español.
+- Indentación de 2 espacios.
+- En los métodos las variables son privadas, por lo que controlamos el acceso a dichos datos de manera adecuada.
+- Comentarios en todas las funciones para que se entienda lo que hace cada cosa (jsdocs).
