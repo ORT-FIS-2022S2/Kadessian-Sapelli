@@ -98,3 +98,18 @@ Para cada una de ellas se aplico buenas practicas de reporte asi se entienden lo
 
 Por esta razon, para cada label se le asigno prioridad, su label correspondiente y fotos mostrando a lo que se hace referencia.
 
+<br>
+
+# Reporte de calidad del sistema
+
+Luego del testing del sistema y del reporte de los issues, se llego a que el sistema cuenta con:
+
+- 3 Errores
+- 6 Mejoras a futuro
+- 2 invalidez
+
+<br>
+
+Ya habiendo visto esto, podemos decir que es necesario que se vea el codigo y funcionamiento ya que hay importantes errores como la posibilidad de seleccionar comensales y el poder ver el historial del comensal agregado por el usuario. Tambien se añadieron varias recomendaciones pero importantes mejoras a futuro para hacer que el trabajo de los compañeros sea aun mas efectivo y amigable para el usuario, ya que estas issues van a hacer que el trabajo de los compañeros se destaque mas.
+
+Como conclusion, el sistema hecho por los compañeros esta simple pero hace lo que debe hacer. Para un primer release es muy buen proyecto y creemos que va bien encaminado para ser un excelente sistema para cualquier usuario que desee utilizarlo. 
