@@ -126,17 +126,17 @@ Buscamos crear una experiencia intuitiva y satisfactoria para los usuarios, dond
 Tambien aplicamos responsibidad a nuestro proyecto para que la interfaz sea adecuada en todas las resoluciones de pantalla.
 
 *Responsividad pantallas grandes mayor a 1500px de ancho:*
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveGrande.png></img>
+<p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveGrande.PNG></img></p>
 
 *Responsividad pantallas medias menor a 1000px de ancho:*
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveMedia.PNG>
+<p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveMedia.PNG></p>
 
 *Responsividad pantallas pequeñas menor a 800px de ancho:*
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveChica.PNG>
+<p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveChica.PNG></p>
 
 ## Accesibilidad
 Nuestro proyecto cumple con los principios de accesibilidad WCAG lo comprobamos con la extensión wave.
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/WaveDespues.PNG >
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/WaveDespues.png >
 
 El único error que tuvimos de contraste no lo podemos arreglar ya que es por las estrellas de el css de una libreria externa.
 Reportamos el issue https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/4
