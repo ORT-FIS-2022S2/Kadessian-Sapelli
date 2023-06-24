@@ -12,6 +12,8 @@ Luego se definen objetivos en donde se plantean elementos a teastear y la idea q
 
 A lo ultimo se escriben las conclusiones obtenidas luego de realizar la prueba con los resultados obtenidos.
 
+<br>
+
 ### Sesion de prueba exploratoria 1
 *Bloque de tiempo:* 60 minutos (Media)
 
@@ -38,6 +40,8 @@ A lo ultimo se escriben las conclusiones obtenidas luego de realizar la prueba c
 
 Como se puede ver, la informacion del footer queda cortado y no podemos visualizar el boton de "Agregar Comensal" como hemos mencionado anteriormente
 
+<br>
+
 ### Sesion de prueba exploratoria 2
 *Bloque de tiempo:* 30 minutos (Corta)
 
@@ -52,21 +56,28 @@ Como se puede ver, la informacion del footer queda cortado y no podemos visualiz
 
 *Notas:* Luego de explorar y leer detenidamente cada sección no se encontrarón errores ortograficos ni inconsistencias gramaticales que mejorar.
 Se encontrarón inconsitencias con los mensajes que emite el sitio web, en la sección agregar comensal se ve como placeholder en los inputs (sin haber ingresado nada) los datos de una persona llamada Santiago Molinari como se ve en la imagen:
+
 | <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestMensajes.png"> |
+
 Esto me parece inadecuado porque se confunde con un dato ya ingresado, lo mejor sería especificar que tipo de dato requiere dicho input por ejemplo en edad, en vez de 12 poner edad.
 Por otro lado en la página "historial de pedidos", la inconsitencia esta en que hay total ausencia de indicaciones claras de que efectua cada botón, simplemente hay cinco botones que contienen un número el cual hay que adivinar que hace, a pesar de esto no pude evaluar del todo los mensajes en dicha página ya que no funcionan los botones con números de dicha sección.
+
 | <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/testmensajebotones.png"> |
+
 Otro defecto encontrado en dicha página es que la descripción del menú solo aparece cuando el comensal pidio dicho menú, (el número del boton aparece mayor a 0 intuyo que significa eso), pero tendría mas logica ver la descripción independientemente de que haya pedido el comensal.
 Concluimos que se revise el código nuevamente y se vea en que se falla para que el sitio web pueda funcionar correctamente.
-
 
 <br>
 
 ### Sesion de prueba exploratoria 3
 *Bloque de tiempo:* 30 minutos (Corta).
+
 *Fecha:*23/6/2023
+
 *Nombre del tester:* Jorge Sapelli
+
 *Objetivos:* 
+
 - Verificar que se pueda seleccionar un mes y un comensal de forma sencilla
 
 - Ver que hayan datos en el historias 
@@ -111,15 +122,24 @@ Encontramos errores en el ingreso de la edad, ya que la aplicación permite cual
     Por lo cual concluimos que la calidad de este código es muy baja.
 
     link del issue report : https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/4
+
+<br>
+
 ### Funcionalidad
-    Lamentablemente no se pudierón evaluar funcionalidades ya que no funciona correctamente el sitio web.
+    Lamentablemente no se pudieron evaluar funcionalidades mas que la de agregar un comensal y ver un historial precargado, ya que no funciona correctamente el sitio web y no hay mas funcionalidades.
+
+<br>
 
 ### Accesibilidad
-    Se evaluo la accesibilidad del sitio con la extensión wave y no se encontrarón errores graves, solo dos alertas sobre el texto alternativo de unos logos.
+    Se evaluo la accesibilidad del sitio con la extensión Wave y no se encontrarón errores graves, solo dos alertas sobre el texto alternativo de unos logos.
     Por lo que dentro de los parametros el sitio web cumple con los estandares de accesibilidad.
+
+<br>
 
 ### Portabilidad
     Se probo en pruebas exploratorios desde diversos dispositivos y al cambiar la resolución de pantalla se esconden los botones y queda inutilizable por lo que este sitio web no es portable para equipos mobiles.
+
+<br>
 
 # Reporte de issues
 Luego de estas dos pruebas exploratorias, reportamos 11 issues y definimos los siguientes lables pasa estos.
