@@ -106,7 +106,9 @@ Realizamos el test de caja negra de particiones equivalentes en la página de ag
 
 Encontramos errores en el ingreso de la edad, ya que la aplicación permite cualquier edad incluso 0 y mayor a 18, el resto de las pruebas las paso correctamente.
 
-# Evaluación global de la calidad
+<br>
+
+# Evaluación de la Calidad del Codigo
 
 ### Cálidad de codigo
 Se evaluo la calidad del codigo de javaScript y encontramos los siguiente problemas:
@@ -186,7 +188,10 @@ Para cada una de ellas se aplico buenas practicas de reporte asi se entienden lo
 Por esta razon, para cada label se le asigno prioridad, su label correspondiente y fotos mostrando a lo que se hace referencia.
 
 <br>
-# Sumario de issues
+
+# Informe de Calidad del Sistema
+
+## Sumario de issues
 
 Luego del testing del sistema y del reporte de los issues, se llego a que el sistema cuenta con:
 
@@ -195,6 +200,8 @@ Luego del testing del sistema y del reporte de los issues, se llego a que el sis
 - 2 invalidez
 
 <br>
+
+## Evaluacion Global de la Calidad
 
 Ya habiendo visto esto, podemos decir que es necesario que se vea el codigo y funcionamiento ya que hay importantes errores como la posibilidad de seleccionar comensales y el poder ver el historial del comensal agregado por el usuario. Tambien se añadieron varias recomendaciones pero importantes mejoras a futuro para hacer que el trabajo de los compañeros sea aun mas efectivo y amigable para el usuario, ya que estas issues van a hacer que el trabajo de los compañeros se destaque mas.
 
