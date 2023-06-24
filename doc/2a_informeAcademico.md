@@ -129,14 +129,14 @@ Tambien aplicamos responsibidad a nuestro proyecto para que la interfaz sea adec
 <img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveGrande.png></img>
 
 *Responsividad pantallas medias menor a 1000px de ancho:*
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveMedia.png></img>
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveMedia.png>
 
 *Responsividad pantallas pequeñas menor a 800px de ancho:*
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveChica.png></img>
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveChica.png>
 
 ## Accesibilidad
 Nuestro proyecto cumple con los principios de accesibilidad WCAG lo comprobamos con la extensión wave.
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/WaveDespues.png></img>
+<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/WaveDespues.png >
 
 El único error que tuvimos de contraste no lo podemos arreglar ya que es por las estrellas de el css de una libreria externa.
 Reportamos el issue https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/4
@@ -225,5 +225,7 @@ Espero seguir aplicando lo que hemos aprendido en futuros proyectos y continuar 
 ## Presentación en clase
 Nuestra exposición abarcó los fundamentos de la elicitación y la ingeniería de requerimientos, resaltando su importancia y algunas mejores prácticas.
 Link con nuestra presentación:
+
+> https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/Elicitaci%C3%B3n%20-%20priorizaci%C3%B3n%20de%20requerimientos.pptx
 
 ## Video de el software construido
