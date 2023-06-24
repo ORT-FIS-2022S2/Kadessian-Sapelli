@@ -109,35 +109,40 @@ Encontramos errores en el ingreso de la edad, ya que la aplicación permite cual
 # Evaluación global de la calidad
 
 ### Cálidad de codigo
-    Se evaluo la calidad del codigo de javaScript y encontramos los siguiente problemas:
+Se evaluo la calidad del codigo de javaScript y encontramos los siguiente problemas:
 
-    -En main.js hay eventos inecesarios (lineas 40 al 53) dichos eventos que te redirigen a otra página al apretar un botón se pueden añadir como atributo en una etiqueta html "href", por lo que son inecesarios.
-    -Con respecto al estilo de códificación se observo que tienen líneas muy largas lo que nos dificulta el analizis del código, las cuales se podrian fragmentar en variables mas pequeñas con nombres nemotecnicos.
-    -Utilizan let en constantes (lineas 12 al 28,82,83,163,171,179).
-    -No hay un estándar de utilización de comillas en strings, utilizan "" y '' mezcladas.
-    -Los nombres de los archivos de la clase comensal.js , lista_comensal.js, lista_pedido.js no son consistentes con el nombre de la clase, los cuales deberian ser Comensal.js, ListaComensal.js, ListaPedido.js respectivamente.
-    -Falta jsDocs lo que nos dificulta entender de que tipo es cada variable y retorno, aparte podrian incluir mas comentarios especificando que hace cada función.
-    -Hay funciones que deberian ser métodos pertenecientes a su clase.
-    -Tienen demasiada cantidad de líneas en funciones y eventos que se podrían reducir en bloques mas pequeños para facilitar la lectura de código y reutilización del mismo.
-    Por lo cual concluimos que la calidad de este código es muy baja.
+- En main.js hay eventos inecesarios (lineas 40 al 53) dichos eventos que te redirigen a otra página al apretar un botón se pueden añadir como atributo en una etiqueta html "href", por lo que son inecesarios.
+- Con respecto al estilo de códificación se observo que tienen líneas muy largas lo que nos dificulta el analizis del código, las cuales se podrian fragmentar en variables mas pequeñas con nombres nemotecnicos.
+- Utilizan let en constantes (lineas 12 al 28,82,83,163,171,179).
+- No hay un estándar de utilización de comillas en strings, utilizan "" y '' mezcladas.
+- Los nombres de los archivos de la clase comensal.js , lista_comensal.js, lista_pedido.js no son consistentes con el nombre de la clase, los cuales deberian ser Comensal.js, ListaComensal.js, ListaPedido.js respectivamente.
+- Falta jsDocs lo que nos dificulta entender de que tipo es cada variable y retorno, aparte podrian incluir mas comentarios especificando que hace cada función.
+- Hay funciones que deberian ser métodos pertenecientes a su clase.
+- Tienen demasiada cantidad de líneas en funciones y eventos que se podrían reducir en bloques mas pequeños para facilitar la lectura de código y reutilización del mismo.
 
-    link del issue report : https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/4
+Por lo cual concluimos que la calidad de este código es muy baja.
+
+Link del issue report: 
+
+    https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/4
 
 <br>
 
 ### Funcionalidad
-    Lamentablemente no se pudieron evaluar funcionalidades mas que la de agregar un comensal y ver un historial precargado, ya que no funciona correctamente el sitio web y no hay mas funcionalidades.
+Lamentablemente no se pudieron evaluar funcionalidades mas que la de agregar un comensal y ver un historial precargado, ya que no funciona correctamente el sitio web y no hay mas funcionalidades.
 
 <br>
 
 ### Accesibilidad
-    Se evaluo la accesibilidad del sitio con la extensión Wave y no se encontrarón errores graves, solo dos alertas sobre el texto alternativo de unos logos.
-    Por lo que dentro de los parametros el sitio web cumple con los estandares de accesibilidad.
+Se evaluo la accesibilidad del sitio con la extensión Wave y no se encontrarón errores graves, solo dos alertas sobre el texto alternativo de unos logos.
+Por lo que dentro de los parametros el sitio web cumple con los estandares de accesibilidad.
+
+<img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/Wave-Collazo-Ricca-Salgado.png" width="350"> 
 
 <br>
 
 ### Portabilidad
-    Se probo en pruebas exploratorios desde diversos dispositivos y al cambiar la resolución de pantalla se esconden los botones y queda inutilizable por lo que este sitio web no es portable para equipos mobiles.
+Se probo en pruebas exploratorios desde diversos dispositivos y al cambiar la resolución de pantalla se esconden los botones y queda inutilizable por lo que este sitio web no es portable para equipos mobiles.
 
 <br>
 
