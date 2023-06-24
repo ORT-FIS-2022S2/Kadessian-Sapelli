@@ -181,7 +181,7 @@ __Invalidez:__
 <br>
 
 Estos son los 11 issues que se realizaron en el github del repositorio de Collazo, Ricca y Salgado. 
-En github, los lables automaticos son bug, enhancement e invalid. Pero para que se entienda mejor, modificamos los labels de github. 
+En github, los lables automaticos son bug para Error, enhancement para Mejora a Futuro, e invalid para Invalidez. 
 
 Para cada una de ellas se aplico buenas practicas de reporte asi se entienden lo mejor posible. 
 
