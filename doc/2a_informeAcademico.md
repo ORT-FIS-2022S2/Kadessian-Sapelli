@@ -64,7 +64,7 @@ Al no tener login en nuestro sistema, el sistema contara con un usuario predefin
 
 ## Librerias utilizadas
 
-Utilizamos las siguientes dependencias en el package.json las cuales contienen jsDoc (para documentación del codigo), esLint (para analizis de estilo de código) y jest para test unitarios configurados.
+Utilizamos las siguientes dependencias en el package.json las cuales contienen jsDoc (para documentación del codigo), esLint (para analizis de estilo de código) y jest para test unitarios configurados, también utilizamos el framework de flowbite y bootstrap para el css pero lo utilizamos en forma de link en el html.
 ```
   "devDependencies": {
     "eslint": "^8.43.0",
@@ -98,7 +98,7 @@ Con estas dos funciones enrutamos el archivo index.html al puerto 3000 de nuestr
 Aquí reportamos un issue ya que no encontramos forma de configurar un server con una dispoción de carpetas deseada, aquí el link a dicho reporte:
 https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/3#issue-1771661121
 
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/carpetas.png></img>
+<p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/carpetas.png></img></p>
 El proyecto dispone de las siguientes carpetas en la carpeta fuente:
 
 1. **Dominio:** Contiene las clases del código y la carpeta test con los test unitarios de cada clase.
@@ -125,13 +125,13 @@ Buscamos crear una experiencia intuitiva y satisfactoria para los usuarios, dond
 
 Tambien aplicamos responsibidad a nuestro proyecto para que la interfaz sea adecuada en todas las resoluciones de pantalla.
 
-*Responsividad pantallas grandes mayor a 1500px de ancho:*
+*Responsividad pantallas grandes mayores a 1500px de ancho:*
 <p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveGrande.PNG></img></p>
 
-*Responsividad pantallas medias menor a 1000px de ancho:*
+*Responsividad pantallas medias menores a 1000px de ancho:*
 <p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveMedia.PNG></p>
 
-*Responsividad pantallas pequeñas menor a 800px de ancho:*
+*Responsividad pantallas pequeñas menores a 800px de ancho:*
 <p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveChica.PNG></p>
 
 ## Accesibilidad
@@ -149,7 +149,7 @@ La codificación la realizamos en el IDE Visual Studio Code, respetando el estan
 <img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/eslintDominio.PNG></img>
 
 **Eslint para el codigo index.js:**
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/eslintindex.PNG></img>
+<p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/eslintindex.PNG></img></p>
 Reporte de issue por lineas muy largas: https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/5
 
 ## Buenas practicas de OOP
@@ -176,7 +176,7 @@ Tratamos de implementar las siguientes buenas practicas de codificación en nues
 Realizamos test unitario en todas las clases del dominio, con jest y alcanzamos una cobertura del 100% para todas las clases. Cada clase del dominio tiene una clase en la carpeta test que la prueba , la cual contiene pruebas que son independientes entre sí de cada método.
 
 **Pruebas con cobertura 100% :**
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/jest100.PNG></img>
+<p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/jest100.PNG></img></P>
 
 Para ejecutar las pruebas en la terminal en la carpeta Sapelli-Kadessian ingresar:
 > npm run test
