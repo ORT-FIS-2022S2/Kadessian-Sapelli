@@ -10,6 +10,8 @@
 | 26/06/2023 |
 | https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian |
 
+<br>
+
 # Construccion
 
 ## Instalacion y iniciación del proyecto
@@ -96,9 +98,11 @@ app.listen(3000, () => {
 ```
 Con estas dos funciones enrutamos el archivo index.html al puerto 3000 de nuestro local host.
 Aquí reportamos un issue ya que no encontramos forma de configurar un server con una dispoción de carpetas deseada, aquí el link a dicho reporte:
+
 https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/3#issue-1771661121
 
 <p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/carpetas.png></img></p>
+
 El proyecto dispone de las siguientes carpetas en la carpeta fuente:
 
 1. **Dominio:** Contiene las clases del código y la carpeta test con los test unitarios de cada clase.
@@ -108,6 +112,8 @@ Cada archivo es una clase.
 
 **Otras carpetas:**
 Luego estan las carpetas docs (No contiene el software si no la documentación), coverage (informe de la cobertura de los test unitarios) y out (la documentación de jsdocs).
+
+<br>
 
 # Interfaz de usuario
 
@@ -171,15 +177,20 @@ Tratamos de implementar las siguientes buenas practicas de codificación en nues
 - En los métodos las variables son privadas, por lo que controlamos el acceso a dichos datos de manera adecuada.
 - Comentarios en todas las funciones para que se entienda lo que hace cada cosa (jsdocs).
 
+<br>
+
 # Test unitario
 
 Realizamos test unitario en todas las clases del dominio, con jest y alcanzamos una cobertura del 100% para todas las clases. Cada clase del dominio tiene una clase en la carpeta test que la prueba , la cual contiene pruebas que son independientes entre sí de cada método.
 
 **Pruebas con cobertura 100% :**
+
 <p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/jest100.PNG></img></P>
 
 Para ejecutar las pruebas en la terminal en la carpeta Sapelli-Kadessian ingresar:
 > npm run test
+
+<br> 
 
 # Reflexión
 
@@ -193,37 +204,46 @@ Espero seguir aplicando lo que hemos aprendido en futuros proyectos y continuar 
 
 ### Jorge Sapelli 
 
+Para esta segunda entrega
+
+<br>
 
 ## Técnicas aplicadas y aprendizajes
 
 **Las técnologias que aplicamos y los aprendizajes que obtuvimos son los siguientes:**
 
--Git: Sistema de control de versiones que utilizamos para gestionar y mantener el historial de cambios en nuestro proyecto.
+- Git: Sistema de control de versiones que utilizamos para gestionar y mantener el historial de cambios en nuestro proyecto.
 
--GitHub: Plataforma basada en la nube que utilizamos para almacenar nuestro repositorio de código, colaborar con otros miembros del equipo y revisar y aprobar cambios.
+- GitHub: Plataforma basada en la nube que utilizamos para almacenar nuestro repositorio de código, colaborar con otros miembros del equipo y revisar y aprobar cambios.
 
--Node.js: Entorno de ejecución de JavaScript en el servidor que utilizamos para construir la aplicación web.
+- Node.js: Entorno de ejecución de JavaScript en el servidor que utilizamos para construir la aplicación web.
 
--JavaScript: Lenguaje de programación principal utilizado para desarrollar la lógica del lado del cliente y del servidor en nuestro proyecto.
+- JavaScript: Lenguaje de programación principal utilizado para desarrollar la lógica del lado del cliente y del servidor en nuestro proyecto.
 
--HTML: Lenguaje de marcado utilizado para estructurar y crear la interfaz de usuario de nuestra página web.
+- HTML: Lenguaje de marcado utilizado para estructurar y crear la interfaz de usuario de nuestra página web.
 
--CSS: Lenguaje utilizado para dar estilo y diseño a nuestra página web, controlando la apariencia de los elementos.
+- CSS: Lenguaje utilizado para dar estilo y diseño a nuestra página web, controlando la apariencia de los elementos.
 
--Frameworks de CSS: Utilizamos frameworks como Flowbite y Bootstrap para acelerar el desarrollo y aplicar estilos predefinidos a nuestras aplicaciones.
+- Frameworks de CSS: Utilizamos frameworks como Flowbite y Bootstrap para acelerar el desarrollo y aplicar estilos predefinidos a nuestras aplicaciones.
 
--ESLint: Herramienta que nos ayudó a mantener un código limpio y consistente, siguiendo las mejores prácticas y evitando errores comunes.
+- ESLint: Herramienta que nos ayudó a mantener un código limpio y consistente, siguiendo las mejores prácticas y evitando errores comunes.
 
--Jest: Framework de pruebas unitarias utilizado para asegurar la calidad y el correcto funcionamiento de nuestro código.
+- Jest: Framework de pruebas unitarias utilizado para asegurar la calidad y el correcto funcionamiento de nuestro código.
 
--Testing exploratorio: Técnica de prueba en la que los desarrolladores exploran el software de manera informal para descubrir errores y problemas.
+- Testing exploratorio: Técnica de prueba en la que los desarrolladores exploran el software de manera informal para descubrir errores y problemas.
 
--Testing de caja negra: Técnica de prueba que se enfoca en probar la funcionalidad del software sin conocer su estructura interna.
+- Testing de caja negra: Técnica de prueba que se enfoca en probar la funcionalidad del software sin conocer su estructura interna.
 
--JSDoc: Sistema de documentación en JavaScript que utilizamos para proporcionar descripciones detalladas de nuestras funciones, parámetros y valores de retorno.
+- JSDoc: Sistema de documentación en JavaScript que utilizamos para proporcionar descripciones detalladas de nuestras funciones, parámetros y valores de retorno.
 
-## Presentación en clase
-Nuestra exposición abarcó los fundamentos de la elicitación y la ingeniería de requerimientos, resaltando su importancia y algunas mejores prácticas.
+- Wave: Herramienta que nos permite evaluar la accesibilidad de una web
+
+<br> 
+
+# Presentación en clase
+
+Nuestra exposición abarcó los fundamentos de la elicitación y la ingeniería de requerimientos, resaltando su importancia y algunas mejores prácticas. Esto lo vinculamos a nuestra primera entrega del obligatorio, donde utilizamos las tecnicas de elicitacion y de Ingenieria de requerimientos para poder comenzar a crear el sistema en esta segunda entrega.
+
 Link con nuestra presentación:
 
 > https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/Elicitaci%C3%B3n%20-%20priorizaci%C3%B3n%20de%20requerimientos.pptx
