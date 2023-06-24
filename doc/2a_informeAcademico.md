@@ -252,3 +252,7 @@ Link con nuestra presentación:
 > https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/Elicitaci%C3%B3n%20-%20priorizaci%C3%B3n%20de%20requerimientos.pptx
 
 ## Video de el software construido
+
+<video controls>
+  <source src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/Video_Demostrativo.mp4" type="video/mp4">
+</video>
