@@ -253,6 +253,4 @@ Link con nuestra presentación:
 
 ## Video de el software construido
 
-<video controls>
-  <source src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/Video_Demostrativo.mp4" type="video/mp4">
-</video>
+<img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/Video_Demostrativo.mp4"></img>
