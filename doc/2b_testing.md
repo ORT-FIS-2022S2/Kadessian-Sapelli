@@ -6,7 +6,7 @@ El proyecto puede ser encontrado en el siguiente repositorio:
 https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado.git
 ```
 ## Sesiones de Prueba
-A continuacion se realizaron las sessiones de prueba del sistema. Para documentar estas pruebas se escribe el Bloque de tiempo que duro la prueba. Estos bloques pueden Corta (30 minutos), Media (60 minutos) o Larga (90-120 minutos).
+A continuacion se realizaron las sessiones de prueba del sistema. Para documentar estas pruebas se escribe el Bloque de tiempo que duro la prueba. Estos bloques pueden ser Corta (30 minutos), Media (60 minutos) o Larga (90-120 minutos).
 
 Luego se definen objetivos en donde se plantean elementos a teastear y la idea que se tiene de la prueba. 
 
@@ -14,8 +14,11 @@ A lo ultimo se escriben las conclusiones obtenidas luego de realizar la prueba c
 
 ### Sesion de prueba exploratoria 1
 *Bloque de tiempo:* 60 minutos (Media)
-*Fecha:*23/6/2023
+
+*Fecha:* 23/6/2023
+
 *Nombre del tester:* Jorge Sapelli
+
 *Objetivos:* 
 - Validar que se agregué un Comensal al sistema correctamente
 
@@ -37,8 +40,11 @@ Como se puede ver, la informacion del footer queda cortado y no podemos visualiz
 
 ### Sesion de prueba exploratoria 2
 *Bloque de tiempo:* 30 minutos (Corta)
-*Fecha:*23/6/2023
+
+*Fecha:* 23/6/2023
+
 *Nombre del tester:* Ana Betina Kadessian
+
 *Objetivos:* 
 - Validar que la grámatica y ortografia se correcta.
 
