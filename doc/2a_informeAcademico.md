@@ -254,3 +254,5 @@ Link con nuestra presentación:
 ## Video de el software construido
 
 <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/Video_Demostrativo.mp4"></img>
+
+Es necesario descargar el video para poder verlo debido al tamaño. En caso de no acceder por el link, el video se encuentra en la carpeta "imagenes".
