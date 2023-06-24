@@ -45,10 +45,10 @@ Como se puede ver, la informacion del footer queda cortado y no podemos visualiz
 - Validar consistencia de los mensajes y señales que emite el sitio web.
 
 *Notas:* Luego de explorar y leer detenidamente cada sección no se encontrarón errores ortograficos ni inconsistencias gramaticales que mejorar.
-Se encontrarón inconsitencias con la emisión de mensajes que emite el sitio web, en la sección agregar comensal se ve como placeholder en los inputs (sin haber ingresado nada) los datos de una persona llamada Santiago Molinari como se ve en la imagen:
+Se encontrarón inconsitencias con los mensajes que emite el sitio web, en la sección agregar comensal se ve como placeholder en los inputs (sin haber ingresado nada) los datos de una persona llamada Santiago Molinari como se ve en la imagen:
 | <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestMensajes.png" width="250"> |
-Esto me parece inadecuado porque se confunde con un dato ya ingresado, lo mejor sería especificar que tipo de dato requiere dicho input por ejemplo en edad en vez de 12 poner edad.
-Por otro lado en la página "historial de pedidos", la inconsitencia esta en que hay total ausencia de indicaciones claras de que efectua cada botón, simplemente hay cinco botones que contienen un número el cual hay que adivinar que hace, a pesar de esto no pude evaluar del todo los mensajes en dicha página ya que no funcionan ni los botones ni los select.
+Esto me parece inadecuado porque se confunde con un dato ya ingresado, lo mejor sería especificar que tipo de dato requiere dicho input por ejemplo en edad, en vez de 12 poner edad.
+Por otro lado en la página "historial de pedidos", la inconsitencia esta en que hay total ausencia de indicaciones claras de que efectua cada botón, simplemente hay cinco botones que contienen un número el cual hay que adivinar que hace, a pesar de esto no pude evaluar del todo los mensajes en dicha página ya que no funcionan los botones con números de dicha sección.
 | <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/testmensajebotones.png" width="250"> |
 Concluimos que se revise el código nuevamente y se vea en que se falla para que el sitio web pueda funcionar correctamente.
 
@@ -66,12 +66,26 @@ Concluimos que se revise el código nuevamente y se vea en que se falla para que
 - Ver si hay historial para un comensal agregado por el usuario (No precargado)
 
 
-*Notas:* En esta prueba, no habia mucho por probar ya que las funcionalidades son acotadas. Se encontro un error al principio cuando no se selecciona ningun mes y tenemos a enero como default, no nos aparece para seleccionar ningun comensal. Luego cuando seleccionamos un mes, nos aparecen comensales pregargados pero no el que acabamos de agregar. Cuando se selecciona un comensal pregarcago (Que se encuentran precargados en pocos meses) se ve el historial con el menu de ciertos dias especificas. Se ve un numero junto al dia que nunca especifica que quiere decir ese numero. La seleccion del mes y del comensal (Si lo hay) son claras y muy sencillas.
+*Notas:* En esta prueba, no habia mucho por probar ya que las funcionalidades son acotadas. Se encontro un error al principio cuando no se selecciona ningun mes y tenemos a enero como default, no nos aparece para seleccionar ningun comensal. Luego cuando seleccionamos el mes de mayo y junio, nos aparecen comensales pregargados pero no el que acabamos de agregar. Cuando se selecciona un comensal precargado (Que se encuentran precargados en pocos meses) se ve el historial con el menu de ciertos dias especificas. Se ve un numero junto al dia que nunca especifica que quiere decir ese numero. La selección del mes y del comensal (sí lo hay) son claras y muy sencillas.
 
 Al no haber muchas funcionalidades en el sistema, solo se lograron realizar estas tres pruebas exploratorias. 
 
 <br>
 
+## Test de caja negra
+Realizamos el test de caja negra de particiones equivalentes en la página de agregar comensal ya que es la única en la que observamos una entrada y salida de datos.
+
+**Definimos las siguientes clases de equivalencia:**
+
+| Entrada / Variable | Clases válidas                                 | Clases inválidas                          |
+| ------------------ | ---------------------------------------------- | ----------------------------------------- |
+| Nombre             | Una cadena de texto no vacía.(1)               | Una cadena de texto vacía.(4)                |
+| Apellido           | Una cadena de texto no vacía.(2)               | Una cadena de texto vacía.(5)              |
+| Edad               | Un número entero mayor a cero y menor a 18.(3) | Un número menor igual a cero(6).Un número mayor igual a 18(7) |
+
+| <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestParticionEquivalente.png"> |
+
+Encontramos errores en el ingreso de la edad, ya que la aplicación permite cualquier edad incluso 0 y mayor a 18, el resto de las pruebas las paso correctamente.
 ## Evaluación global de la calidad
 
 ### Cálidad de codigo
