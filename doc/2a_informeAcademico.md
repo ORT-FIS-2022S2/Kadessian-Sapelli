@@ -204,7 +204,10 @@ Espero seguir aplicando lo que hemos aprendido en futuros proyectos y continuar 
 
 ### Jorge Sapelli 
 
-Para esta segunda entrega
+Para esta segunda entrega, realice codificacion del HTML, css y documentacion del proyecto. Trabaje con flowbite para ello e hice uso de la herramienta Wave para evaluar y corregir la accesibilidad del sistema. 
+Aprendi muchas cosas importantes para poder crear un software. Aprendi que el crear un software no solo es programar, sino todo el proceso, contacto con el cliente, con el usuario, y con los otros miembros del equipo. Me parecio muy interesante todo lo que lleva el proceso de crear el software y creo que es muy importante el documentar todo lo creado para poder mantener un orden a lo largo del proceso.
+Tambien aprendimos lo que es una buena calidad de codigo, algo muy importante para que otros desarrolladores se puedan adaptar facilmente al codigo y haya un orden consistente a lo largo de todo el codigo. 
+Espero poder seguir aprendiendo y utilizando estas herramientas a futuro ya que me resultaron muy utiles al momento de crear el software. 
 
 <br>
 
