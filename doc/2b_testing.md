@@ -46,16 +46,18 @@ Como se puede ver, la informacion del footer queda cortado y no podemos visualiz
 
 *Notas:* Luego de explorar y leer detenidamente cada sección no se encontrarón errores ortograficos ni inconsistencias gramaticales que mejorar.
 Se encontrarón inconsitencias con los mensajes que emite el sitio web, en la sección agregar comensal se ve como placeholder en los inputs (sin haber ingresado nada) los datos de una persona llamada Santiago Molinari como se ve en la imagen:
-| <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestMensajes.png" width="250"> |
+| <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestMensajes.png"> |
 Esto me parece inadecuado porque se confunde con un dato ya ingresado, lo mejor sería especificar que tipo de dato requiere dicho input por ejemplo en edad, en vez de 12 poner edad.
 Por otro lado en la página "historial de pedidos", la inconsitencia esta en que hay total ausencia de indicaciones claras de que efectua cada botón, simplemente hay cinco botones que contienen un número el cual hay que adivinar que hace, a pesar de esto no pude evaluar del todo los mensajes en dicha página ya que no funcionan los botones con números de dicha sección.
-| <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/testmensajebotones.png" width="250"> |
+| <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/testmensajebotones.png"> |
+Otro defecto encontrado en dicha página es que la descripción del menú solo aparece cuando el comensal pidio dicho menú, (el número del boton aparece mayor a 0 intuyo que significa eso), pero tendría mas logica ver la descripción independientemente de que haya pedido el comensal.
 Concluimos que se revise el código nuevamente y se vea en que se falla para que el sitio web pueda funcionar correctamente.
+
 
 <br>
 
 ### Sesion de prueba exploratoria 3
-*Bloque de tiempo:* 30 minutos (Corta)
+*Bloque de tiempo:* 30 minutos (Corta).
 *Fecha:*23/6/2023
 *Nombre del tester:* Jorge Sapelli
 *Objetivos:* 
@@ -83,10 +85,11 @@ Realizamos el test de caja negra de particiones equivalentes en la página de ag
 | Apellido           | Una cadena de texto no vacía.(2)               | Una cadena de texto vacía.(5)              |
 | Edad               | Un número entero mayor a cero y menor a 18.(3) | Un número menor igual a cero(6).Un número mayor igual a 18(7) |
 
-| <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestParticionEquivalente.png"> |
+ <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestParticionEquivalente.png"> 
 
 Encontramos errores en el ingreso de la edad, ya que la aplicación permite cualquier edad incluso 0 y mayor a 18, el resto de las pruebas las paso correctamente.
-## Evaluación global de la calidad
+
+# Evaluación global de la calidad
 
 ### Cálidad de codigo
     Se evaluo la calidad del codigo de javaScript y encontramos los siguiente problemas:
