@@ -6,20 +6,20 @@
 | -------- |
 | Fundamentos de Ingeniería de Software     |
 | M4B - Docentes: Gerardo Matturro, Alejandro Adorjan |
-| Ana Kadessian, Jorge Sapelli |
+| Ana Betina Kadessian, Jorge Sapelli |
 | 26/06/2023 |
 | https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian |
 
 <br>
 
-# Construccion
+# Construcción
 
-## Instalacion y iniciación del proyecto
+## Instalación y iniciación del proyecto
 
-Descargar y instalar la ultima versión de Node.JS
+Descargar e instalar la última versión de Node.JS
 > https://nodejs.org/
 
-Una vez clonado este repositorio en su máquina, abra una terminal y posicionesé en la primer carpeta "/Kadessian-Sapelli" y ejecutar los siguientes comandos:
+Una vez clonado este repositorio en su máquina, abra una terminal y posiciones en la primer carpeta "/Sapelli-Kadessian" y ejecutar los siguientes comandos:
 
 ```
 npm install
@@ -29,11 +29,10 @@ Para ejecutar el proyecto en la misma ruta de la terminal ejecuté esté comando
 ```
 npm run start
 ```
-Luego de esto dirijasé al localhost:3000 de su explorador web
+Luego de esto diríjase al localhost:3000 de su explorador web
 > http://localhost:3000/
 
-Es importante que NO se cambie la configuracion de puertos
-
+Es importante que NO se cambie la configuración de puertos
 
 Para correr pruebas jest ingrese en la misma terminal de comandos
 ```
@@ -41,10 +40,10 @@ npm run test
 ```
 
 ## Objetivos
-Nuestro objetivo fue completar los requerimientos de mayor importancia definidos en la elicitacion del proycto. 
+Nuestro objetivo fue completar los requerimientos de mayor importancia definidos en la elicitación del proyecto. 
 
 ### UML
-Creamos un diagrama de clases para poder visualizar mejor el esqueleto del sistema y tener en claro que clases eran necesarias crear para el funcionamiento de la pagina web.
+Creamos un diagrama de clases para poder visualizar mejor el esqueleto del sistema y tener en claro que clases eran necesarias crear para el funcionamiento de la página web.
 <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/UML.png">
 
 ### Funciones del Sistema
@@ -52,21 +51,21 @@ Al no tener login en nuestro sistema, el sistema contara con un usuario predefin
 
 **Funcionalidades del usuario padre**
 1. Ver que menú se ofrece en cada fecha, si no hay menú muestra un mensaje de no disponibilidad.
-2. Ingresar como padre y visualizar toda la informacion del mismo en el botón (información padre).
+2. Ingresar como padre y visualizar toda la información del mismo en el botón (información padre).
 3. Ver una lista o historial de menús comprados.
 4. Compra de tickets para la compra de menús.
 5. Comprar un menú.
-6. Comentar y evaluar un menu.
+6. Comentar y evaluar un menú.
 7. Observar comentarios realizados a cada menú.
 
 **Funcionalidades de usuario directora**
 1. Agregar un menú al calendario para la fecha deseada, que este disponible (sin menú ya cargado).
-2. Crear un menu desde cero, personalizando su nombre, descripción, información nutricional y alergenos.
+2. Crear un menú desde cero, personalizando su nombre, descripción, información nutricional y alergenos.
 3. Puede visualizar los comentarios y evaluaciones de cada menú ya cargado realizado por los padres.
 
-## Librerias utilizadas
+## Librerías utilizadas
 
-Utilizamos las siguientes dependencias en el package.json las cuales contienen jsDoc (para documentación del codigo), esLint (para analizis de estilo de código) y jest para test unitarios configurados, también utilizamos el framework de flowbite y bootstrap para el css pero lo utilizamos en forma de link en el html.
+Utilizamos las siguientes dependencias en el package.json las cuales contienen jsDoc (para documentación del código), esLint (para análisis de estilo de código) y jest para test unitarios configurados, también utilizamos el framework de flowbite y bootstrap para el css pero lo utilizamos en forma de link en el html.
 ```
   "devDependencies": {
     "eslint": "^8.43.0",
@@ -82,7 +81,7 @@ Para que los test unitarios (jest) corran adecuadamente tubimos que configurar e
 ```
   "type": "module",
 ```
-Ademas realizamos una configuración de un server en node para enrutar el proyecto en el puerto 3000.
+Además realizamos una configuración de un server en node para enrutar el proyecto en el puerto 3000.
 (Importante solo deben usarse notación tipo modulo(export/import) en dicha configuración ya que si no generara conflictos con otras dependencias).
 Dicha configuración la realizamos en el archivo app.mjs (la extensión mjs significa modules js).
 ```
@@ -97,7 +96,7 @@ app.listen(3000, () => {
 });
 ```
 Con estas dos funciones enrutamos el archivo index.html al puerto 3000 de nuestro local host.
-Aquí reportamos un issue ya que no encontramos forma de configurar un server con una dispoción de carpetas deseada, aquí el link a dicho reporte:
+Aquí reportamos un issue ya que no encontramos forma de configurar un server con una disposición de carpetas deseada, aquí el link a dicho reporte:
 
 https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/3#issue-1771661121
 
@@ -111,7 +110,7 @@ Cada archivo es una clase.
 3. El index.html nuestra página afuera de ambas carpetas.
 
 **Otras carpetas:**
-Luego estan las carpetas docs (No contiene el software si no la documentación), coverage (informe de la cobertura de los test unitarios) y out (la documentación de jsdocs).
+Luego están las carpetas docs (No contiene el software si no la documentación), coverage (informe de la cobertura de los test unitarios) y out (la documentación de jsdocs).
 
 <br>
 
@@ -129,7 +128,7 @@ Buscamos crear una experiencia intuitiva y satisfactoria para los usuarios, dond
 
 ## Responsividad
 
-Tambien aplicamos responsibidad a nuestro proyecto para que la interfaz sea adecuada en todas las resoluciones de pantalla.
+También aplicamos responsividad a nuestro proyecto para que la interfaz sea adecuada en todas las resoluciones de pantalla.
 
 *Responsividad pantallas grandes mayores a 1500px de ancho:*
 <p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveGrande.PNG></img></p>
@@ -144,31 +143,31 @@ Tambien aplicamos responsibidad a nuestro proyecto para que la interfaz sea adec
 Nuestro proyecto cumple con los principios de accesibilidad WCAG lo comprobamos con la extensión wave.
 <img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/WaveDespues.png >
 
-El único error que tuvimos de contraste no lo podemos arreglar ya que es por las estrellas de el css de una libreria externa.
+El único error que tuvimos de contraste no lo podemos arreglar ya que es por las estrellas del css de una librería externa.
 Reportamos el issue https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/4
 
 # Codificación
 
 ## Estilo de codificación
-La codificación la realizamos en el IDE Visual Studio Code, respetando el estandar de codificación 'google style' el cual comprobamos con esLint, para cada código de js.
+La codificación la realizamos en el IDE Visual Studio Code, respetando el estándar de codificación 'google style' el cual comprobamos con esLint, para cada código de js.
 **Eslint con 0 errores para las clases del dominio:**
 <img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/eslintDominio.PNG></img>
 
-**Eslint para el codigo index.js:**
+**Eslint para el código index.js:**
 <p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/eslintindex.PNG></img></p>
-Reporte de issue por lineas muy largas: https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/5
+Reporte de issue por líneas muy largas: https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/5
 
-## Buenas practicas de OOP
+## Buenas prácticas de OOP
 
-Separamos las clases del dominio, en 5 archivos de javascript cada uno es una clase (Comentario.js, Dia.js, Menu.js, Padre.js, Sistema.js) en la carpeta dominio. Así modificar y actualizar el codigo es mucho mas fácil y comodo de realizar.
-Para el código de la interfaz (carpeta interfaz) utilizamos dos archivos de javascript por un lado DatosPreCargados.js que son todos los datos que queriamos precargar en el sitio web, y otro llamado index.js que tiene todos los eventos y funciones de la interfaz. Consideramos que poner los datos precargados en otro archivo de javascript era buena practica ya que son muchas líneas que dificultarian la visualización de todo el resto de código si se pusiera todo junto, aparte que al modificar dichos datos de prueba no nos preocupamos si borramos alguna función importante del sistema por error.
+Separamos las clases del dominio, en 5 archivos de javascript cada uno es una clase (Comentario.js, Dia.js, Menu.js, Padre.js, Sistema.js) en la carpeta dominio. Así modificar y actualizar el código es mucho más fácil y cómodo de realizar.
+Para el código de la interfaz (carpeta interfaz) utilizamos dos archivos de javascript por un lado DatosPreCargados.js que son todos los datos que queríamos precargar en el sitio web, y otro llamado index.js que tiene todos los eventos y funciones de la interfaz. Consideramos que poner los datos precargados en otro archivo de javascript era buena práctica ya que son muchas líneas que dificultarían la visualización de todo el resto de código si se pusiera todo junto, aparte que al modificar dichos datos de prueba no nos preocupamos si borramos alguna función importante del sistema por error.
 
-## Buenas practicas de codificación
+## Buenas prácticas de codificación
 
-Tratamos de implementar las siguientes buenas practicas de codificación en nuestro código:
+Tratamos de implementar las siguientes buenas prácticas de codificación en nuestro código:
 
 - Parámetros cortos.
-- Líneas menores a 80 carácteres.
+- Líneas menores a 80 caracteres.
 - Métodos y funciones con poca cantidad de líneas.
 - Código envolvente.
 - Reutilización de código.
@@ -181,7 +180,7 @@ Tratamos de implementar las siguientes buenas practicas de codificación en nues
 
 # Test unitario
 
-Realizamos test unitario en todas las clases del dominio, con jest y alcanzamos una cobertura del 100% para todas las clases. Cada clase del dominio tiene una clase en la carpeta test que la prueba , la cual contiene pruebas que son independientes entre sí de cada método.
+Realizamos test unitario en todas las clases del dominio, con jest y alcanzamos una cobertura del 100% para todas las clases. Cada clase del dominio tiene una clase en la carpeta test que la prueba, la cual contiene pruebas que son independientes entre sí de cada método.
 
 **Pruebas con cobertura 100% :**
 
@@ -198,22 +197,22 @@ Para ejecutar las pruebas en la terminal en la carpeta Sapelli-Kadessian ingresa
 
 ### Betina Kadessian
 
-En este proyecto realizé la configuración del server con node.js, codigos de javascript, css y html.
+En este proyecto realicé la configuración del server con node.js, códigos de javascript, css y html.
 Este proyecto nos brindó la oportunidad de aplicar buenas prácticas de codificación, aprender técnicas de testing y mejorar nuestras habilidades en la documentación del código. Estas habilidades son fundamentales en nuestra carrera profesional, ya que nos permiten desarrollar software de alta calidad, fácil de mantener y colaborar de manera efectiva en equipos de desarrollo.
 Espero seguir aplicando lo que hemos aprendido en futuros proyectos y continuar avanzando en mi crecimiento profesional en el campo de la programación.
 
 ### Jorge Sapelli 
 
-Para esta segunda entrega, realice codificacion del HTML, css y documentacion del proyecto. Trabaje con flowbite para ello e hice uso de la herramienta Wave para evaluar y corregir la accesibilidad del sistema. 
-Aprendi muchas cosas importantes para poder crear un software. Aprendi que el crear un software no solo es programar, sino todo el proceso, contacto con el cliente, con el usuario, y con los otros miembros del equipo. Me parecio muy interesante todo lo que lleva el proceso de crear el software y creo que es muy importante el documentar todo lo creado para poder mantener un orden a lo largo del proceso.
-Tambien aprendimos lo que es una buena calidad de codigo, algo muy importante para que otros desarrolladores se puedan adaptar facilmente al codigo y haya un orden consistente a lo largo de todo el codigo. 
-Espero poder seguir aprendiendo y utilizando estas herramientas a futuro ya que me resultaron muy utiles al momento de crear el software. 
+Para esta segunda entrega, realice codificación del HTML, css y documentación del proyecto. Trabajé con flowbite para ello e hice uso de la herramienta Wave para evaluar y corregir la accesibilidad del sistema. 
+Aprendí muchas cosas importantes para poder crear un software. Aprendí que el crear un software no solo es programar, sino todo el proceso, contacto con el cliente, con el usuario, y con los otros miembros del equipo. Me pareció muy interesante todo lo que lleva el proceso de crear el software y creo que es muy importante el documentar todo lo creado para poder mantener un orden a lo largo del proceso.
+También aprendimos lo que es una buena calidad de código, algo muy importante para que otros desarrolladores se puedan adaptar fácilmente al código y haya un orden consistente a lo largo de todo el código. 
+Espero poder seguir aprendiendo y utilizando estas herramientas a futuro ya que me resultaron muy útiles al momento de crear el software. 
 
 <br>
 
 ## Técnicas aplicadas y aprendizajes
 
-**Las técnologias que aplicamos y los aprendizajes que obtuvimos son los siguientes:**
+**Las tecnologías que aplicamos y los aprendizajes que obtuvimos son los siguientes:**
 
 - Git: Sistema de control de versiones que utilizamos para gestionar y mantener el historial de cambios en nuestro proyecto.
 
@@ -245,14 +244,15 @@ Espero poder seguir aprendiendo y utilizando estas herramientas a futuro ya que 
 
 # Presentación en clase
 
-Nuestra exposición abarcó los fundamentos de la elicitación y la ingeniería de requerimientos, resaltando su importancia y algunas mejores prácticas. Esto lo vinculamos a nuestra primera entrega del obligatorio, donde utilizamos las tecnicas de elicitacion y de Ingenieria de requerimientos para poder comenzar a crear el sistema en esta segunda entrega.
+Nuestra exposición abarcó los fundamentos de la elicitación y la ingeniería de requerimientos, resaltando su importancia y algunas mejores prácticas. Esto lo vinculamos a nuestra primera entrega del obligatorio, donde utilizamos las técnicas de elicitación y de Ingeniería de requerimientos para poder comenzar a crear el sistema en esta segunda entrega.
 
 Link con nuestra presentación:
 
 > https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/Elicitaci%C3%B3n%20-%20priorizaci%C3%B3n%20de%20requerimientos.pptx
 
-## Video de el software construido
+## Video del software construido
 
-<img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/Video_Demostrativo.mp4"></img>
+Link del video: https://www.youtube.com/watch?v=IjI3LhsN0wc
 
-Es necesario descargar el video para poder verlo debido al tamaño. En caso de no acceder por el link, el video se encuentra en la carpeta "imagenes".
+También puede descargar el archivo con mayor calidad:
+https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/Video_Demostrativo.mp4
