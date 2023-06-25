@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687147064819" clover="3.2.0">
-  <project timestamp="1687147064819" name="All files">
-    <metrics statements="202" coveredstatements="202" conditionals="139" coveredconditionals="139" methods="77" coveredmethods="77" elements="418" coveredelements="418" complexity="0" loc="202" ncloc="202" packages="1" files="5" classes="5"/>
+<coverage generated="1686350287436" clover="3.2.0">
+  <project timestamp="1686350287436" name="All files">
+    <metrics statements="201" coveredstatements="201" conditionals="139" coveredconditionals="139" methods="77" coveredmethods="77" elements="417" coveredelements="417" complexity="0" loc="201" ncloc="201" packages="1" files="5" classes="5"/>
     <file name="Comentario.js" path="C:\Users\betin\OneDrive\Escritorio\Sapelli-Kadessian\fuente\dominio\Comentario.js">
       <metrics statements="17" coveredstatements="17" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="8"/>
       <line num="16" count="18" type="stmt"/>
