@@ -4,7 +4,7 @@
 | M4B - Docentes: Gerardo Matturro, Alejandro Adorjan |
 | Ana Betina Kadessian, Jorge Sapelli |
 | 26/06/2023 |
-| https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian |
+| https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli |
 
 # Test de sistema
 Una vez realizado nuestro proyecto, se nos asignó un proyecto de otro equipo para realizar pruebas exploratorias. Estas pruebas son un enfoque flexible para descubrir problemas en el software mediante la exploración activa y la toma de decisiones durante el proceso de prueba. El equipo que nos tocó testear es el de Collazo, Ricca y Salgado. 
@@ -44,7 +44,7 @@ A lo último se escriben las conclusiones obtenidas luego de realizar la prueba 
 
 *Notas:* Se notaron varios errores e inconsistencias al momento de hacer la prueba. En primer lugar, el sistema no notifica al usuario cuando un comensal fue agregado al sistema por más de que lo haya agregado correctamente. Luego, realizamos un caso donde se intentó agregar al mismo Comensal en donde el sistema mostro el correcto mensaje de error. Se revisaron casos bordes en donde se insertó un comensal con edad 0 y el sistema lo agrego correctamente, el sistema no muestra una edad mínima pero para futuras mejoras recomendamos insertar una. Viendo la interfaz, no logramos distinguir correctamente los "Datos precargados" ya que el color de estos caracteres es muy similar al color de los datos ingresados por el usuario. Por último, vimos que el sistema no se adapta correctamente al tamaño de la pantalla. Primero, con un determinado zoom en la pestaña Chrome, el botón "Agregar Comensal" no aparece en pantalla y dado que hay un footer, el sistema no permite visualizar correctamente el botón, haciendo imposible agregar el comensal deseado. Luego se realizo un test con la extensión "MobileView" de Visual Studio Code lo cual permite ver el sistema desde un determinado celular. Hicimos la prueba con un iPhone 8 y los resultados fueron los siguientes:
 
-<p> <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestHistorial_iPhone8.png" width="250">  <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestComensal_iPhone8.png" width="250"> </p>
+<p> <img src="https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/TestHistorial_iPhone8.png" width="250">  <img src="https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/TestComensal_iPhone8.png" width="250"> </p>
 
 Como se puede ver, la información del footer queda cortado y no podemos visualizar el botón de "Agregar Comensal" como hemos mencionado anteriormente.
 
@@ -65,12 +65,12 @@ Como se puede ver, la información del footer queda cortado y no podemos visuali
 *Notas:* Luego de explorar y leer detenidamente cada sección se encontraron errores ortográficos en la descripción del menú lunes.
 Se encontraron inconsistencias con los mensajes que emite el sitio web, en la sección agregar comensal se ve como placeholder en los inputs (sin haber ingresado nada) los datos de una persona llamada Santiago Molinari como se ve en la imagen:
 
-<p><img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestMensajes.png"></p>
+<p><img src="https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/TestMensajes.png"></p>
 
 Esto me parece inadecuado porque se confunde con un dato ya ingresado, lo mejor sería especificar qué tipo de dato requiere dicho input por ejemplo en edad, en vez de 12 poner edad.
 Por otro lado, en la página "historial de pedidos", la inconsistencia está en que hay total ausencia de indicaciones claras de que efectúa cada botón, simplemente hay cinco botones que contienen un número el cual hay que adivinar que hace, a pesar de esto no pude evaluar del todo los mensajes en dicha página ya que no funcionan los botones con números de dicha sección.
 
-<p><img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/testmensajebotones.png"></p>
+<p><img src="https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/testmensajebotones.png"></p>
 
 Otro defecto encontrado en dicha página es que la descripción del menú solo aparece cuando el comensal pidió dicho menú, (el número del botón aparece mayor a 0 intuyo que significa eso), pero tendría más lógica ver la descripción independientemente de que haya pedido el comensal.
 Concluimos que se revise el código nuevamente y se vea en que se falla para que el sitio web pueda funcionar correctamente.
@@ -109,7 +109,7 @@ Realizamos el test de caja negra de particiones equivalentes en la página de ag
 | Apellido           | Una cadena de texto no vacía.**(2)**               | Una cadena de texto vacía.**(5)**              |
 | Edad               | Un número entero mayor a cero y menor a 18.**(3)** | Un número menor igual a cero.**(6)** Un número mayor igual a 18.**(7)** |
 
- <p><img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestParticionEquivalente.png"> </p>
+ <p><img src="https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/TestParticionEquivalente.png"> </p>
 
 Encontramos errores en el ingreso de la edad, ya que la aplicación permite cualquier edad incluso 0 y mayor a 18, el resto de las pruebas las paso correctamente.
 
@@ -221,7 +221,7 @@ Lamentablemente no se pudieron evaluar funcionalidades mas que la de agregar un 
 Se evaluó la accesibilidad del sitio con la extensión Wave y se encontraron errores, dos alertas sobre el texto alternativo de unos logos y 2 errores de que faltan labels.
 Por lo que dentro de los parámetros el sitio web no cumple con los estándares de accesibilidad y debería mejorar.
 
-<img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/Wave-Collazo-Ricca-Salgado.png" width="350"> 
+<img src="https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/Wave-Collazo-Ricca-Salgado.png" width="350"> 
 
 <br>
 
