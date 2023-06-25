@@ -1,3 +1,11 @@
+| Identificación |
+| -------- |
+| Fundamentos de Ingeniería de Software     |
+| M4B - Docentes: Gerardo Matturro, Alejandro Adorjan |
+| Ana Betina Kadessian, Jorge Sapelli |
+| 26/06/2023 |
+| https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian |
+
 # Test de sistema
 Una vez realizado nuestro proyecto, se nos asignó un proyecto de otro equipo para realizar pruebas exploratorias. Estas pruebas son un enfoque flexible para descubrir problemas en el software mediante la exploración activa y la toma de decisiones durante el proceso de prueba. El equipo que nos tocó testear es el de Collazo, Ricca y Salgado. 
 
