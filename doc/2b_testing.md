@@ -118,15 +118,15 @@ Invalidez: Datos inválidos ingresados y que fueron aceptados.
 
 <br>
 
-### Estos fueron los issues reportados:
+## Estos fuerón los issues reportados:
 
 __Error:__
 Se reportarón 4 bugs:
 
-https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/4
-https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/5
-https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/6
-https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/7
+> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/4
+> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/5
+> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/6
+> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/7
 
 - No se permite seleccionar comensal en el mes de enero al no seleccionar un mes pero apareciendo ese mes como default.
 - No se puede visualizar el comensal agregado por el usuario dentro de las opciones al elegir comensal en el historial de pedidos.
@@ -136,12 +136,12 @@ __Mejora a futuro:__
 
 Se reportarón 6 improvements:
 
-https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/10
-https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/11
-https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/12
-https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/13
-https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/14
-https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/15
+> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/10
+> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/11
+> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/12
+> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/13
+> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/14
+> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/15
 
 - Agregar información de alguna forma sobre los numero que aparecen debajo de cada día en el   historial de pedidos.
 - Realizar una interfaz web responsive que se adapte al tamaño de la pantalla del dispositivo.
@@ -154,8 +154,8 @@ __Invalidez:__
 
 Se reportarón 2 issues:
 
-https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/9
-https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/8
+> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/9
+> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/8
 
 - Se agrego un comensal con edad 0.
 - Se agrego un comensal con edad 1000.
@@ -171,20 +171,19 @@ Por esta razón, para cada label se le asigno prioridad, su label correspondient
 
 <br>
 
-
 ## Sumario de issues
 
 Luego del testing del sistema y del reporte de los issues, se llego a que el sistema cuenta con:
 
-- 3 Errores
+- 4 Errores
 - 6 Mejoras a futuro
 - 2 invalidez
 
 <br>
 
-## Evaluación Global de la Calidad
+# Evaluación Global de la Calidad
 
-### Calidad de código
+## Calidad de código
 Se evaluó la calidad del código de javaScript y encontramos los siguiente problemas:
 
 - En main.js hay eventos innecesarios (lineas 40 al 53) dichos eventos que te redirigen a otra página al apretar un botón se pueden añadir como atributo en una etiqueta html "href", por lo que son innecesarios.
@@ -204,13 +203,13 @@ Link del issue report:
 
 <br>
 
-### Funcionalidad
+## Funcionalidad
 
 Lamentablemente no se pudieron evaluar funcionalidades mas que la de agregar un comensal y ver un historial precargado, ya que no funciona correctamente el sitio web y no hay mas funcionalidades.
 
 <br>
 
-### Accesibilidad
+## Accesibilidad
 
 Se evaluó la accesibilidad del sitio con la extensión Wave y no se encontraron errores graves, solo dos alertas sobre el texto alternativo de unos logos y 2 errores de que faltan labels.
 Por lo que dentro de los parámetros el sitio web cumple con los estándares de accesibilidad.
@@ -219,11 +218,11 @@ Por lo que dentro de los parámetros el sitio web cumple con los estándares de 
 
 <br>
 
-### Portabilidad
+## Portabilidad
 
 Se probo en pruebas exploratorios desde diversos dispositivos y al cambiar la resolución de pantalla se esconden los botones y queda inutilizable por lo que este sitio web no es portable para equipos móviles.
 
-### Conclusión
+# Conclusión
 
 Ya habiendo visto esto, podemos decir que es necesario que se vea el código y funcionamiento ya que hay importantes errores como la posibilidad de seleccionar comensales y el poder ver el historial del comensal agregado por el usuario. También se añadieron varias recomendaciones, importantes mejoras a futuro para hacer que el trabajo de los compañeros sea aún más efectivo y amigable para el usuario, ya que estas issues van a hacer que el trabajo de los compañeros se destaque más.
 
