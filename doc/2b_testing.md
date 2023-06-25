@@ -131,6 +131,7 @@ Se reportarón 4 bugs:
 - No se permite seleccionar comensal en el mes de enero al no seleccionar un mes pero apareciendo ese mes como default.
 - No se puede visualizar el comensal agregado por el usuario dentro de las opciones al elegir comensal en el historial de pedidos.
 - Hay errores de ortografía y de typeo.
+- Hay errores en la codificación.
 
 __Mejora a futuro:__
 
