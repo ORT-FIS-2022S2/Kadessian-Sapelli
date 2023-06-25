@@ -38,7 +38,7 @@ A lo último se escriben las conclusiones obtenidas luego de realizar la prueba 
 
 <p> <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestHistorial_iPhone8.png" width="250">  <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestComensal_iPhone8.png" width="250"> </p>
 
-Como se puede ver, la información del footer queda cortado y no podemos visualizar el botón de "Agregar Comensal" como hemos mencionado anteriormente
+Como se puede ver, la información del footer queda cortado y no podemos visualizar el botón de "Agregar Comensal" como hemos mencionado anteriormente.
 
 <br>
 
@@ -197,8 +197,6 @@ Se evaluó la calidad del código de javaScript y encontramos los siguiente prob
 - Tienen demasiada cantidad de líneas en funciones y eventos que se podrían reducir en bloques más pequeños para facilitar la lectura de código y reutilización del mismo.
 
 Por lo cual concluimos que la calidad de este código es muy baja.
-
-Link del issue report: 
 
     https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/4
 
