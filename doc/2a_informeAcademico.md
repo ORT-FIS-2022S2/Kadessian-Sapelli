@@ -8,7 +8,7 @@
 | M4B - Docentes: Gerardo Matturro, Alejandro Adorjan |
 | Ana Betina Kadessian, Jorge Sapelli |
 | 26/06/2023 |
-| https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian |
+| https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli |
 
 <br>
 
@@ -19,7 +19,7 @@
 Descargar e instalar la última versión de Node.JS
 > https://nodejs.org/
 
-Una vez clonado este repositorio en su máquina, abra una terminal y posiciones en la primer carpeta "/Sapelli-Kadessian" y ejecutar los siguientes comandos:
+Una vez clonado este repositorio en su máquina, abra una terminal y posiciones en la primer carpeta "/Kadessian-Sapelli" y ejecutar los siguientes comandos:
 
 ```
 npm install
@@ -44,7 +44,7 @@ Nuestro objetivo fue completar los requerimientos de mayor importancia definidos
 
 ### UML
 Creamos un diagrama de clases para poder visualizar mejor el esqueleto del sistema y tener en claro que clases eran necesarias crear para el funcionamiento de la página web.
-<img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/UML.png">
+<img src="https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/UML.png">
 
 ### Funciones del Sistema
 Al no tener login en nuestro sistema, el sistema contara con un usuario predefinido.
@@ -98,9 +98,9 @@ app.listen(3000, () => {
 Con estas dos funciones enrutamos el archivo index.html al puerto 3000 de nuestro local host.
 Aquí reportamos un issue ya que no encontramos forma de configurar un server con una disposición de carpetas deseada, aquí el link a dicho reporte:
 
-https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/3#issue-1771661121
+https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/issues/3#issue-1771661121
 
-<p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/carpetas.png></img></p>
+<p><img src=https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/carpetas.png></img></p>
 
 El proyecto dispone de las siguientes carpetas en la carpeta fuente:
 
@@ -131,31 +131,31 @@ Buscamos crear una experiencia intuitiva y satisfactoria para los usuarios, dond
 También aplicamos responsividad a nuestro proyecto para que la interfaz sea adecuada en todas las resoluciones de pantalla.
 
 *Responsividad pantallas grandes mayores a 1500px de ancho:*
-<p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveGrande.PNG></img></p>
+<p><img src=https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/ResponsiveGrande.PNG></img></p>
 
 *Responsividad pantallas medias menores a 1000px de ancho:*
-<p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveMedia.PNG></p>
+<p><img src=https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/ResponsiveMedia.PNG></p>
 
 *Responsividad pantallas pequeñas menores a 800px de ancho:*
-<p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/ResponsiveChica.PNG></p>
+<p><img src=https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/ResponsiveChica.PNG></p>
 
 ## Accesibilidad
 Nuestro proyecto cumple con los principios de accesibilidad WCAG lo comprobamos con la extensión wave.
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/WaveDespues.png >
+<img src=https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/WaveDespues.png >
 
 El único error que tuvimos de contraste no lo podemos arreglar ya que es por las estrellas del css de una librería externa.
-Reportamos el issue https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/4
+Reportamos el issue https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/issues/4
 
 # Codificación
 
 ## Estilo de codificación
 La codificación la realizamos en el IDE Visual Studio Code, respetando el estándar de codificación 'google style' el cual comprobamos con esLint, para cada código de js.
 **Eslint con 0 errores para las clases del dominio:**
-<img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/eslintDominio.PNG></img>
+<img src=https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/eslintDominio.PNG></img>
 
 **Eslint para el código index.js:**
-<p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/eslintindex.PNG></img></p>
-Reporte de issue por líneas muy largas: https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/issues/5
+<p><img src=https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/eslintindex.PNG></img></p>
+Reporte de issue por líneas muy largas: https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/issues/5
 
 ## Buenas prácticas de OOP
 
@@ -184,9 +184,9 @@ Realizamos test unitario en todas las clases del dominio, con jest y alcanzamos 
 
 **Pruebas con cobertura 100% :**
 
-<p><img src=https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/jest100.PNG></img></P>
+<p><img src=https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/jest100.PNG></img></P>
 
-Para ejecutar las pruebas en la terminal en la carpeta Sapelli-Kadessian ingresar:
+Para ejecutar las pruebas en la terminal en la carpeta Kadessian-Sapelli ingresar:
 > npm run test
 
 <br> 
@@ -248,11 +248,11 @@ Nuestra exposición abarcó los fundamentos de la elicitación y la ingeniería 
 
 Link con nuestra presentación:
 
-> https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/Elicitaci%C3%B3n%20-%20priorizaci%C3%B3n%20de%20requerimientos.pptx
+> https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/Elicitaci%C3%B3n%20-%20priorizaci%C3%B3n%20de%20requerimientos.pptx
 
 ## Video del software construido
 
 Link del video: https://www.youtube.com/watch?v=IjI3LhsN0wc
 
 También puede descargar el archivo con mayor calidad:
-https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/Video_Demostrativo.mp4
+https://github.com/ORT-FIS-2022S2/Kadessian-Sapelli/blob/dev/imagenes/Video_Demostrativo.mp4
