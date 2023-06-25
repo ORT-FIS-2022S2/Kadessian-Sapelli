@@ -211,8 +211,8 @@ Lamentablemente no se pudieron evaluar funcionalidades mas que la de agregar un 
 
 ## Accesibilidad
 
-Se evaluó la accesibilidad del sitio con la extensión Wave y no se encontraron errores graves, solo dos alertas sobre el texto alternativo de unos logos y 2 errores de que faltan labels.
-Por lo que dentro de los parámetros el sitio web np cumple con los estándares de accesibilidad y debería mejorar.
+Se evaluó la accesibilidad del sitio con la extensión Wave y se encontraron errores, dos alertas sobre el texto alternativo de unos logos y 2 errores de que faltan labels.
+Por lo que dentro de los parámetros el sitio web no cumple con los estándares de accesibilidad y debería mejorar.
 
 <img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/Wave-Collazo-Ricca-Salgado.png" width="350"> 
 
