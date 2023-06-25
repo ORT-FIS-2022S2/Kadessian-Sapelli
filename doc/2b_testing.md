@@ -72,7 +72,7 @@ Concluimos que se revise el código nuevamente y se vea en que se falla para que
 ### Sesión de prueba exploratoria 3
 *Bloque de tiempo:* 30 minutos (Corta).
 
-*Fecha:*23/6/2023
+*Fecha:* 23/6/2023
 
 *Nombre del tester:* Jorge Sapelli
 
@@ -97,9 +97,9 @@ Realizamos el test de caja negra de particiones equivalentes en la página de ag
 
 | Entrada / Variable | Clases válidas                                 | Clases inválidas                          |
 | ------------------ | ---------------------------------------------- | ----------------------------------------- |
-| Nombre             | Una cadena de texto no vacía.(1)               | Una cadena de texto vacía.(4)                |
-| Apellido           | Una cadena de texto no vacía.(2)               | Una cadena de texto vacía.(5)              |
-| Edad               | Un número entero mayor a cero y menor a 18.(3) | Un número menor igual a cero(6).Un número mayor igual a 18.(7) |
+| Nombre             | Una cadena de texto no vacía.**(1)**               | Una cadena de texto vacía.**(4)**                |
+| Apellido           | Una cadena de texto no vacía.**(2)**               | Una cadena de texto vacía.**(5)**              |
+| Edad               | Un número entero mayor a cero y menor a 18.**(3)** | Un número menor igual a cero.**(6)** Un número mayor igual a 18.**(7)** |
 
  <p><img src="https://github.com/ORT-FIS-2022S2/Sapelli-Kadessian/blob/dev/imagenes/TestParticionEquivalente.png"> </p>
 
@@ -123,10 +123,10 @@ Invalidez: Datos inválidos ingresados y que fueron aceptados.
 __Error:__
 Se reportarón 4 bugs:
 
-> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/4
-> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/5
-> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/6
-> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/7
+> 1. https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/4
+> 2. https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/5
+> 3. https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/6
+> 4. https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/7
 
 - No se permite seleccionar comensal en el mes de enero al no seleccionar un mes pero apareciendo ese mes como default.
 - No se puede visualizar el comensal agregado por el usuario dentro de las opciones al elegir comensal en el historial de pedidos.
@@ -136,12 +136,12 @@ __Mejora a futuro:__
 
 Se reportarón 6 improvements:
 
-> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/10
-> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/11
-> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/12
-> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/13
-> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/14
-> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/15
+> 1. https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/10
+> 2. https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/11
+> 3. https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/12
+> 4. https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/13
+> 5. https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/14
+> 6. https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/15
 
 - Agregar información de alguna forma sobre los numero que aparecen debajo de cada día en el   historial de pedidos.
 - Realizar una interfaz web responsive que se adapte al tamaño de la pantalla del dispositivo.
@@ -154,8 +154,8 @@ __Invalidez:__
 
 Se reportarón 2 issues:
 
-> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/9
-> https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/8
+> 1. https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/9
+> 2. https://github.com/ORT-FIS-2022S2/Obligatorio1-Collazo-Ricca-Salgado/issues/8
 
 - Se agrego un comensal con edad 0.
 - Se agrego un comensal con edad 1000.
